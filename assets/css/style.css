@@ -59,6 +59,7 @@ html {
   font-family: var(--font-family);
   background-color: var(--color-bg);
   color: var(--color-text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -600,7 +601,9 @@ body {
   line-height: 1.55;
 }
 
-/* FAQ / Support Section */
+/* =========================================================
+   Ultra-Smooth CSS Grid Accordion for FAQ
+   ========================================================= */
 .faq-section {
   padding: 70px 0;
 }
@@ -618,7 +621,7 @@ body {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-md);
   overflow: hidden;
-  transition: var(--transition-fast);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
 }
 
 .faq-item:hover {
@@ -628,43 +631,57 @@ body {
 .faq-question {
   width: 100%;
   text-align: left;
-  padding: 18px 22px;
+  padding: 20px 24px;
   background: transparent;
   border: none;
   color: var(--color-text-primary);
-  font-size: 1.02rem;
+  font-size: 1.04rem;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   font-family: inherit;
+  user-select: none;
 }
 
-.faq-icon {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
+.faq-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background var(--transition-fast);
   color: var(--color-accent);
 }
 
-.faq-item.active .faq-icon {
+.faq-item.active .faq-icon-wrapper {
   transform: rotate(45deg);
+  background: var(--color-accent-glow);
+}
+
+/* Modern Grid 0fr -> 1fr Animation */
+.faq-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.active .faq-collapse {
+  grid-template-rows: 1fr;
+}
+
+.faq-collapse-inner {
+  overflow: hidden;
 }
 
 .faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
-  padding: 0 22px;
+  padding: 0 24px 22px;
   color: var(--color-text-secondary);
-  font-size: 0.94rem;
-  line-height: 1.6;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 300px;
-  padding-bottom: 20px;
-  transition: max-height 0.35s cubic-bezier(1, 0, 1, 0);
+  font-size: 0.96rem;
+  line-height: 1.65;
 }
 
 /* Support Contact Box */
@@ -674,19 +691,35 @@ body {
   background: var(--color-bg-secondary);
   border: 1px dashed var(--color-border-hover);
   border-radius: var(--border-radius-md);
-  padding: 28px;
+  padding: 32px 24px;
   text-align: center;
 }
 
+.support-badge-indie {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 159, 10, 0.12);
+  border: 1px solid rgba(255, 159, 10, 0.3);
+  color: var(--color-orange);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
 .support-card h4 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-bottom: 8px;
 }
 
 .support-card p {
   color: var(--color-text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 16px;
+  font-size: 0.96rem;
+  max-width: 580px;
+  margin: 0 auto 20px;
+  line-height: 1.55;
 }
 
 /* Footer */
@@ -703,7 +736,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 24px;
-  margin-bottom: 26px;
+  margin-bottom: 28px;
 }
 
 .footer-brand {
@@ -732,6 +765,42 @@ body {
 }
 
 .footer-links a:hover {
+  color: var(--color-text-primary);
+}
+
+/* Footer Language Dropdown */
+.footer-lang-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.footer-lang-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.footer-lang-select {
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.footer-lang-select option {
+  background: var(--color-bg-secondary);
   color: var(--color-text-primary);
 }
 

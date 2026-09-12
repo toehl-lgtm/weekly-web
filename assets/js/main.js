@@ -1,6 +1,6 @@
 /**
- * weekly - Landing Page Scripts
- * Supports DE & EN localizations, real screenshot toggling, theme switching, and micro-interactions.
+ * weekly - Modern Interactive Logic
+ * Supports DE & EN localizations, real screenshot toggling, theme switching, smooth FAQ, and footer language selector.
  */
 
 const translations = {
@@ -9,7 +9,7 @@ const translations = {
     navPreview: "Vorschau",
     navPrivacy: "Datenschutz",
     navSupport: "Support & FAQ",
-    badgeText: "Exklusiv für iPhone • iOS",
+    badgeText: "Indie-App für iPhone • iOS",
     heroTitlePrefix: "Deine Woche.",
     heroTitleGradient: "Auf den Punkt gebracht.",
     heroDesc: "Schluss mit unübersichtlichen Kalendern. weekly kombiniert die Klarheit eines intuitiven Wochenrasters mit smartem Arbeitszeit-Tracking, automatischer iCloud-Synchronisation und 100 % Privatsphäre.",
@@ -37,7 +37,7 @@ const translations = {
     f6Desc: "Deine Daten gehören dir. Alles wird direkt auf deinem iPhone gespeichert und sicher verschlüsselt über deine eigene Apple iCloud synchronisiert – ohne fremde Server.",
     trustTitle: "100 % Privatsphäre. Kein Tracking. Keine Werbung.",
     trustDesc: "Deine Termine sind Privatsache. weekly läuft vollständig auf deinem Gerät und deiner persönlichen iCloud. Wir erfassen keinerlei Nutzungsdaten, haben keine Werbebanner und verkaufen niemals Daten an Dritte.",
-    trustBtn: "Datenschutzerklärung lesen →",
+    trustBtn: "Datenschutzerklärung öffnen →",
     faqSub: "Hilfe & Support",
     faqTitle: "Häufig gestellte Fragen (FAQ)",
     faqDesc: "Alles Wichtige zur App, Synchronisation und zum Support.",
@@ -47,21 +47,23 @@ const translations = {
     faq2A: "Nein, keinesfalls. weekly bindet deine Apple-Kalender nur lesend ein, um sie nahtlos im Wochenraster anzuzeigen. Deine bestehenden Kalender bleiben völlig unberührt.",
     faq3Q: "Speichert weekly Daten auf fremden Entwickler-Servern?",
     faq3A: "Nein, zu 0 %. weekly besitzt keine eigenen Server oder Datenbanken. Deine Daten verbleiben ausschließlich auf deinem Gerät und in deiner persönlichen, verschlüsselten iCloud.",
-    faq4Q: "Wie erreiche ich den Support bei Fragen oder Wünschen?",
-    faq4A: "Du kannst uns jederzeit direkt per E-Mail unter weekly.workandworkout@gmail.com kontaktieren. Wir antworten dir in der Regel innerhalb von 24 Stunden.",
-    supportBoxTitle: "Du hast eine Frage oder Feedback zur App?",
-    supportBoxDesc: "Wir freuen uns über dein Feedback, Anregungen oder Feature-Wünsche.",
-    supportBtn: "Support kontaktieren (weekly.workandworkout@gmail.com)",
+    faq4Q: "Wer entwickelt weekly und wie erreiche ich den Support?",
+    faq4A: "weekly ist ein unabhängiges Herzensprojekt, das ich (Tim Oehl) als Solo-Entwickler mit viel Liebe zum Detail baue. Bei Fragen, Feedback oder Wünschen erreichst du mich direkt unter weekly.workandworkout@gmail.com. Da ich das Projekt alleine betreue, kann eine Antwort je nach Arbeitsaufwand etwas dauern – vielen Dank für dein Verständnis und deine Geduld!",
+    supportIndieBadge: "👨‍💻 Indie-Entwickler Projekt",
+    supportBoxTitle: "Fragen oder Feedback an den Entwickler?",
+    supportBoxDesc: "Ich freue mich über jede Nachricht, Feedback und neue Ideen. Da ich die App alleine entwickle, kann eine Antwort manchmal etwas Zeit in Anspruch nehmen.",
+    supportBtn: "Nachricht schreiben (weekly.workandworkout@gmail.com)",
     footerImprint: "Impressum / Kontakt",
     footerRights: "© 2026 Tim Oehl. Alle Rechte vorbehalten.",
-    footerMade: "Mit Präzision für iOS entwickelt."
+    footerMade: "Als Indie-App mit Leidenschaft für iOS entwickelt.",
+    langLabel: "Sprache:"
   },
   en: {
     navFeatures: "Features",
     navPreview: "Preview",
     navPrivacy: "Privacy",
     navSupport: "Support & FAQ",
-    badgeText: "Crafted for iPhone • iOS",
+    badgeText: "Indie App for iPhone • iOS",
     heroTitlePrefix: "Your Week.",
     heroTitleGradient: "Clear and Focused.",
     heroDesc: "No more cluttered calendars. weekly combines the visual clarity of a structured timetable grid with smart work-hour tracking, seamless iCloud sync, and 100% privacy.",
@@ -89,7 +91,7 @@ const translations = {
     f6Desc: "Your data stays yours. Everything is stored locally on your device and safely synchronized through your private Apple iCloud – without third-party developer servers.",
     trustTitle: "100% Privacy. Zero Tracking. No Ads.",
     trustDesc: "Your schedule is strictly private. weekly operates entirely on your iPhone and personal iCloud. We do not collect behavioral data, have no ads, and never sell data to anyone.",
-    trustBtn: "Read Privacy Policy →",
+    trustBtn: "Open Privacy Policy →",
     faqSub: "Help & Inquiries",
     faqTitle: "Frequently Asked Questions",
     faqDesc: "Everything you need to know about the app, sync, and support.",
@@ -99,29 +101,32 @@ const translations = {
     faq2A: "Not at all. weekly connects to your Apple Calendars in read-only mode to visualize them cleanly in your weekly grid. Your original calendar data is never altered.",
     faq3Q: "Does weekly upload data to external servers?",
     faq3A: "Zero percent. weekly has no developer servers or external databases. Your data stays solely on your device and inside your encrypted personal iCloud.",
-    faq4Q: "How can I contact support for help or suggestions?",
-    faq4A: "You can reach us anytime at weekly.workandworkout@gmail.com. We usually respond within 24 hours.",
-    supportBoxTitle: "Have a question or feedback about weekly?",
-    supportBoxDesc: "We would love to hear your thoughts, feedback, and feature suggestions.",
-    supportBtn: "Contact Support (weekly.workandworkout@gmail.com)",
+    faq4Q: "Who develops weekly and how can I reach support?",
+    faq4A: "weekly is an independent passion project crafted and maintained solely by myself, Tim Oehl. You can contact me directly at weekly.workandworkout@gmail.com. As I manage everything independently, replying may take a little time depending on workload – thank you very much for your patience and understanding!",
+    supportIndieBadge: "👨‍💻 Indie Developer Project",
+    supportBoxTitle: "Questions or feedback for the developer?",
+    supportBoxDesc: "I welcome any message, feedback, or feature ideas. Because I develop weekly independently as a solo project, responses might take a few days.",
+    supportBtn: "Send a message (weekly.workandworkout@gmail.com)",
     footerImprint: "Legal & Contact",
     footerRights: "© 2026 Tim Oehl. All rights reserved.",
-    footerMade: "Designed with precision for iOS."
+    footerMade: "Handcrafted with passion for iOS as an indie app.",
+    langLabel: "Language:"
   }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  initLanguage();
   initTheme();
+  initLanguage();
   initScreenshotSwitcher();
   initScrollReveals();
   initSpotlightCards();
   initFaqAccordion();
 });
 
-/* --- 1. Language Switcher --- */
+/* --- 1. Language System --- */
 function initLanguage() {
   const langBtns = document.querySelectorAll('.lang-btn');
+  const footerSelect = document.getElementById('footer-lang-select');
   const savedLang = localStorage.getItem('weekly-lang');
   const browserLang = (navigator.language || 'de').startsWith('de') ? 'de' : 'en';
   const currentLang = savedLang || browserLang;
@@ -135,25 +140,50 @@ function initLanguage() {
       localStorage.setItem('weekly-lang', selected);
     });
   });
+
+  if (footerSelect) {
+    footerSelect.value = currentLang;
+    footerSelect.addEventListener('change', (e) => {
+      const selected = e.target.value;
+      setLanguage(selected);
+      localStorage.setItem('weekly-lang', selected);
+    });
+  }
 }
 
 function setLanguage(lang) {
   const dict = translations[lang] || translations.de;
   document.documentElement.setAttribute('lang', lang);
 
+  // Sync nav buttons
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.getAttribute('data-lang') === lang);
   });
 
+  // Sync footer dropdown
+  const footerSelect = document.getElementById('footer-lang-select');
+  if (footerSelect) {
+    footerSelect.value = lang;
+  }
+
+  // Update elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict[key]) {
       el.textContent = dict[key];
     }
   });
+
+  // Update legal page toggles if present
+  if (typeof window.showLegalLang === 'function') {
+    window.showLegalLang(lang);
+  }
+  if (typeof window.showImprintLang === 'function') {
+    window.showImprintLang(lang);
+  }
 }
 
-/* --- 2. Screenshot Switcher (Dark / Light) --- */
+/* --- 2. Screenshot Switcher --- */
 function initScreenshotSwitcher() {
   const buttons = document.querySelectorAll('.tab-pill[data-screenshot]');
   const img = document.getElementById('phone-screenshot');
@@ -183,21 +213,22 @@ function initScreenshotSwitcher() {
 /* --- 3. Dark / Light Theme Toggle --- */
 function initTheme() {
   const toggleBtn = document.getElementById('theme-toggle');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
   const savedTheme = localStorage.getItem('weekly-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
 
-  const currentTheme = savedTheme || (prefersDark.matches ? 'dark' : 'light');
   document.documentElement.setAttribute('data-theme', currentTheme);
   updateThemeIcon(currentTheme);
 
   if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
+    // Avoid double attaching
+    toggleBtn.onclick = () => {
       const activeTheme = document.documentElement.getAttribute('data-theme');
       const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('weekly-theme', newTheme);
       updateThemeIcon(newTheme);
-    });
+    };
   }
 }
 
@@ -211,7 +242,7 @@ function updateThemeIcon(theme) {
   }
 }
 
-/* --- 4. Scroll Reveal Animations --- */
+/* --- 4. Scroll Reveals --- */
 function initScrollReveals() {
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -222,14 +253,14 @@ function initScrollReveals() {
       }
     });
   }, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -30px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -20px 0px'
   });
 
   reveals.forEach(el => observer.observe(el));
 }
 
-/* --- 5. Mouse Spotlight on Feature Cards --- */
+/* --- 5. Mouse Spotlight --- */
 function initSpotlightCards() {
   const cards = document.querySelectorAll('.feature-card');
   cards.forEach(card => {
@@ -246,7 +277,7 @@ function initSpotlightCards() {
   });
 }
 
-/* --- 6. FAQ Accordion --- */
+/* --- 6. Smooth FAQ Accordion --- */
 function initFaqAccordion() {
   const items = document.querySelectorAll('.faq-item');
   items.forEach(item => {

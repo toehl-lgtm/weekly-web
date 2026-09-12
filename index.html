@@ -9,6 +9,14 @@
   <link rel="apple-touch-icon" href="assets/img/app-icon.png">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
+  <!-- Immediate theme check before render -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('weekly-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
 </head>
 <body>
 
@@ -29,7 +37,7 @@
       <ul class="nav-links">
         <li><a href="#features" data-i18n="navFeatures">Features</a></li>
         <li><a href="#preview" data-i18n="navPreview">Vorschau</a></li>
-        <li><a href="#privacy" data-i18n="navPrivacy">Datenschutz</a></li>
+        <li><a href="privacy.html" data-i18n="navPrivacy">Datenschutz</a></li>
         <li><a href="#support" data-i18n="navSupport">Support &amp; FAQ</a></li>
       </ul>
 
@@ -68,7 +76,7 @@
     <section class="hero container">
       <div class="badge-pill">
         <span class="badge-dot"></span>
-        <span data-i18n="badgeText">Exklusiv für iPhone • iOS</span>
+        <span data-i18n="badgeText">Indie-App für iPhone • iOS</span>
       </div>
 
       <h1 class="hero-title reveal">
@@ -171,14 +179,14 @@
       </div>
 
       <!-- Trust / Privacy Highlight Banner -->
-      <div id="privacy" class="trust-banner reveal">
+      <div id="privacy-section" class="trust-banner reveal">
         <div class="trust-badge-icon">🛡️</div>
         <div class="trust-content">
           <h3 data-i18n="trustTitle">100 % Privatsphäre. Kein Tracking. Keine Werbung.</h3>
           <p data-i18n="trustDesc">Deine Termine sind Privatsache. weekly läuft vollständig auf deinem Gerät und deiner persönlichen iCloud. Wir erfassen keinerlei Nutzungsdaten, haben keine Werbebanner und verkaufen niemals Daten an Dritte.</p>
           <div style="margin-top: 16px;">
             <a href="privacy.html" class="btn btn-secondary btn-sm" style="color: var(--color-green); border-color: rgba(48, 209, 88, 0.4);" data-i18n="trustBtn">
-              Datenschutzerklärung lesen →
+              Datenschutzerklärung öffnen →
             </a>
           </div>
         </div>
@@ -194,57 +202,78 @@
       </div>
 
       <div class="faq-list reveal">
+        <!-- Item 1 -->
         <div class="faq-item active">
           <button class="faq-question">
             <span data-i18n="faq1Q">Wie funktioniert die iCloud-Synchronisation?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon-wrapper">+</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq1A">weekly nutzt dein persönliches Apple iCloud-Konto. Wenn iCloud auf deinem iPhone aktiv ist, synchronisieren sich alle Einträge vollautomatisch im Hintergrund auf deinen Apple-Geräten. Es ist keine zusätzliche Registrierung erforderlich.</p>
+          <div class="faq-collapse">
+            <div class="faq-collapse-inner">
+              <div class="faq-answer">
+                <p data-i18n="faq1A">weekly nutzt dein persönliches Apple iCloud-Konto. Wenn iCloud auf deinem iPhone aktiv ist, synchronisieren sich alle Einträge vollautomatisch im Hintergrund auf deinen Apple-Geräten. Es ist keine zusätzliche Registrierung erforderlich.</p>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- Item 2 -->
         <div class="faq-item">
           <button class="faq-question">
             <span data-i18n="faq2Q">Werden meine bestehenden Kalendertermine verändert?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon-wrapper">+</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq2A">Nein, keinesfalls. weekly bindet deine Apple-Kalender nur lesend ein, um sie nahtlos im Wochenraster anzuzeigen. Deine bestehenden Kalender bleiben völlig unberührt.</p>
+          <div class="faq-collapse">
+            <div class="faq-collapse-inner">
+              <div class="faq-answer">
+                <p data-i18n="faq2A">Nein, keinesfalls. weekly bindet deine Apple-Kalender nur lesend ein, um sie nahtlos im Wochenraster anzuzeigen. Deine bestehenden Kalender bleiben völlig unberührt.</p>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- Item 3 -->
         <div class="faq-item">
           <button class="faq-question">
             <span data-i18n="faq3Q">Speichert weekly Daten auf fremden Entwickler-Servern?</span>
-            <span class="faq-icon">+</span>
+            <span class="faq-icon-wrapper">+</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq3A">Nein, zu 0 %. weekly besitzt keine eigenen Server oder Datenbanken. Deine Daten verbleiben ausschließlich auf deinem Gerät und in deiner persönlichen, verschlüsselten iCloud.</p>
+          <div class="faq-collapse">
+            <div class="faq-collapse-inner">
+              <div class="faq-answer">
+                <p data-i18n="faq3A">Nein, zu 0 %. weekly besitzt keine eigenen Server oder Datenbanken. Deine Daten verbleiben ausschließlich auf deinem Gerät und in deiner persönlichen, verschlüsselten iCloud.</p>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- Item 4 -->
         <div class="faq-item">
           <button class="faq-question">
-            <span data-i18n="faq4Q">Wie erreiche ich den Support bei Fragen oder Wünschen?</span>
-            <span class="faq-icon">+</span>
+            <span data-i18n="faq4Q">Wer entwickelt weekly und wie erreiche ich den Support?</span>
+            <span class="faq-icon-wrapper">+</span>
           </button>
-          <div class="faq-answer">
-            <p data-i18n="faq4A">Du kannst uns jederzeit direkt per E-Mail unter weekly.workandworkout@gmail.com kontaktieren. Wir antworten dir in der Regel innerhalb von 24 Stunden.</p>
+          <div class="faq-collapse">
+            <div class="faq-collapse-inner">
+              <div class="faq-answer">
+                <p data-i18n="faq4A">weekly ist ein unabhängiges Herzensprojekt, das ich (Tim Oehl) als Solo-Entwickler mit viel Liebe zum Detail baue. Bei Fragen, Feedback oder Wünschen erreichst du mich direkt unter weekly.workandworkout@gmail.com. Da ich das Projekt alleine betreue, kann eine Antwort je nach Arbeitsaufwand etwas dauern – vielen Dank für dein Verständnis und deine Geduld!</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- App Store Direct Support Contact Box -->
       <div class="support-card reveal">
-        <h4 data-i18n="supportBoxTitle">Du hast eine Frage oder Feedback zur App?</h4>
-        <p data-i18n="supportBoxDesc">Wir freuen uns über dein Feedback, Anregungen oder Feature-Wünsche.</p>
+        <div class="support-badge-indie" data-i18n="supportIndieBadge">👨‍💻 Indie-Entwickler Projekt</div>
+        <h4 data-i18n="supportBoxTitle">Fragen oder Feedback an den Entwickler?</h4>
+        <p data-i18n="supportBoxDesc">Ich freue mich über jede Nachricht, Feedback und neue Ideen. Da ich die App alleine entwickle, kann eine Antwort manchmal etwas Zeit in Anspruch nehmen.</p>
         <a href="mailto:weekly.workandworkout@gmail.com?subject=weekly%20iOS%20App%20Support" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
-          <span data-i18n="supportBtn">Support kontaktieren (weekly.workandworkout@gmail.com)</span>
+          <span data-i18n="supportBtn">Nachricht schreiben (weekly.workandworkout@gmail.com)</span>
         </a>
       </div>
     </section>
@@ -264,11 +293,27 @@
           <li><a href="imprint.html" data-i18n="footerImprint">Impressum / Kontakt</a></li>
           <li><a href="mailto:weekly.workandworkout@gmail.com">Support</a></li>
         </ul>
+
+        <!-- Footer Language Dropdown -->
+        <div class="footer-lang-picker">
+          <label for="footer-lang-select" class="footer-lang-label">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span data-i18n="langLabel">Sprache:</span>
+          </label>
+          <select id="footer-lang-select" class="footer-lang-select" aria-label="Sprache wählen">
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+          </select>
+        </div>
       </div>
 
       <div class="footer-bottom">
         <span data-i18n="footerRights">© 2026 Tim Oehl. Alle Rechte vorbehalten.</span>
-        <span data-i18n="footerMade">Mit Präzision für iOS entwickelt.</span>
+        <span data-i18n="footerMade">Als Indie-App mit Leidenschaft für iOS entwickelt.</span>
       </div>
     </div>
   </footer>
