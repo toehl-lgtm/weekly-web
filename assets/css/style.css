@@ -820,16 +820,196 @@ body {
   .nav-links {
     display: none;
   }
-  
+
+  .navbar {
+    top: 8px;
+    margin-bottom: 18px;
+  }
+
+  .nav-container {
+    padding: 8px 14px;
+  }
+
+  .nav-cta {
+    display: none !important;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+    gap: 8px;
+  }
+
+  .brand-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero {
+    padding: 24px 0 40px;
+  }
+
+  .badge-pill {
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.7rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .hero-desc {
+    font-size: 0.96rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
+    padding: 0 4px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.82rem;
+    margin-bottom: 28px;
+  }
+
+  .mockup-wrapper {
+    max-width: 310px;
+    padding: 0 8px;
+  }
+
+  .phone-mockup {
+    border-radius: 46px;
+    padding: 8px;
+  }
+
+  .phone-screen,
+  .phone-screenshot-img {
+    border-radius: 38px;
+  }
+
+  .mockup-controls {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .tab-pill {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+
+  .features-section {
+    padding: 50px 0;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-size: 1.95rem;
+  }
+
+  .section-desc {
+    font-size: 0.98rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+
   .trust-banner {
     flex-direction: column;
     text-align: center;
     padding: 26px 18px;
+    margin: 40px 0;
+    border-radius: 20px;
   }
 
-  .footer-content,
+  .trust-badge-icon {
+    margin: 0 auto;
+  }
+
+  .faq-section {
+    padding: 40px 0;
+  }
+
+  .faq-question {
+    padding: 16px 18px;
+    font-size: 0.98rem;
+  }
+
+  .faq-answer {
+    padding: 0 18px 18px;
+    font-size: 0.9rem;
+  }
+
+  .support-card {
+    padding: 24px 18px;
+    margin-top: 30px;
+  }
+
+  .footer {
+    margin-top: 50px;
+    padding: 36px 0 24px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .mockup-wrapper {
+    max-width: 275px;
+  }
+
+  .phone-mockup {
+    border-radius: 40px;
+    padding: 6px;
+  }
+
+  .phone-screen,
+  .phone-screenshot-img {
+    border-radius: 34px;
   }
 }
