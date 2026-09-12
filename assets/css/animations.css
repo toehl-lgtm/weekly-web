@@ -1,0 +1,126 @@
+/* =========================================================
+   Animations & Micro-interactions for weekly Landingpage
+   ========================================================= */
+
+/* Reveal animations for scroll triggers */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Subtle floating badge */
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.badge-pill {
+  animation: floatBadge 4s ease-in-out infinite;
+}
+
+/* Pulsing current time indicator */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 69, 58, 0.8);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(255, 69, 58, 1);
+    opacity: 0.85;
+  }
+}
+
+.mock-time-line::before {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Red live timeline drift effect */
+@keyframes timelineDrift {
+  0%, 100% {
+    top: 40%;
+  }
+  50% {
+    top: 45%;
+  }
+}
+
+.mock-time-line {
+  animation: timelineDrift 16s ease-in-out infinite;
+}
+
+/* Floating floating orbs in background */
+@keyframes orbMove1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, 30px) scale(1.08);
+  }
+}
+
+@keyframes orbMove2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, -25px) scale(1.12);
+  }
+}
+
+.glow-1 {
+  animation: orbMove1 12s ease-in-out infinite;
+}
+
+.glow-2 {
+  animation: orbMove2 15s ease-in-out infinite;
+}
+
+/* Event Tile shimmer/stagger on load */
+@keyframes eventFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mock-event {
+  animation: eventFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.mock-event:nth-child(1) { animation-delay: 0.1s; }
+.mock-event:nth-child(2) { animation-delay: 0.2s; }
+.mock-event:nth-child(3) { animation-delay: 0.3s; }
+.mock-event:nth-child(4) { animation-delay: 0.4s; }
+.mock-event:nth-child(5) { animation-delay: 0.5s; }
+.mock-event:nth-child(6) { animation-delay: 0.6s; }
+.mock-event:nth-child(7) { animation-delay: 0.7s; }
+
+/* Phone 3D subtle tilt */
+.phone-mockup {
+  transform-style: preserve-3d;
+}
+
+/* Interactive spotlight mouse effect */
+.spotlight-wrap {
+  position: relative;
+}
