@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum &amp; Kontakt – weekly</title>
+  <title>Impressum &amp; Kontakt / Legal – weekly</title>
   <meta name="description" content="Impressum und Kontaktangaben für die iOS-App weekly.">
-  <link rel="icon" type="image/svg+xml" href="assets/img/app-icon.svg">
+  <link rel="icon" type="image/png" href="assets/img/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/img/app-icon.png">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <style>
@@ -19,9 +20,14 @@
       backdrop-filter: blur(24px);
     }
     .legal-header {
-      margin-bottom: 32px;
-      padding-bottom: 24px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
       border-bottom: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
     }
     .legal-title {
       font-size: 2.2rem;
@@ -57,6 +63,28 @@
       color: var(--color-text-primary);
       font-size: 1.1rem;
     }
+    .lang-section-toggle {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .lang-tab {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      font-family: inherit;
+    }
+    .lang-tab.active {
+      background: var(--color-accent);
+      color: #FFF;
+      border-color: var(--color-accent);
+    }
     @media (max-width: 768px) {
       .legal-container {
         padding: 24px;
@@ -77,7 +105,7 @@
   <div class="container navbar">
     <nav class="nav-container">
       <a href="index.html" class="brand">
-        <img src="assets/img/app-icon.svg" alt="weekly App Icon" class="brand-icon">
+        <img src="assets/img/app-icon.png" alt="weekly App Icon" class="brand-icon">
         <span>weekly</span>
       </a>
 
@@ -97,7 +125,7 @@
             </svg>
           </span>
         </button>
-        <a href="index.html" class="btn btn-secondary btn-sm">← Zur Startseite</a>
+        <a href="index.html" class="btn btn-secondary btn-sm">← Zur Startseite / Home</a>
       </div>
     </nav>
   </div>
@@ -106,33 +134,60 @@
   <main class="container">
     <article class="legal-container">
       <header class="legal-header">
-        <h1 class="legal-title">Impressum &amp; Kontakt</h1>
-        <p class="legal-subtitle">Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</p>
+        <div>
+          <h1 class="legal-title" id="imprint-title">Impressum &amp; Kontakt</h1>
+          <p class="legal-subtitle" id="imprint-sub">Angaben für die iOS-App <strong>weekly</strong></p>
+        </div>
+        <div class="lang-section-toggle">
+          <button class="lang-tab active" onclick="showImprintLang('de')">Deutsch</button>
+          <button class="lang-tab" onclick="showImprintLang('en')">English</button>
+        </div>
       </header>
 
-      <div class="legal-content">
-        <h2>Entwickler &amp; Verantwortlicher</h2>
-        <div class="contact-card-box">
-          <p><strong>Tim Oehl</strong><br>
-          Softwareentwicklung &amp; Design</p>
-          <p style="margin-bottom: 0;">
-            E-Mail: <a href="mailto:info@timoehl.de" style="color: var(--color-accent); font-weight: 600;">info@timoehl.de</a><br>
-            Web: <a href="index.html" style="color: var(--color-accent);">weekly iOS App</a>
-          </p>
+      <!-- GERMAN VERSION -->
+      <div id="imprint-de">
+        <div class="legal-content">
+          <h2>Entwickler &amp; Kontakt</h2>
+          <div class="contact-card-box">
+            <p><strong>Tim Oehl</strong><br>
+            Entwicklung der iOS-App weekly</p>
+            <p style="margin-bottom: 0;">
+              E-Mail: <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent); font-weight: 600;">weekly.workandworkout@gmail.com</a><br>
+              Web: <a href="index.html" style="color: var(--color-accent);">weekly Landingpage</a>
+            </p>
+          </div>
+
+          <h2>Support &amp; Feedback</h2>
+          <p>Für technische Fragen, Anregungen oder Support-Anfragen zur iOS-App <strong>weekly</strong> erreichst du uns jederzeit unter der oben genannten E-Mail-Adresse.</p>
+
+          <h2>Haftung für Inhalte &amp; Urheberrecht</h2>
+          <p>Die Inhalte dieser Webseite sowie das Design und die Benutzeroberfläche der App weekly wurden mit größter Sorgfalt erstellt. Alle Rechte liegen beim Entwickler.</p>
         </div>
+      </div>
 
-        <h2>Support &amp; Anfragen</h2>
-        <p>Für technische Fragen, Anregungen oder Support-Anfragen zur iOS-App <strong>weekly</strong> erreichst du uns jederzeit unter der angegebenen E-Mail-Adresse.</p>
+      <!-- ENGLISH VERSION -->
+      <div id="imprint-en" style="display: none;">
+        <div class="legal-content">
+          <h2>Developer &amp; Contact</h2>
+          <div class="contact-card-box">
+            <p><strong>Tim Oehl</strong><br>
+            Developer of the iOS app weekly</p>
+            <p style="margin-bottom: 0;">
+              Email: <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent); font-weight: 600;">weekly.workandworkout@gmail.com</a><br>
+              Web: <a href="index.html" style="color: var(--color-accent);">weekly Landing Page</a>
+            </p>
+          </div>
 
-        <h2>Haftung für Inhalte</h2>
-        <p>Als Diensteanbieter sind wir gemäß den allgemeinen Gesetzen für eigene Inhalte auf diesen Seiten verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+          <h2>Support &amp; Feedback</h2>
+          <p>For technical support, feedback, questions or feature requests concerning <strong>weekly</strong>, feel free to contact us anytime at the email address above.</p>
 
-        <h2>Urheberrecht</h2>
-        <p>Die durch den Seitenbetreiber erstellten Inhalte, Texte, Bildschirmgrafiken und Designs auf diesen Seiten sowie die Benutzeroberfläche der App weekly unterliegen dem deutschen Urheberrecht.</p>
+          <h2>Copyright &amp; Disclaimer</h2>
+          <p>The contents of this website as well as the design and user interface of the weekly iOS app are protected by copyright law.</p>
+        </div>
       </div>
 
       <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--color-border); text-align: center;">
-        <a href="index.html" class="btn btn-primary">Zurück zur Startseite</a>
+        <a href="index.html" class="btn btn-primary">← Zur Startseite / Back to Home</a>
       </div>
     </article>
   </main>
@@ -142,25 +197,41 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/img/app-icon.svg" alt="weekly Icon" width="28" height="28" style="border-radius: 6px;">
+          <img src="assets/img/app-icon.png" alt="weekly Icon" width="30" height="30">
           <span>weekly für iOS</span>
         </div>
 
         <ul class="footer-links">
-          <li><a href="index.html">Startseite</a></li>
-          <li><a href="privacy.html">Datenschutz</a></li>
-          <li><a href="imprint.html">Impressum / Kontakt</a></li>
-          <li><a href="mailto:info@timoehl.de">Support</a></li>
+          <li><a href="index.html">Startseite / Home</a></li>
+          <li><a href="privacy.html">Datenschutz / Privacy</a></li>
+          <li><a href="imprint.html">Impressum / Legal</a></li>
+          <li><a href="mailto:weekly.workandworkout@gmail.com">Support</a></li>
         </ul>
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 Tim Oehl. Alle Rechte vorbehalten.</span>
+        <span>© 2026 Tim Oehl. All rights reserved.</span>
         <span>Made with precision for iOS.</span>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script>
+    function showImprintLang(lang) {
+      document.getElementById('imprint-de').style.display = lang === 'de' ? 'block' : 'none';
+      document.getElementById('imprint-en').style.display = lang === 'en' ? 'block' : 'none';
+      
+      document.querySelectorAll('.lang-tab').forEach((tab, index) => {
+        tab.classList.toggle('active', (lang === 'de' && index === 0) || (lang === 'en' && index === 1));
+      });
+
+      document.getElementById('imprint-title').textContent = lang === 'de' ? 'Impressum & Kontakt' : 'Legal & Contact';
+      document.getElementById('imprint-sub').textContent = lang === 'de' ? 'Angaben für die iOS-App weekly' : 'Information for the iOS app weekly';
+    }
+
+    if ((navigator.language || '').toLowerCase().startsWith('en')) {
+      showImprintLang('en');
+    }
+  </script>
 </body>
 </html>

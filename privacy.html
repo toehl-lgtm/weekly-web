@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datenschutzerklärung – weekly</title>
+  <title>Datenschutzerklärung / Privacy Policy – weekly</title>
   <meta name="description" content="Datenschutzerklärung für die iOS App weekly gemäß DSGVO und Apple App Store Richtlinien.">
-  <link rel="icon" type="image/svg+xml" href="assets/img/app-icon.svg">
+  <link rel="icon" type="image/png" href="assets/img/app-icon.png">
+  <link rel="apple-touch-icon" href="assets/img/app-icon.png">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/animations.css">
   <style>
@@ -19,9 +20,14 @@
       backdrop-filter: blur(24px);
     }
     .legal-header {
-      margin-bottom: 32px;
-      padding-bottom: 24px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
       border-bottom: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
     }
     .legal-title {
       font-size: 2.2rem;
@@ -65,6 +71,28 @@
       color: var(--color-text-primary);
       font-weight: 500;
     }
+    .lang-section-toggle {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .lang-tab {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--color-border);
+      background: transparent;
+      color: var(--color-text-secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      font-family: inherit;
+    }
+    .lang-tab.active {
+      background: var(--color-accent);
+      color: #FFF;
+      border-color: var(--color-accent);
+    }
     @media (max-width: 768px) {
       .legal-container {
         padding: 24px;
@@ -85,7 +113,7 @@
   <div class="container navbar">
     <nav class="nav-container">
       <a href="index.html" class="brand">
-        <img src="assets/img/app-icon.svg" alt="weekly App Icon" class="brand-icon">
+        <img src="assets/img/app-icon.png" alt="weekly App Icon" class="brand-icon">
         <span>weekly</span>
       </a>
 
@@ -105,7 +133,7 @@
             </svg>
           </span>
         </button>
-        <a href="index.html" class="btn btn-secondary btn-sm">← Zur Startseite</a>
+        <a href="index.html" class="btn btn-secondary btn-sm">← Zur Startseite / Home</a>
       </div>
     </nav>
   </div>
@@ -114,68 +142,104 @@
   <main class="container">
     <article class="legal-container">
       <header class="legal-header">
-        <h1 class="legal-title">Datenschutzerklärung</h1>
-        <p class="legal-subtitle">Für die iOS-App <strong>weekly</strong> • Gültig für den Apple App Store</p>
+        <div>
+          <h1 class="legal-title" id="policy-title">Datenschutzerklärung</h1>
+          <p class="legal-subtitle" id="policy-sub">iOS-App <strong>weekly</strong> • Apple App Store &amp; DSGVO konform</p>
+        </div>
+        <div class="lang-section-toggle">
+          <button class="lang-tab active" onclick="showLegalLang('de')">Deutsch</button>
+          <button class="lang-tab" onclick="showLegalLang('en')">English</button>
+        </div>
       </header>
 
-      <div class="highlight-pill-box">
-        <p>🔒 <strong>Kurz &amp; transparent:</strong> weekly speichert all deine Daten zu 100&nbsp;% lokal auf deinem Gerät und synchronisiert sie verschlüsselt über dein persönliches iCloud-Konto. Es gibt kein Nutzer-Tracking, keine Werbung, keine Analyse-Frameworks und keine Drittanbieter-Entwicklerserver.</p>
+      <!-- GERMAN VERSION -->
+      <div id="legal-de">
+        <div class="highlight-pill-box">
+          <p>🔒 <strong>Kurz &amp; transparent:</strong> weekly speichert all deine Daten zu 100&nbsp;% lokal auf deinem iPhone und synchronisiert sie verschlüsselt über deine persönliche Apple iCloud. Es gibt kein Nutzer-Tracking, keine Werbung, keine Analyse-Frameworks und keine Drittanbieter-Entwicklerserver.</p>
+        </div>
+
+        <div class="legal-content">
+          <h2>1. Verantwortlicher &amp; Kontakt</h2>
+          <p>Verantwortlich für die Datenverarbeitung im Sinne der DSGVO ist:</p>
+          <p>
+            <strong>Tim Oehl</strong><br>
+            E-Mail: <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>
+          </p>
+
+          <h2>2. Lokale Speicherung auf deinem iPhone</h2>
+          <p>Alle deine angelegten Termine, Wochenpläne, Basis- und Sonderwochen, Notizen, Arbeitszeiten, Sportroutinen und Checklisten werden ausschließlich im geschützten Speicher deiner App auf deinem iPhone abgelegt.</p>
+          <p>Wir als Entwickler haben zu keinem Zeitpunkt Zugriff auf deine Termine, Notizen oder Kalendereinträge.</p>
+
+          <h2>3. Sichere Synchronisation über Apple iCloud</h2>
+          <p>Wenn du die iCloud-Synchronisation auf deinem iPhone nutzt, werden deine Pläne und Arbeitszeiten automatisch und verschlüsselt über deine persönliche Apple iCloud auf deine anderen Apple-Geräte übertragen.</p>
+          <p>Diese Synchronisation läuft direkt über Apples gesicherte Infrastruktur (Apple Inc., Cupertino, USA). Wir haben zu keinem Zeitpunkt Zugriff auf deine Apple-ID oder deine Daten in der iCloud.</p>
+
+          <h2>4. Integration deiner Apple-Kalender</h2>
+          <p>weekly kann deine bestehenden iOS-Kalender im Wochenplan anzeigen. Der Zugriff erfolgt erst, nachdem du ihn im iOS-Dialog ausdrücklich bestätigt hast. weekly liest diese Daten lediglich zur Anzeige aus. Deine externen Kalender werden weder verändert noch auf Server hochgeladen.</p>
+
+          <h2>5. Kein Tracking, keine Werbung, keine externen Server</h2>
+          <p>weekly verzichtet aus Überzeugung auf jede Art von Datensammlung:</p>
+          <ul>
+            <li>Keine Tracking- oder Analyse-Tools (kein Google Analytics, Firebase, TelemetryDeck o. Ä.)</li>
+            <li>Keine Werbe-Netzwerke oder Banner</li>
+            <li>Kein Zugriff auf Werbe-IDs (IDFA)</li>
+            <li>Keine Weitergabe oder Verkauf von Daten an Dritte</li>
+          </ul>
+
+          <h2>6. Exporte (PDF &amp; CSV)</h2>
+          <p>Exportierte Monats- und Stundennachweise als PDF oder CSV verbleiben auf deinem iPhone, bis du sie selbst aktiv über das iOS-Teilen-Menü versendest oder speicherst.</p>
+
+          <h2>7. Deine Rechte</h2>
+          <p>Da alle Daten auf deinem Endgerät bzw. in deiner privaten iCloud liegen, hast du die volle Kontrolle: Du kannst Termine jederzeit bearbeiten, exportieren oder die App und damit alle Daten vollständig löschen.</p>
+          <p>Bei Fragen erreichst du uns jederzeit unter <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>.</p>
+        </div>
       </div>
 
-      <div class="legal-content">
-        <h2>1. Allgemeine Hinweise &amp; Verantwortliche Stelle</h2>
-        <p>Der Schutz deiner persönlichen Daten hat bei der Konzeption und Entwicklung von <strong>weekly</strong> oberste Priorität. Wir behandeln deine Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften (insb. der EU-Datenschutz-Grundverordnung, DSGVO) sowie dieser Datenschutzerklärung.</p>
-        <p>Verantwortlicher für die Datenverarbeitung im Sinne der DSGVO ist:</p>
-        <p>
-          <strong>Tim Oehl</strong><br>
-          E-Mail: <a href="mailto:info@timoehl.de" style="color: var(--color-accent);">info@timoehl.de</a>
-        </p>
+      <!-- ENGLISH VERSION -->
+      <div id="legal-en" style="display: none;">
+        <div class="highlight-pill-box">
+          <p>🔒 <strong>Clear &amp; Transparent:</strong> weekly stores 100% of your data locally on your iPhone and syncs it securely through your personal Apple iCloud. There is zero user tracking, no advertising, no analytics SDKs, and no external developer servers.</p>
+        </div>
 
-        <h2>2. Lokale Datenspeicherung (SwiftData)</h2>
-        <p>Alle deine angelegten Termine, Wochenpläne, Basis- und Sonderwochen, Notizen, Arbeitszeiten, Sportroutinen und Checklisten werden ausschließlich in einer geschützten, lokalen <strong>SwiftData</strong>-Datenbank im isolierten App-Sandbox-Bereich auf deinem iOS-Gerät gespeichert.</p>
-        <p>Der Entwickler hat zu keinem Zeitpunkt Zugriff auf deine Einträge oder Datenbankinhalte.</p>
+        <div class="legal-content">
+          <h2>1. Data Controller &amp; Contact</h2>
+          <p>Data controller for weekly:</p>
+          <p>
+            <strong>Tim Oehl</strong><br>
+            Email: <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>
+          </p>
 
-        <h2>3. Verschlüsselte Synchronisation über Apple iCloud (CloudKit)</h2>
-        <p>Sofern du die iCloud-Synchronisation in den Einstellungen deines iOS-Geräts aktiviert hast, werden deine Pläne und Arbeitszeiten verschlüsselt über Apples offizielle <strong>CloudKit</strong>-Schnittstelle mit deinem persönlichen iCloud-Konto synchronisiert.</p>
-        <p>Diese Übertragung und Speicherung erfolgt ausschließlich über die zertifizierte Server-Infrastruktur der <strong>Apple Inc.</strong> (One Apple Park Way, Cupertino, CA 95014, USA). Der Entwickler der App weekly erhält zu keinem Zeitpunkt Zugriff auf deine Apple-ID, deine Kontodaten oder deine synchronisierten Daten.</p>
+          <h2>2. Local Storage on Your iPhone</h2>
+          <p>All your created appointments, weekly schedules, base templates, work hours, notes, and checklists are stored exclusively in your app's isolated sandbox storage on your device.</p>
+          <p>The developer has no access to your schedule, events, or entries at any time.</p>
 
-        <h2>4. Apple Kalender Integration (EventKit)</h2>
-        <p>weekly bietet die Möglichkeit, Termine aus deinen iOS-Systemkalendern einzulesen und im Wochenplan darzustellen. Diese Funktion nutzt das offizielle Apple <strong>EventKit</strong>-Framework.</p>
-        <ul>
-          <li>Der Zugriff auf Kalenderdaten erfolgt erst nach deiner ausdrücklichen Bestätigung des nativen iOS-Berechtigungsdialogs.</li>
-          <li>weekly liest externe Kalender nur im passiven Lesemodus aus. Es werden keine Termine auf externen Kalendern ungefragt modifiziert oder gelöscht.</li>
-          <li>Die Kalenderdaten verbleiben vollständig auf deinem Gerät und werden niemals an Dritte oder Server übertragen.</li>
-        </ul>
+          <h2>3. Secure Sync via Apple iCloud</h2>
+          <p>If you have iCloud enabled on your iPhone, your schedules and tracked hours sync automatically and end-to-end encrypted through your personal Apple iCloud to your other Apple devices.</p>
+          <p>This process is handled exclusively through Apple Inc.'s encrypted infrastructure. We never receive or store your Apple ID or iCloud data.</p>
 
-        <h2>5. Keine Analyse-Tools, kein Tracking, keine Werbung</h2>
-        <p>weekly verzichtet bewusst und vollständig auf:</p>
-        <ul>
-          <li>Drittanbieter-Tracking (z. B. Firebase Analytics, Google Analytics, TelemetryDeck o. Ä.)</li>
-          <li>Werbenetzwerke oder SDKs von Werbetreibenden</li>
-          <li>Zugriff auf den Werbe-Identifikator deines iPhones (IDFA / App Tracking Transparency)</li>
-          <li>Erstellung von Nutzerprofilen oder Nutzungsstatistiken</li>
-        </ul>
+          <h2>4. Apple Calendar Integration</h2>
+          <p>weekly can display events from your iOS system calendars inside the weekly timetable grid. Calendar access requires your explicit permission via iOS system dialogs. weekly accesses these calendars in read-only mode and never modifies your original events or transmits them anywhere.</p>
 
-        <h2>6. Lokale Exporte (PDF &amp; CSV)</h2>
-        <p>Wenn du Stundennachweise oder Wochenübersichten als PDF oder CSV exportierst, werden diese Dateien lokal im temporären Speicher deiner App erzeugt. Sie verlassen dein iPhone nur dann, wenn du sie aktiv über das iOS-Teilen-Menü („Share Sheet“) selbst an Kontakte versendest oder in Dateien ablegst.</p>
+          <h2>5. Zero Tracking, No Ads, No Third-Party Servers</h2>
+          <p>weekly is built with privacy by design:</p>
+          <ul>
+            <li>No analytics or user tracking tools (no Google Analytics, Firebase, TelemetryDeck, etc.)</li>
+            <li>No ad networks or tracking identifiers (IDFA)</li>
+            <li>No external servers or remote databases</li>
+            <li>No sharing or selling of user data</li>
+          </ul>
 
-        <h2>7. Push-Mitteilungen / Terminerinnerungen</h2>
-        <p>weekly kann dich vor anstehenden Terminen benachrichtigen. Diese Erinnerungen werden rein <strong>lokal auf deinem iPhone</strong> über das iOS UserNotifications-Framework geplant. Es werden keine externen Push-Server kontaktiert.</p>
+          <h2>6. PDF &amp; CSV Exports</h2>
+          <p>Exported monthly hour reports in PDF or CSV format are created locally on your device and only leave your iPhone if you choose to share or send them manually.</p>
 
-        <h2>8. Deine Rechte nach der DSGVO</h2>
-        <p>Da alle Daten auf deinem Endgerät bzw. in deinem privaten iCloud-Konto gespeichert sind, hast du die volle Kontrolle:</p>
-        <ul>
-          <li><strong>Löschung:</strong> Du kannst deine Daten jederzeit direkt in der App bearbeiten oder durch Zurücksetzen der App bzw. Löschen der App vollständig und unwiderruflich entfernen.</li>
-          <li><strong>Auskunft &amp; Übertragbarkeit:</strong> Alle deine Daten lassen sich jederzeit über die integrierten PDF- und CSV-Exportfunktionen exportieren.</li>
-        </ul>
-        <p>Bei weiteren datenschutzrechtlichen Fragen kannst du dich jederzeit unkompliziert per E-Mail an <a href="mailto:info@timoehl.de" style="color: var(--color-accent);">info@timoehl.de</a> wenden.</p>
-
-        <h2>9. Änderungen dieser Datenschutzerklärung</h2>
-        <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, falls neue Funktionen in weekly integriert werden oder sich gesetzliche Anforderungen ändern. Die jeweils aktuelle Fassung ist stets unter dieser URL abrufbar.</p>
+          <h2>7. Your Rights</h2>
+          <p>You have full control over your data at all times. You can edit, export, or delete your data directly inside the app, or delete the app entirely.</p>
+          <p>For any privacy inquiries, reach out to <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>.</p>
+        </div>
       </div>
 
       <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--color-border); text-align: center;">
-        <a href="index.html" class="btn btn-primary">Zurück zur Startseite</a>
+        <a href="index.html" class="btn btn-primary">← Zur Startseite / Back to Home</a>
       </div>
     </article>
   </main>
@@ -185,25 +249,42 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/img/app-icon.svg" alt="weekly Icon" width="28" height="28" style="border-radius: 6px;">
+          <img src="assets/img/app-icon.png" alt="weekly Icon" width="30" height="30">
           <span>weekly für iOS</span>
         </div>
 
         <ul class="footer-links">
-          <li><a href="index.html">Startseite</a></li>
-          <li><a href="privacy.html">Datenschutz</a></li>
-          <li><a href="imprint.html">Impressum / Kontakt</a></li>
-          <li><a href="mailto:info@timoehl.de">Support</a></li>
+          <li><a href="index.html">Startseite / Home</a></li>
+          <li><a href="privacy.html">Datenschutz / Privacy</a></li>
+          <li><a href="imprint.html">Impressum / Legal</a></li>
+          <li><a href="mailto:weekly.workandworkout@gmail.com">Support</a></li>
         </ul>
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 Tim Oehl. Alle Rechte vorbehalten.</span>
+        <span>© 2026 Tim Oehl. All rights reserved.</span>
         <span>Made with precision for iOS.</span>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script>
+    function showLegalLang(lang) {
+      document.getElementById('legal-de').style.display = lang === 'de' ? 'block' : 'none';
+      document.getElementById('legal-en').style.display = lang === 'en' ? 'block' : 'none';
+      
+      document.querySelectorAll('.lang-tab').forEach((tab, index) => {
+        tab.classList.toggle('active', (lang === 'de' && index === 0) || (lang === 'en' && index === 1));
+      });
+
+      document.getElementById('policy-title').textContent = lang === 'de' ? 'Datenschutzerklärung' : 'Privacy Policy';
+      document.getElementById('policy-sub').textContent = lang === 'de' ? 'iOS-App weekly • Apple App Store & DSGVO konform' : 'iOS App weekly • Compliant with Apple App Store & GDPR';
+    }
+
+    // Auto-detect language
+    if ((navigator.language || '').toLowerCase().startsWith('en')) {
+      showLegalLang('en');
+    }
+  </script>
 </body>
 </html>
