@@ -7,8 +7,10 @@
   <meta name="description" content="Datenschutzerklärung für die iOS App weekly gemäß DSGVO und Apple App Store Richtlinien.">
   <link rel="icon" type="image/png" href="assets/img/app-icon.png">
   <link rel="apple-touch-icon" href="assets/img/app-icon.png">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
+  <!-- Apple Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=6808738681">
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
+  <link rel="stylesheet" href="assets/css/animations.css?v=3">
   <script>
     (function() {
       const saved = localStorage.getItem('weekly-theme');
@@ -147,6 +149,7 @@
             </svg>
           </span>
         </button>
+        <a href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">App Store ↗</a>
         <a href="index.html" class="btn btn-secondary btn-sm">← Zur Startseite / Home</a>
       </div>
     </nav>
@@ -270,6 +273,7 @@
         </div>
 
         <ul class="footer-links">
+          <li><a href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681" target="_blank" rel="noopener noreferrer">App Store ↗</a></li>
           <li><a href="index.html">Startseite / Home</a></li>
           <li><a href="privacy.html">Datenschutz / Privacy</a></li>
           <li><a href="imprint.html">Impressum / Legal</a></li>
@@ -300,7 +304,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=3"></script>
   <script>
     window.showLegalLang = function(lang) {
       document.getElementById('legal-de').style.display = lang === 'de' ? 'block' : 'none';

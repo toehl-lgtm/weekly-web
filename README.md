@@ -2,7 +2,8 @@
 
 Die offizielle Website, der Feature-Showcase und die rechtlichen Pflichtseiten für die iOS-App **weekly** sind live auf **GitHub Pages**:
 
-🌐 **Live-Website:** [https://toehl-lgtm.github.io/weekly-web/](https://toehl-lgtm.github.io/weekly-web/)
+🌐 **Live-Website:** [https://toehl-lgtm.github.io/weekly-web/](https://toehl-lgtm.github.io/weekly-web/)  
+🍏 **App Store Link:** [weekly: Work & Workout (Apple App Store)](https://apps.apple.com/us/app/weekly-work-workout/id6808738681) – **Jetzt live!**
 
 ---
 
