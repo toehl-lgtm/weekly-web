@@ -9,8 +9,8 @@
   <link rel="apple-touch-icon" href="assets/img/app-icon.png">
   <!-- Apple Smart App Banner -->
   <meta name="apple-itunes-app" content="app-id=6808738681">
-  <link rel="stylesheet" href="assets/css/style.css?v=3">
-  <link rel="stylesheet" href="assets/css/animations.css?v=3">
+  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="stylesheet" href="assets/css/animations.css?v=4">
   <script>
     (function() {
       const saved = localStorage.getItem('weekly-theme');
@@ -28,6 +28,9 @@
       border-radius: var(--border-radius-lg);
       backdrop-filter: blur(24px);
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      width: 100%;
+      overflow: hidden;
     }
     .legal-header {
       margin-bottom: 28px;
@@ -40,10 +43,14 @@
       gap: 16px;
     }
     .legal-title {
-      font-size: 2.2rem;
+      font-size: clamp(1.6rem, 5.5vw, 2.2rem);
       font-weight: 800;
       letter-spacing: -0.03em;
       margin-bottom: 8px;
+      line-height: 1.2;
+      word-break: break-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
     }
     .legal-subtitle {
       color: var(--color-text-secondary);
@@ -97,8 +104,28 @@
     }
     @media (max-width: 768px) {
       .legal-container {
-        padding: 24px;
-        margin: 20px 16px 60px;
+        padding: 24px 18px;
+        margin: 16px auto 40px;
+        border-radius: 20px;
+      }
+      .legal-header {
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+      }
+      .legal-title {
+        font-size: 1.65rem;
+      }
+      .legal-content h2 {
+        font-size: 1.18rem;
+        margin: 26px 0 10px;
+      }
+      .legal-content p {
+        font-size: 0.94rem;
+        line-height: 1.6;
+      }
+      .contact-card-box {
+        padding: 18px 16px;
+        border-radius: 14px;
       }
     }
   </style>
@@ -140,8 +167,7 @@
             </svg>
           </span>
         </button>
-        <a href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta">App Store ↗</a>
-        <a href="index.html" class="btn btn-secondary btn-sm">← Zur Startseite / Home</a>
+        <a href="index.html" id="nav-back-link" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 0.82rem;">← Startseite</a>
       </div>
     </nav>
   </div>
@@ -251,7 +277,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=3"></script>
+  <script src="assets/js/main.js?v=4"></script>
   <script>
     window.showImprintLang = function(lang) {
       document.getElementById('imprint-de').style.display = lang === 'de' ? 'block' : 'none';
@@ -263,6 +289,8 @@
 
       document.getElementById('imprint-title').textContent = lang === 'de' ? 'Impressum & Kontakt' : 'Legal & Contact';
       document.getElementById('imprint-sub').textContent = lang === 'de' ? 'Angaben für die iOS-App weekly' : 'Information for the iOS app weekly';
+      const backLink = document.getElementById('nav-back-link');
+      if (backLink) backLink.textContent = lang === 'de' ? '← Startseite' : '← Home';
     };
 
     const saved = localStorage.getItem('weekly-lang');
