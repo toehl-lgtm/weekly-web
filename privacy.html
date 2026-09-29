@@ -9,11 +9,12 @@
   <link rel="apple-touch-icon" href="assets/img/app-icon.png">
   <!-- Apple Smart App Banner -->
   <meta name="apple-itunes-app" content="app-id=6808738681">
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
-  <link rel="stylesheet" href="assets/css/animations.css?v=4">
+  <link rel="stylesheet" href="assets/css/style.css?v=10">
+  <link rel="stylesheet" href="assets/css/animations.css?v=8">
   <script>
     (function() {
-      const saved = localStorage.getItem('weekly-theme');
+      let saved = null;
+      try { saved = localStorage.getItem('weekly-theme'); } catch { /* Storage is optional. */ }
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
     })();
@@ -94,6 +95,7 @@
       margin-top: 8px;
     }
     .lang-tab {
+      min-height: 44px;
       padding: 6px 14px;
       border-radius: 999px;
       border: 1px solid var(--color-border);
@@ -106,9 +108,9 @@
       font-family: inherit;
     }
     .lang-tab.active {
-      background: var(--color-accent);
+      background: var(--color-action);
       color: #FFF;
-      border-color: var(--color-accent);
+      border-color: var(--color-action);
     }
     @media (max-width: 768px) {
       .legal-container {
@@ -139,7 +141,7 @@
     }
   </style>
 </head>
-<body>
+<body class="legal-page">
 
   <!-- Ambient Glows -->
   <div class="bg-ambient">
@@ -151,7 +153,7 @@
   <div class="container navbar">
     <nav class="nav-container">
       <a href="index.html" class="brand">
-        <img src="assets/img/app-icon.png" alt="weekly App Icon" class="brand-icon">
+        <img src="assets/img/app-icon.png" alt="" class="brand-icon">
         <span>weekly</span>
       </a>
 
@@ -177,7 +179,7 @@
             </svg>
           </span>
         </button>
-        <a href="index.html" id="nav-back-link" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 0.82rem;">← Startseite</a>
+        <a href="index.html" id="nav-back-link" class="btn btn-secondary btn-sm">← Startseite</a>
       </div>
     </nav>
   </div>
@@ -188,18 +190,18 @@
       <header class="legal-header">
         <div>
           <h1 class="legal-title" id="policy-title">Datenschutzerklärung</h1>
-          <p class="legal-subtitle" id="policy-sub">iOS-App <strong>weekly</strong> • Apple App Store &amp; DSGVO konform</p>
+          <p class="legal-subtitle" id="policy-sub">iOS-App <strong>weekly</strong> • Informationen zur Datenverarbeitung</p>
         </div>
         <div class="lang-section-toggle">
-          <button class="lang-tab active" onclick="showLegalLang('de')">Deutsch</button>
-          <button class="lang-tab" onclick="showLegalLang('en')">English</button>
+          <button type="button" class="lang-tab active" data-lang="de" aria-pressed="true">Deutsch</button>
+          <button type="button" class="lang-tab" data-lang="en" aria-pressed="false">English</button>
         </div>
       </header>
 
       <!-- GERMAN VERSION -->
       <div id="legal-de">
         <div class="highlight-pill-box">
-          <p>🔒 <strong>Kurz &amp; transparent:</strong> weekly speichert all deine Daten zu 100&nbsp;% lokal auf deinem iPhone und synchronisiert sie verschlüsselt über deine persönliche Apple iCloud. Es gibt kein Nutzer-Tracking, keine Werbung, keine Analyse-Frameworks und keine Drittanbieter-Entwicklerserver.</p>
+          <p>🔒 <strong>Kurz &amp; transparent:</strong> weekly speichert deine Pläne und Arbeitszeiten auf deinem Gerät. Wenn iCloud aktiv ist, werden sie über deine persönliche iCloud synchronisiert. Die App nutzt keine Analyse-Tools oder Werbung und betreibt keine eigenen Server für deine Pläne. Welche Apple-Dienste zusätzlich genutzt werden, steht unten.</p>
         </div>
 
         <div class="legal-content">
@@ -220,22 +222,24 @@
           <p>Diese Synchronisation läuft direkt über Apples gesicherte Infrastruktur (Apple Inc., Cupertino, USA). Wir haben zu keinem Zeitpunkt Zugriff auf deine Apple-ID oder deine Daten in der iCloud.</p>
 
           <h2>4. Integration deiner Apple-Kalender</h2>
-          <p>weekly kann deine bestehenden iOS-Kalender im Wochenplan anzeigen. Der Zugriff erfolgt erst, nachdem du ihn im iOS-Dialog ausdrücklich bestätigt hast. weekly liest diese Daten lediglich zur Anzeige aus. Deine externen Kalender werden weder verändert noch auf Server hochgeladen.</p>
+          <p>weekly kann deine bestehenden iOS-Kalender im Wochenplan anzeigen. Der Zugriff erfolgt erst, nachdem du ihn im iOS-Dialog ausdrücklich bestätigt hast. weekly liest diese Daten lediglich zur Anzeige aus. Deine externen Kalender werden nicht verändert. Für Fahrtzeitberechnungen können Terminorte an Apple übermittelt werden, wie unten beschrieben.</p>
 
-          <h2>5. Kein Tracking, keine Werbung, keine externen Server</h2>
+          <h2>5. Kein Tracking, keine Werbung</h2>
           <p>weekly verzichtet aus Überzeugung auf jede Art von Datensammlung:</p>
           <ul>
             <li>Keine Tracking- oder Analyse-Tools (kein Google Analytics, Firebase, TelemetryDeck o. Ä.)</li>
             <li>Keine Werbe-Netzwerke oder Banner</li>
             <li>Kein Zugriff auf Werbe-IDs (IDFA)</li>
-            <li>Keine Weitergabe oder Verkauf von Daten an Dritte</li>
+            <li>Kein Verkauf deiner Daten</li>
           </ul>
 
+          <h2>Apple-Dienste für Orte, Routen und Updates</h2>
+          <p>Die Ortssuche und Fahrtzeitberechnung nutzen Apple MapKit. Dabei werden Suchbegriffe sowie Start- und Zielorte an Apple übermittelt. Dies kann auch Orte aus eingeblendeten Kalenderterminen betreffen, wenn die App deren Fahrtzeit berechnet. Die Updateprüfung fragt Versionsinformationen beim Apple App Store ab. Dabei erhält Apple technisch erforderliche Verbindungsdaten, etwa die IP-Adresse.</p>
           <h2>6. Exporte (PDF &amp; CSV)</h2>
           <p>Exportierte Monats- und Stundennachweise als PDF oder CSV verbleiben auf deinem iPhone, bis du sie selbst aktiv über das iOS-Teilen-Menü versendest oder speicherst.</p>
 
           <h2>7. Deine Rechte</h2>
-          <p>Da alle Daten auf deinem Endgerät bzw. in deiner privaten iCloud liegen, hast du die volle Kontrolle: Du kannst Termine jederzeit bearbeiten, exportieren oder die App und damit alle Daten vollständig löschen.</p>
+          <p>Da alle Daten auf deinem Endgerät bzw. in deiner privaten iCloud liegen, hast du die volle Kontrolle: Du kannst Termine jederzeit bearbeiten, exportieren oder Daten in der App löschen. Das Deinstallieren der App allein löscht keine bereits synchronisierten iCloud-Daten. Nutze zum Zurücksetzen die Datenlöschung in der App und lasse die Löschungen synchronisieren.</p>
           <p>Bei Fragen erreichst du mich jederzeit unter <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>.</p>
         </div>
       </div>
@@ -243,7 +247,7 @@
       <!-- ENGLISH VERSION -->
       <div id="legal-en" style="display: none;">
         <div class="highlight-pill-box">
-          <p>🔒 <strong>Clear &amp; Transparent:</strong> weekly stores 100% of your data locally on your iPhone and syncs it securely through your personal Apple iCloud. There is zero user tracking, no advertising, no analytics SDKs, and no external developer servers.</p>
+          <p>🔒 <strong>Clear &amp; Transparent:</strong> weekly stores your plans and work hours on your device. When iCloud is enabled, they sync through your personal iCloud. The app uses no analytics tools or ads and operates no servers of its own for your plans. The Apple services it also uses are described below.</p>
         </div>
 
         <div class="legal-content">
@@ -260,26 +264,28 @@
           <p>The developer has no access to your schedule, events, or entries at any time.</p>
 
           <h2>3. Secure Sync via Apple iCloud</h2>
-          <p>If you have iCloud enabled on your iPhone, your schedules and tracked hours sync automatically and end-to-end encrypted through your personal Apple iCloud to your other Apple devices.</p>
+          <p>If you have iCloud enabled on your iPhone, your schedules and tracked hours sync automatically over an encrypted connection through your personal Apple iCloud to your other Apple devices.</p>
           <p>This process is handled exclusively through Apple Inc.'s encrypted infrastructure. We never receive or store your Apple ID or iCloud data.</p>
 
           <h2>4. Apple Calendar Integration</h2>
-          <p>weekly can display events from your iOS system calendars inside the weekly timetable grid. Calendar access requires your explicit permission via iOS system dialogs. weekly accesses these calendars in read-only mode and never modifies your original events or transmits them anywhere.</p>
+          <p>weekly can display events from your iOS system calendars inside the weekly timetable grid. Calendar access requires your explicit permission via iOS system dialogs. weekly accesses these calendars in read-only mode and does not modify your original events. Event locations may be sent to Apple for travel-time calculations, as described below.</p>
 
-          <h2>5. Zero Tracking, No Ads, No Third-Party Servers</h2>
+          <h2>5. No Tracking, No Ads</h2>
           <p>weekly is built with privacy by design:</p>
           <ul>
             <li>No analytics or user tracking tools (no Google Analytics, Firebase, TelemetryDeck, etc.)</li>
             <li>No ad networks or tracking identifiers (IDFA)</li>
-            <li>No external servers or remote databases</li>
-            <li>No sharing or selling of user data</li>
+            <li>No developer-operated server for your schedules</li>
+            <li>No sale of your data</li>
           </ul>
 
+          <h2>Apple Services for Locations, Routes and Updates</h2>
+          <p>Location search and travel-time calculations use Apple MapKit. Search terms and departure and destination locations are sent to Apple. This may include locations from displayed calendar events when the app calculates their travel time. Update checks request version information from the Apple App Store. Apple receives connection information required for these requests, such as the IP address.</p>
           <h2>6. PDF &amp; CSV Exports</h2>
           <p>Exported monthly hour reports in PDF or CSV format are created locally on your device and only leave your iPhone if you choose to share or send them manually.</p>
 
           <h2>7. Your Rights</h2>
-          <p>You have full control over your data at all times. You can edit, export, or delete your data directly inside the app, or delete the app entirely.</p>
+          <p>You have full control over your data at all times. You can edit, export, or delete your data directly inside the app, or delete the app entirely. Uninstalling the app alone does not erase previously synced iCloud data. To reset your data, use the in-app data deletion and allow the deletions to sync.</p>
           <p>For any privacy inquiries, reach out to <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>.</p>
         </div>
       </div>
@@ -326,12 +332,12 @@
 
       <div class="footer-bottom">
         <span data-i18n="footerRights">© 2026 Tim Oehl. Alle Rechte vorbehalten.</span>
-        <span data-i18n="footerMade">Als Indie-App mit Leidenschaft für iOS entwickelt.</span>
+        <span data-i18n="footerMade">Ein unabhängiges Projekt von Tim Oehl.</span>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=4"></script>
+  <script src="assets/js/main.js?v=9"></script>
   <script>
     window.showLegalLang = function(lang) {
       document.getElementById('legal-de').style.display = lang === 'de' ? 'block' : 'none';
@@ -342,13 +348,13 @@
       });
 
       document.getElementById('policy-title').textContent = lang === 'de' ? 'Datenschutzerklärung' : 'Privacy Policy';
-      document.getElementById('policy-sub').textContent = lang === 'de' ? 'iOS-App weekly • Apple App Store & DSGVO konform' : 'iOS App weekly • Compliant with Apple App Store & GDPR';
+      document.getElementById('policy-sub').textContent = lang === 'de' ? 'iOS-App weekly • Informationen zur Datenverarbeitung' : 'weekly iOS App • Information about data processing';
       const backLink = document.getElementById('nav-back-link');
       if (backLink) backLink.textContent = lang === 'de' ? '← Startseite' : '← Home';
     };
 
-    const saved = localStorage.getItem('weekly-lang');
-    if (saved) {
+    const saved = weeklyStorage.get('weekly-lang');
+    if (saved === 'de' || saved === 'en') {
       showLegalLang(saved);
     }
   </script>

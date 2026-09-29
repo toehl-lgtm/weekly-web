@@ -20,17 +20,18 @@
   <meta property="og:site_name" content="weekly">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="weekly – Dein intelligenter Wochenplaner für iOS">
-  <meta name="twitter:description" content="Klarheit im Wochenraster, smarter Arbeitszeit-Tracker und 100 % Privatsphäre. Jetzt im App Store für iPhone.">
+  <meta name="twitter:description" content="Klarheit im Wochenraster, Arbeitszeit-Tracker und keine Werbung oder Analyse-Tools. Jetzt im App Store für iPhone.">
   <meta name="twitter:image" content="assets/img/app-icon.png">
   <meta name="theme-color" content="#080A10" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#F5F6FA" media="(prefers-color-scheme: light)">
 
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
-  <link rel="stylesheet" href="assets/css/animations.css?v=4">
+  <link rel="stylesheet" href="assets/css/style.css?v=10">
+  <link rel="stylesheet" href="assets/css/animations.css?v=8">
   <!-- Immediate theme check before render -->
   <script>
     (function() {
-      const saved = localStorage.getItem('weekly-theme');
+      let saved = null;
+      try { saved = localStorage.getItem('weekly-theme'); } catch { /* Storage is optional. */ }
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
     })();
@@ -48,7 +49,7 @@
   <div class="container navbar">
     <nav class="nav-container">
       <a href="index.html" class="brand">
-        <img src="assets/img/app-icon.png" alt="weekly App Icon" class="brand-icon">
+        <img src="assets/img/app-icon.png" alt="" class="brand-icon">
         <span>weekly</span>
       </a>
 
@@ -60,6 +61,17 @@
       </ul>
 
       <div class="nav-actions">
+        <div class="mobile-menu">
+          <button type="button" class="mobile-menu-trigger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu-panel">
+            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <div class="mobile-menu-panel" id="mobile-menu-panel" hidden>
+            <a href="#features" data-i18n="navFeatures">Features</a>
+            <a href="#preview" data-i18n="navPreview">Vorschau</a>
+            <a href="privacy.html" data-i18n="navPrivacy">Datenschutz</a>
+            <a href="#support" data-i18n="navSupport">Support &amp; FAQ</a>
+          </div>
+        </div>
         <!-- Language Switcher (DE / EN) -->
         <div class="lang-switcher">
           <button class="lang-btn active" data-lang="de">DE</button>
@@ -92,6 +104,8 @@
   <main>
     <!-- Hero Section -->
     <section class="hero container">
+      <div class="hero-layout">
+      <div class="hero-copy">
       <div class="badge-pill">
         <span class="badge-dot live"></span>
         <span data-i18n="badgeText">Jetzt live im App Store • iOS</span>
@@ -103,7 +117,7 @@
       </h1>
 
       <p class="hero-desc reveal reveal-delay-1" data-i18n="heroDesc">
-        Schluss mit unübersichtlichen Kalendern. weekly kombiniert die Klarheit eines intuitiven Wochenrasters mit smartem Arbeitszeit-Tracking, automatischer iCloud-Synchronisation und 100 % Privatsphäre.
+        Plane Arbeit, Uni, Sport und Freizeit in einer klaren Wochenübersicht. Mit Arbeitszeiten, Tagesplan und Synchronisation über deine iCloud.
       </p>
 
       <div class="hero-cta-group reveal reveal-delay-2">
@@ -116,94 +130,84 @@
         <a href="#features" class="btn btn-secondary btn-lg" data-i18n="discoverFeatures">Features entdecken</a>
       </div>
 
-      <div class="hero-meta reveal reveal-delay-3">
-        <span data-i18n="metaNative">⚡ Blitzschnell &amp; intuitiv</span>
-        <span data-i18n="metaIcloud">☁️ Automatische iCloud-Synchronisation</span>
-        <span data-i18n="metaPrivacy">🔒 Keine Werbung, kein Tracking</span>
       </div>
 
       <!-- Real App Screenshot Showcase -->
-      <div id="preview" class="mockup-wrapper reveal reveal-delay-4">
-        <div class="phone-mockup">
-          <div class="phone-screen">
-            <img id="phone-screenshot" class="phone-screenshot-img" src="assets/img/screenshot-week-grid-dark.png" alt="weekly iOS App Wochenplaner Screenshot">
-          </div>
+      <div id="preview" class="mockup-wrapper reveal reveal-delay-2">
+        <div class="iphone-device">
+          <img id="phone-screenshot" class="iphone-screen-image" src="assets/img/weekly-week-de.jpg" alt="weekly: Wochenübersicht mit Arbeit, Uni, Sport und Freizeit" width="460" height="1000" fetchpriority="high">
         </div>
 
-        <!-- Real Screenshot Dark/Light Switcher -->
-        <div class="mockup-controls">
-          <button class="tab-pill active" data-screenshot="dark" data-i18n="tabDark">🌙 Dunkelmodus</button>
-          <button class="tab-pill" data-screenshot="light" data-i18n="tabLight">☀️ Hellmodus</button>
+        <div class="mockup-controls" role="group" aria-label="App-Vorschau">
+          <button type="button" class="tab-pill active" data-screenshot="week" data-i18n="tabWeek" aria-pressed="true">Woche</button>
+          <button type="button" class="tab-pill" data-screenshot="today" data-i18n="tabToday" aria-pressed="false">Heute</button>
+          <button type="button" class="tab-pill" data-screenshot="workout" data-i18n="tabWorkout" aria-pressed="false">Workout</button>
         </div>
+        <p class="preview-caption" data-i18n="previewCaption">Echte App-Aufnahmen mit Demo-Daten</p>
+      </div>
       </div>
     </section>
 
     <!-- Features Section -->
     <section id="features" class="features-section container">
       <div class="section-header reveal">
-        <p class="section-subtitle" data-i18n="sectionSub">Funktionen im Überblick</p>
-        <h2 class="section-title" data-i18n="sectionTitle">Konzipiert für deinen echten Alltag.</h2>
-        <p class="section-desc" data-i18n="sectionDesc">weekly wurde für Menschen entwickelt, die Arbeit, Studium, Sport und Freizeit harmonisch und ohne Stress in einer klaren Wochenübersicht planen möchten.</p>
+        <p class="section-subtitle" data-i18n="sectionSub">So funktioniert weekly</p>
+        <h2 class="section-title" data-i18n="sectionTitle">Weniger suchen. Mehr Überblick.</h2>
+        <p class="section-desc" data-i18n="sectionDesc">Vom Wochenplan bis zum Workout: Jede Ansicht zeigt dir genau das, was gerade zählt.</p>
       </div>
 
-      <div class="feature-grid">
-        <!-- Card 1 -->
-        <div class="feature-card reveal">
-          <div class="feature-card-spotlight"></div>
-          <div class="feature-icon-box">📊</div>
-          <h3 data-i18n="f1Title">Klares Wochenraster</h3>
-          <p data-i18n="f1Desc">Perfekt auf einen Blick. Das übersichtliche Wochenraster mit Zeitleiste (07:00 – 21:00 Uhr) und roter Live-Zeitlinie verschafft dir sofort Orientierung ohne lästiges Scrollen.</p>
-        </div>
+      <div class="feature-stories">
+        <article class="story-card reveal">
+          <div class="story-copy">
+            <p class="story-eyebrow" data-i18n="todayEyebrow">DEIN TAG</p>
+            <h3 data-i18n="todayTitle">Heute weißt du, was ansteht.</h3>
+            <p data-i18n="todayDesc">Termine, Arbeitszeit und das Nächste auf deinem Plan stehen in einer ruhigen Tagesansicht zusammen.</p>
+          </div>
+          <div class="story-visual story-visual-today">
+            <div class="iphone-device">
+              <img class="iphone-screen-image" data-preview-image="today" src="assets/img/weekly-today-de.jpg" alt="weekly Tagesansicht mit Terminen und Arbeitszeit" width="460" height="1000" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </article>
+        <article class="story-card story-card-workout reveal">
+          <div class="story-copy">
+            <p class="story-eyebrow" data-i18n="workoutEyebrow">DEIN TRAINING</p>
+            <h3 data-i18n="workoutTitle">Sport passt in deinen Alltag.</h3>
+            <p data-i18n="workoutDesc">Plane Training neben Arbeit und Freizeit. Im Workout-Bereich findest du deine Routinen und Vorlagen an einem Ort.</p>
+          </div>
+          <div class="story-visual story-visual-workout">
+            <div class="iphone-device">
+              <img class="iphone-screen-image" data-preview-image="workout" src="assets/img/weekly-workout-de.jpg" alt="weekly Workout-Bereich mit Routinen und Vorlagen" width="460" height="1000" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </article>
+      </div>
 
-        <!-- Card 2 -->
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-card-spotlight"></div>
-          <div class="feature-icon-box green">⏱️</div>
-          <h3 data-i18n="f2Title">Smarter Arbeitszeit-Tracker</h3>
-          <p data-i18n="f2Desc">Behalte deine Soll- und Ist-Arbeitszeiten im Griff. Nur berufliche Termine fließen in deine wöchentliche Arbeitszeitberechnung ein. Ideal für Studium, Nebenjob oder Gleitzeit.</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-card-spotlight"></div>
-          <div class="feature-icon-box purple">🔄</div>
-          <h3 data-i18n="f3Title">Basiswoche &amp; flexible Vorlagen</h3>
-          <p data-i18n="f3Desc">Erstelle deine ideale Routine-Woche einmalig – sie wiederholt sich automatisch. Bei Prüfungsphasen oder Urlaub schaltest du einfach mit einem Tippen auf ein Wochen-Preset um.</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="feature-card reveal">
-          <div class="feature-card-spotlight"></div>
-          <div class="feature-icon-box orange">🏀</div>
-          <h3 data-i18n="f4Title">Deine Apple-Kalender im Blick</h3>
-          <p data-i18n="f4Desc">Binde deine bestehenden Kalender (Vereinssport, Termine, Familie) direkt ein. Bestimme selbst, welche Termine als Arbeitszeit gelten und passe die Farben nach Wunsch an.</p>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-card-spotlight"></div>
-          <div class="feature-icon-box">📄</div>
-          <h3 data-i18n="f5Title">Stundennachweis als PDF &amp; CSV</h3>
-          <p data-i18n="f5Desc">Monatliche Stundenabrechnungen per Knopfdruck: Exportiere deine geleisteten Stunden als saubere PDF-Übersicht für deinen Arbeitgeber oder als CSV-Tabelle.</p>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-card-spotlight"></div>
-          <div class="feature-icon-box green">☁️</div>
-          <h3 data-i18n="f6Title">Sichere iCloud-Synchronisation</h3>
-          <p data-i18n="f6Desc">Deine Daten gehören dir. Alles wird direkt auf deinem iPhone gespeichert und sicher verschlüsselt über deine eigene Apple iCloud synchronisiert – ohne fremde Server.</p>
-        </div>
+      <div class="capability-grid">
+        <article class="capability-item reveal">
+          <h3 data-i18n="f3Title">Wiederkehrende Wochen</h3>
+          <p data-i18n="f3Desc">Lege eine Basiswoche an und wechsle bei Bedarf zu einer anderen Vorlage.</p>
+        </article>
+        <article class="capability-item reveal">
+          <h3 data-i18n="f4Title">Apple-Kalender</h3>
+          <p data-i18n="f4Desc">Zeige ausgewählte Kalender direkt neben deinen weekly-Terminen an.</p>
+        </article>
+        <article class="capability-item reveal">
+          <h3 data-i18n="f5Title">Stundennachweise</h3>
+          <p data-i18n="f5Desc">Exportiere deine Arbeitszeiten als PDF oder CSV.</p>
+        </article>
       </div>
 
       <!-- Trust / Privacy Highlight Banner -->
       <div id="privacy-section" class="trust-banner reveal">
-        <div class="trust-badge-icon">🛡️</div>
+        <div class="trust-badge-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
         <div class="trust-content">
-          <h3 data-i18n="trustTitle">100 % Privatsphäre. Kein Tracking. Keine Werbung.</h3>
-          <p data-i18n="trustDesc">Deine Termine sind Privatsache. weekly läuft vollständig auf deinem Gerät und deiner persönlichen iCloud. Wir erfassen keinerlei Nutzungsdaten, haben keine Werbebanner und verkaufen niemals Daten an Dritte.</p>
-          <div style="margin-top: 16px;">
-            <a href="privacy.html" class="btn btn-secondary btn-sm" style="color: var(--color-green); border-color: rgba(48, 209, 88, 0.4);" data-i18n="trustBtn">
+          <h3 data-i18n="trustTitle">Deine Daten bleiben in deiner Hand.</h3>
+          <p data-i18n="trustDesc">Deine Pläne liegen auf deinem Gerät und bei aktivierter Synchronisation in deiner persönlichen iCloud. weekly nutzt keine Analyse-Tools und zeigt keine Werbung. Welche Apple-Dienste die App nutzt, steht in der Datenschutzerklärung.</p>
+          <div class="trust-action">
+            <a href="privacy.html" class="btn btn-secondary btn-sm" data-i18n="trustBtn">
               Datenschutzerklärung öffnen →
             </a>
           </div>
@@ -224,7 +228,7 @@
         <div class="faq-item active">
           <button class="faq-question">
             <span data-i18n="faq1Q">Wie funktioniert die iCloud-Synchronisation?</span>
-            <span class="faq-icon-wrapper">+</span>
+            <span class="faq-icon-wrapper" aria-hidden="true">+</span>
           </button>
           <div class="faq-collapse">
             <div class="faq-collapse-inner">
@@ -239,7 +243,7 @@
         <div class="faq-item">
           <button class="faq-question">
             <span data-i18n="faq2Q">Werden meine bestehenden Kalendertermine verändert?</span>
-            <span class="faq-icon-wrapper">+</span>
+            <span class="faq-icon-wrapper" aria-hidden="true">+</span>
           </button>
           <div class="faq-collapse">
             <div class="faq-collapse-inner">
@@ -253,13 +257,13 @@
         <!-- Item 3 -->
         <div class="faq-item">
           <button class="faq-question">
-            <span data-i18n="faq3Q">Speichert weekly Daten auf fremden Entwickler-Servern?</span>
-            <span class="faq-icon-wrapper">+</span>
+            <span data-i18n="faq3Q">Speichert weekly meine Pläne auf eigenen Servern?</span>
+            <span class="faq-icon-wrapper" aria-hidden="true">+</span>
           </button>
           <div class="faq-collapse">
             <div class="faq-collapse-inner">
               <div class="faq-answer">
-                <p data-i18n="faq3A">Nein, zu 0 %. weekly besitzt keine eigenen Server oder Datenbanken. Deine Daten verbleiben ausschließlich auf deinem Gerät und in deiner persönlichen, verschlüsselten iCloud.</p>
+                <p data-i18n="faq3A">Nein. Deine Pläne liegen auf deinem Gerät und bei aktivierter Synchronisation in deiner persönlichen iCloud. Für Ortssuche, Fahrtzeiten und Updates verwendet die App Apple-Dienste; Details findest du in der Datenschutzerklärung.</p>
               </div>
             </div>
           </div>
@@ -269,7 +273,7 @@
         <div class="faq-item">
           <button class="faq-question">
             <span data-i18n="faq4Q">Wer entwickelt weekly und wie erreiche ich den Support?</span>
-            <span class="faq-icon-wrapper">+</span>
+            <span class="faq-icon-wrapper" aria-hidden="true">+</span>
           </button>
           <div class="faq-collapse">
             <div class="faq-collapse-inner">
@@ -283,7 +287,7 @@
 
       <!-- App Store Direct Support Contact Box -->
       <div class="support-card reveal">
-        <div class="support-badge-indie" data-i18n="supportIndieBadge">👨‍💻 Indie-Entwickler Projekt</div>
+        <div class="support-badge-indie" data-i18n="supportIndieBadge">Unabhängig entwickelt</div>
         <h4 data-i18n="supportBoxTitle">Fragen oder Feedback an den Entwickler?</h4>
         <p data-i18n="supportBoxDesc">Ich freue mich über jede Nachricht, Feedback und neue Ideen. Da ich die App alleine entwickle, kann eine Antwort manchmal etwas Zeit in Anspruch nehmen.</p>
         <a href="mailto:weekly.workandworkout@gmail.com?subject=weekly%20iOS%20App%20Support" class="btn btn-primary">
@@ -300,7 +304,7 @@
     <section class="cta-section container">
       <div class="cta-card reveal">
         <div class="cta-glow"></div>
-        <img src="assets/img/app-icon.png" alt="weekly App Icon" class="cta-app-icon">
+        <img src="assets/img/app-icon.png" alt="" class="cta-app-icon">
         <h2 class="cta-title" data-i18n="ctaTitle">Bereit für deine beste Woche?</h2>
         <p class="cta-desc" data-i18n="ctaDesc">weekly ist jetzt offiziell im App Store für iPhone verfügbar. Plane Termine, verfolge deine Arbeitszeit und behalte deine Apple-Kalender im Blick – 100 % werbe- und trackingfrei.</p>
         <div class="cta-actions">
@@ -312,7 +316,7 @@
           </a>
         </div>
         <div class="cta-meta">
-          <span data-i18n="ctaMeta">iPhone • iOS 17+ • 100 % Privatsphäre • iCloud Sync</span>
+          <span data-i18n="ctaMeta">iPhone • iOS 17+ • ohne Werbung und Tracking • iCloud-Sync</span>
         </div>
       </div>
     </section>
@@ -323,7 +327,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/img/app-icon.png" alt="weekly Icon" width="30" height="30">
+          <img src="assets/img/app-icon.png" alt="" width="30" height="30">
           <span>weekly für iOS</span>
         </div>
 
@@ -353,11 +357,11 @@
 
       <div class="footer-bottom">
         <span data-i18n="footerRights">© 2026 Tim Oehl. Alle Rechte vorbehalten.</span>
-        <span data-i18n="footerMade">Als Indie-App mit Leidenschaft für iOS entwickelt.</span>
+        <span data-i18n="footerMade">Ein unabhängiges Projekt von Tim Oehl.</span>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=4"></script>
+  <script src="assets/js/main.js?v=9"></script>
 </body>
 </html>

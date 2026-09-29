@@ -9,11 +9,12 @@
   <link rel="apple-touch-icon" href="assets/img/app-icon.png">
   <!-- Apple Smart App Banner -->
   <meta name="apple-itunes-app" content="app-id=6808738681">
-  <link rel="stylesheet" href="assets/css/style.css?v=4">
-  <link rel="stylesheet" href="assets/css/animations.css?v=4">
+  <link rel="stylesheet" href="assets/css/style.css?v=10">
+  <link rel="stylesheet" href="assets/css/animations.css?v=8">
   <script>
     (function() {
-      const saved = localStorage.getItem('weekly-theme');
+      let saved = null;
+      try { saved = localStorage.getItem('weekly-theme'); } catch { /* Storage is optional. */ }
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
     })();
@@ -86,6 +87,7 @@
       margin-top: 8px;
     }
     .lang-tab {
+      min-height: 44px;
       padding: 6px 14px;
       border-radius: 999px;
       border: 1px solid var(--color-border);
@@ -98,9 +100,9 @@
       font-family: inherit;
     }
     .lang-tab.active {
-      background: var(--color-accent);
+      background: var(--color-action);
       color: #FFF;
-      border-color: var(--color-accent);
+      border-color: var(--color-action);
     }
     @media (max-width: 768px) {
       .legal-container {
@@ -130,7 +132,7 @@
     }
   </style>
 </head>
-<body>
+<body class="legal-page">
 
   <!-- Ambient Glows -->
   <div class="bg-ambient">
@@ -142,7 +144,7 @@
   <div class="container navbar">
     <nav class="nav-container">
       <a href="index.html" class="brand">
-        <img src="assets/img/app-icon.png" alt="weekly App Icon" class="brand-icon">
+        <img src="assets/img/app-icon.png" alt="" class="brand-icon">
         <span>weekly</span>
       </a>
 
@@ -167,7 +169,7 @@
             </svg>
           </span>
         </button>
-        <a href="index.html" id="nav-back-link" class="btn btn-secondary btn-sm" style="padding: 6px 12px; font-size: 0.82rem;">← Startseite</a>
+        <a href="index.html" id="nav-back-link" class="btn btn-secondary btn-sm">← Startseite</a>
       </div>
     </nav>
   </div>
@@ -181,8 +183,8 @@
           <p class="legal-subtitle" id="imprint-sub">Angaben für die iOS-App <strong>weekly</strong></p>
         </div>
         <div class="lang-section-toggle">
-          <button class="lang-tab active" onclick="showImprintLang('de')">Deutsch</button>
-          <button class="lang-tab" onclick="showImprintLang('en')">English</button>
+          <button type="button" class="lang-tab active" data-lang="de" aria-pressed="true">Deutsch</button>
+          <button type="button" class="lang-tab" data-lang="en" aria-pressed="false">English</button>
         </div>
       </header>
 
@@ -272,12 +274,12 @@
 
       <div class="footer-bottom">
         <span data-i18n="footerRights">© 2026 Tim Oehl. Alle Rechte vorbehalten.</span>
-        <span data-i18n="footerMade">Als Indie-App mit Leidenschaft für iOS entwickelt.</span>
+        <span data-i18n="footerMade">Ein unabhängiges Projekt von Tim Oehl.</span>
       </div>
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=4"></script>
+  <script src="assets/js/main.js?v=9"></script>
   <script>
     window.showImprintLang = function(lang) {
       document.getElementById('imprint-de').style.display = lang === 'de' ? 'block' : 'none';
@@ -293,8 +295,8 @@
       if (backLink) backLink.textContent = lang === 'de' ? '← Startseite' : '← Home';
     };
 
-    const saved = localStorage.getItem('weekly-lang');
-    if (saved) {
+    const saved = weeklyStorage.get('weekly-lang');
+    if (saved === 'de' || saved === 'en') {
       showImprintLang(saved);
     }
   </script>

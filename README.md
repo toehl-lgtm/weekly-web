@@ -13,15 +13,15 @@ Kopiere diese URLs direkt in **App Store Connect** bei der App-Einreichung:
 
 | Feld in App Store Connect | URL | Status |
 |---|---|---|
-| **Datenschutz-URL (Privacy Policy)** | `https://toehl-lgtm.github.io/weekly-web/privacy.html` | ✅ Live (DSGVO & Apple Richtlinien, DE/EN) |
+| **Datenschutz-URL (Privacy Policy)** | `https://toehl-lgtm.github.io/weekly-web/privacy.html` | ✅ Live (DE/EN) |
 | **Support-URL** | `https://toehl-lgtm.github.io/weekly-web/#support` | ✅ Live (FAQ, Solo-Dev Kontakt, Mailto) |
 | **Marketing-URL (optional)** | `https://toehl-lgtm.github.io/weekly-web/` | ✅ Live (Feature-Showcase & Screenshots) |
 
 ---
 
 ## 🌟 Highlights der Live-Website
-- **Echte iOS-Screenshots:** Pixelgenaue Aufnahmen direkt aus dem iPhone 17 Pro Simulator mit Terminen, Arbeitszeiten und Sport.
-- **Interaktiver Mockup-Switcher:** Umschalten zwischen Dunkelmodus (🌙) und Hellmodus (☀️).
+- **Aktuelle iOS-Screenshots:** Aufnahmen mit Demo-Daten aus der App für Woche, Heute und Workout, jeweils auf Deutsch und Englisch.
+- **Interaktive Vorschau im iPhone-Rahmen:** Die vorhandene iPhone-16-Pro-Max-Vorlage aus dem App-Store-Material zeigt Woche, Heute und Workout; das Farbschema der Website ist separat einstellbar.
 - **Zweisprachig (DE & EN):** Sowohl in der Navbar als auch im Footer frei umschaltbar.
 - **Flüssiges CSS-Grid-Akkordeon:** Buttersanftes Aufklappen der FAQ.
 - **Authentischer Solo-Entwickler-Fokus:** Sympathisch und transparent gestaltet.
