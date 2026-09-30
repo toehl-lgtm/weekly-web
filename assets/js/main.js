@@ -17,13 +17,13 @@ const translations = {
     navSupport: "Support & FAQ",
     badgeText: "Jetzt live im App Store • iOS",
     heroTitlePrefix: "Deine Woche.",
-    heroTitleGradient: "Auf den Punkt gebracht.",
-    heroDesc: "Plane Arbeit, Uni, Sport und Freizeit in einer klaren Wochenübersicht. Mit Arbeitszeiten, Tagesplan und Synchronisation über deine iCloud.",
+    heroTitleGradient: "Alles hat seinen Platz.",
+    heroDesc: "Arbeit, Alltag und Training in einem klaren Wochenüberblick. Plane deinen Tag, erfasse Arbeitszeit und behalte deine Routinen im Blick.",
     appStoreBadge: "Im App Store laden",
     navCta: "App Store ↗",
     discoverFeatures: "Features entdecken",
-    ctaTitle: "Bereit für deine beste Woche?",
-    ctaDesc: "weekly ist jetzt offiziell im App Store für iPhone verfügbar. Plane Termine, verfolge deine Arbeitszeit und behalte deine Apple-Kalender im Blick – 100 % werbe- und trackingfrei.",
+    ctaTitle: "Deine Woche beginnt hier.",
+    ctaDesc: "Plane Arbeit und Training an einem Ort. weekly ist im App Store für iPhone verfügbar – ohne Werbung und Analyse-Tools.",
     ctaBadge: "Im App Store laden",
     ctaMeta: "iPhone • iOS 17+ • ohne Werbung und Tracking • iCloud-Sync",
     tabWeek: "Woche",
@@ -75,13 +75,13 @@ const translations = {
     navSupport: "Support & FAQ",
     badgeText: "Now Live on the App Store • iOS",
     heroTitlePrefix: "Your Week.",
-    heroTitleGradient: "Clear and Focused.",
-    heroDesc: "Plan work, university, exercise and free time in one clear week view. Keep track of work hours, see your day and sync through your iCloud.",
+    heroTitleGradient: "Everything in its place.",
+    heroDesc: "Work, life and training in one clear week view. Plan your day, track work hours and keep your routines in sight.",
     appStoreBadge: "Download on the App Store",
     navCta: "App Store ↗",
     discoverFeatures: "Explore Features",
-    ctaTitle: "Ready for your best week yet?",
-    ctaDesc: "weekly is now officially available on the App Store for iPhone. Plan appointments, track work hours, and keep your Apple calendars in view – 100% ad- and tracking-free.",
+    ctaTitle: "Your week starts here.",
+    ctaDesc: "Plan work and training in one place. weekly is available on the App Store for iPhone, without ads or analytics tools.",
     ctaBadge: "Download on the App Store",
     ctaMeta: "iPhone • iOS 17+ • no ads or tracking • iCloud sync",
     tabWeek: "Week",
@@ -169,6 +169,12 @@ function setLanguage(lang) {
   lang = ['de', 'en'].includes(lang) ? lang : 'de';
   const dict = translations[lang] || translations.de;
   document.documentElement.setAttribute('lang', lang);
+  if (document.querySelector('.hero')) {
+    document.title = lang === 'de'
+      ? 'weekly – Arbeit und Training in einer Woche'
+      : 'weekly – Work and training in one week';
+    document.querySelector('.footer-brand span').textContent = lang === 'de' ? 'weekly für iOS' : 'weekly for iOS';
+  }
 
   // Sync nav buttons
   document.querySelectorAll('.lang-btn, .lang-tab').forEach(b => {
