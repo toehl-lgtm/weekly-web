@@ -25,7 +25,7 @@
   <meta name="theme-color" content="#111420" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#F7F8F6" media="(prefers-color-scheme: light)">
 
-  <link rel="stylesheet" href="assets/css/style.css?v=14">
+  <link rel="stylesheet" href="assets/css/style.css?v=15">
   <link rel="stylesheet" href="assets/css/animations.css?v=8">
   <!-- Immediate theme check before render -->
   <script>
@@ -127,8 +127,22 @@
 
       <!-- Real App Screenshot Showcase -->
       <div id="preview" class="mockup-wrapper reveal reveal-delay-2">
-        <div class="iphone-device">
-          <img id="phone-screenshot" class="iphone-screen-image" src="assets/img/weekly-week-de.jpg" alt="weekly: Wochenübersicht mit Arbeit, Uni, Sport und Freizeit" width="460" height="1000" fetchpriority="high">
+        <div class="mockup-deck" data-active="week" role="region" aria-label="App-Vorschau interaktiver Kartenstapel">
+          <div class="deck-card card-week" data-card="week" role="button" tabindex="0" aria-label="Wochenansicht öffnen">
+            <div class="iphone-device">
+              <img id="phone-screenshot-week" class="iphone-screen-image" src="assets/img/weekly-week-de.jpg" alt="weekly: Wochenübersicht mit Arbeit, Uni, Sport und Freizeit" width="1320" height="2868" fetchpriority="high">
+            </div>
+          </div>
+          <div class="deck-card card-today" data-card="today" role="button" tabindex="0" aria-label="Tagesansicht öffnen">
+            <div class="iphone-device">
+              <img id="phone-screenshot-today" class="iphone-screen-image" src="assets/img/weekly-today-de.jpg" alt="weekly: Tagesansicht mit Arbeitszeit und Terminen" width="1320" height="2868" loading="lazy">
+            </div>
+          </div>
+          <div class="deck-card card-workout" data-card="workout" role="button" tabindex="0" aria-label="Workout-Ansicht öffnen">
+            <div class="iphone-device">
+              <img id="phone-screenshot-workout" class="iphone-screen-image" src="assets/img/weekly-workout-de.jpg" alt="weekly: Workout-Routinen und Trainingspläne" width="1320" height="2868" loading="lazy">
+            </div>
+          </div>
         </div>
 
         <div class="mockup-controls" role="group" aria-label="App-Vorschau">
@@ -158,7 +172,7 @@
           </div>
           <div class="story-visual story-visual-today">
             <div class="iphone-device">
-              <img class="iphone-screen-image" data-preview-image="today" src="assets/img/weekly-today-de.jpg" alt="weekly Tagesansicht mit Terminen und Arbeitszeit" width="460" height="1000" loading="lazy" decoding="async">
+              <img class="iphone-screen-image" data-preview-image="today" src="assets/img/weekly-today-de.jpg" alt="weekly Tagesansicht mit Terminen und Arbeitszeit" width="1320" height="2868" loading="lazy" decoding="async">
             </div>
           </div>
         </article>
@@ -170,7 +184,7 @@
           </div>
           <div class="story-visual story-visual-workout">
             <div class="iphone-device">
-              <img class="iphone-screen-image" data-preview-image="workout" src="assets/img/weekly-workout-de.jpg" alt="weekly Workout-Bereich mit Routinen und Vorlagen" width="460" height="1000" loading="lazy" decoding="async">
+              <img class="iphone-screen-image" data-preview-image="workout" src="assets/img/weekly-workout-de.jpg" alt="weekly Workout-Bereich mit Routinen und Vorlagen" width="1320" height="2868" loading="lazy" decoding="async">
             </div>
           </div>
         </article>
@@ -355,6 +369,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=9"></script>
+  <script src="assets/js/main.js?v=10"></script>
 </body>
 </html>

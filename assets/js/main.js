@@ -232,20 +232,92 @@ const screenshotLabels = {
   }
 };
 
-function updateScreenshot() {
-  const img = document.getElementById('phone-screenshot');
-  const selected = document.querySelector('.tab-pill[data-screenshot].active')?.dataset.screenshot || 'week';
-  const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
-  if (img) {
-    img.src = `assets/img/weekly-${selected}-${lang}.jpg`;
-    img.alt = screenshotLabels[lang][selected];
+const deckCardLabels = {
+  de: {
+    week: 'Wochenansicht öffnen',
+    today: 'Tagesansicht öffnen',
+    workout: 'Workout-Ansicht öffnen'
+  },
+  en: {
+    week: 'Open week view',
+    today: 'Open today view',
+    workout: 'Open workout view'
   }
+};
+
+function updateScreenshot() {
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'de';
+
+  // Update images and accessibility labels for all cards in the deck
+  ['week', 'today', 'workout'].forEach(view => {
+    const cardImg = document.getElementById(`phone-screenshot-${view}`);
+    if (cardImg) {
+      cardImg.src = `assets/img/weekly-${view}-${lang}.jpg`;
+      cardImg.alt = screenshotLabels[lang][view];
+    }
+    const card = document.querySelector(`.deck-card[data-card="${view}"]`);
+    if (card) {
+      card.setAttribute('aria-label', deckCardLabels[lang][view]);
+    }
+  });
+
+  // Story card images
   document.querySelectorAll('[data-preview-image]').forEach(storyImage => {
     const view = storyImage.dataset.previewImage;
     storyImage.src = `assets/img/weekly-${view}-${lang}.jpg`;
     storyImage.alt = screenshotLabels[lang][view];
   });
-  document.querySelector('.mockup-controls')?.setAttribute('aria-label', lang === 'de' ? 'App-Vorschau' : 'App preview');
+
+  const controls = document.querySelector('.mockup-controls');
+  if (controls) {
+    controls.setAttribute('aria-label', lang === 'de' ? 'App-Vorschau' : 'App preview');
+  }
+  const deck = document.querySelector('.mockup-deck');
+  if (deck) {
+    deck.setAttribute('aria-label', lang === 'de' ? 'App-Vorschau interaktiver Kartenstapel' : 'App preview interactive card stack');
+  }
+}
+
+function setScreenshotView(view) {
+  const deck = document.querySelector('.mockup-deck');
+  if (deck) {
+    deck.dataset.active = view;
+  }
+  const buttons = document.querySelectorAll('.tab-pill[data-screenshot]');
+  buttons.forEach(b => {
+    const isActive = b.dataset.screenshot === view;
+    b.classList.toggle('active', isActive);
+    b.setAttribute('aria-pressed', String(isActive));
+  });
+}
+
+function initScreenshotSwitcher() {
+  const buttons = document.querySelectorAll('.tab-pill[data-screenshot]');
+  const deck = document.querySelector('.mockup-deck');
+  if (!deck) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const view = btn.dataset.screenshot;
+      setScreenshotView(view);
+    });
+  });
+
+  // Also allow clicking directly on any deck card to switch
+  const cards = deck.querySelectorAll('.deck-card[data-card]');
+  cards.forEach(card => {
+    const handleCardClick = () => {
+      const view = card.dataset.card;
+      setScreenshotView(view);
+    };
+    card.addEventListener('click', handleCardClick);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        handleCardClick();
+      }
+    });
+  });
 }
 
 function initMobileMenu() {
@@ -266,24 +338,6 @@ function initMobileMenu() {
       setOpen(false);
       trigger.focus();
     }
-  });
-}
-
-function initScreenshotSwitcher() {
-  const buttons = document.querySelectorAll('.tab-pill[data-screenshot]');
-  const img = document.getElementById('phone-screenshot');
-  if (!img || !buttons.length) return;
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-pressed', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-pressed', 'true');
-      updateScreenshot();
-    });
   });
 }
 
