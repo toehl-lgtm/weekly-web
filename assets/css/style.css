@@ -1407,26 +1407,26 @@ body {
   isolation: isolate;
 }
 
-.mockup-wrapper::before {
+.mockup-wrapper .iphone-device::before {
   content: "";
   position: absolute;
+  inset: -14px;
+  border-radius: 68px;
   z-index: -1;
-  inset: 8% -13% 16%;
-  border-radius: 46px;
-  transform: rotate(5deg);
-  border: 1px solid rgba(140, 200, 255, 0.34);
   background:
-    repeating-linear-gradient(90deg, transparent 0, transparent calc(14.285% - 1px), rgba(255, 255, 255, 0.13) calc(14.285% - 1px), rgba(255, 255, 255, 0.13) 14.285%),
-    linear-gradient(145deg, #2476CB, #0B3A75);
-  box-shadow: 0 30px 80px rgba(10, 132, 255, 0.18);
+    repeating-linear-gradient(90deg, transparent 0, transparent calc(14.285% - 1px), rgba(255, 255, 255, 0.12) calc(14.285% - 1px), rgba(255, 255, 255, 0.12) 14.285%),
+    linear-gradient(155deg, #207BE2 0%, #0A4590 60%, #062858 100%);
+  border: 1px solid rgba(140, 200, 255, 0.38);
+  box-shadow: 0 20px 60px rgba(10, 132, 255, 0.32), 0 0 50px rgba(10, 132, 255, 0.22), 0 8px 24px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
 }
 
-[data-theme="light"] .mockup-wrapper::before {
-  border-color: rgba(10, 132, 255, 0.16);
+[data-theme="light"] .mockup-wrapper .iphone-device::before {
   background:
     repeating-linear-gradient(90deg, transparent 0, transparent calc(14.285% - 1px), rgba(10, 132, 255, 0.12) calc(14.285% - 1px), rgba(10, 132, 255, 0.12) 14.285%),
-    linear-gradient(145deg, #D8EAFD, #AFCDF1);
-  box-shadow: 0 26px 60px rgba(10, 132, 255, 0.12);
+    linear-gradient(155deg, #DCEEFF 0%, #B4D7FC 60%, #99C6F7 100%);
+  border-color: rgba(10, 132, 255, 0.22);
+  box-shadow: 0 20px 50px rgba(10, 132, 255, 0.18), 0 0 35px rgba(10, 132, 255, 0.12);
 }
 
 .iphone-device { position: relative; z-index: 1; }
@@ -1535,7 +1535,10 @@ body {
 [data-theme="light"] .cta-card .cta-meta { color: #475569; }
 
 @media (max-width: 768px) {
-  .mockup-wrapper::before { inset: 7% -6% 16%; border-radius: 38px; }
+  .mockup-wrapper .iphone-device::before {
+    inset: -10px;
+    border-radius: 56px;
+  }
   .capability-item { min-height: 0; }
 }
 
