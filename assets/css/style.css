@@ -1410,23 +1410,25 @@ body {
 .mockup-wrapper .iphone-device::before {
   content: "";
   position: absolute;
-  inset: -14px;
-  border-radius: 68px;
+  inset: -2px -4px;
+  border-radius: 56px;
+  transform: rotate(3.5deg);
+  transform-origin: center center;
   z-index: -1;
   background:
     repeating-linear-gradient(90deg, transparent 0, transparent calc(14.285% - 1px), rgba(255, 255, 255, 0.12) calc(14.285% - 1px), rgba(255, 255, 255, 0.12) 14.285%),
-    linear-gradient(155deg, #207BE2 0%, #0A4590 60%, #062858 100%);
-  border: 1px solid rgba(140, 200, 255, 0.38);
-  box-shadow: 0 20px 60px rgba(10, 132, 255, 0.32), 0 0 50px rgba(10, 132, 255, 0.22), 0 8px 24px rgba(0, 0, 0, 0.4);
+    linear-gradient(150deg, #1F72D0 0%, #0D4184 55%, #052654 100%);
+  border: 1px solid rgba(160, 215, 255, 0.35);
+  box-shadow: 0 24px 60px rgba(10, 132, 255, 0.22), 0 0 35px rgba(10, 132, 255, 0.14), 0 10px 25px rgba(0, 0, 0, 0.4);
   pointer-events: none;
 }
 
 [data-theme="light"] .mockup-wrapper .iphone-device::before {
   background:
     repeating-linear-gradient(90deg, transparent 0, transparent calc(14.285% - 1px), rgba(10, 132, 255, 0.12) calc(14.285% - 1px), rgba(10, 132, 255, 0.12) 14.285%),
-    linear-gradient(155deg, #DCEEFF 0%, #B4D7FC 60%, #99C6F7 100%);
+    linear-gradient(150deg, #DCEEFF 0%, #B4D7FC 55%, #99C6F7 100%);
   border-color: rgba(10, 132, 255, 0.22);
-  box-shadow: 0 20px 50px rgba(10, 132, 255, 0.18), 0 0 35px rgba(10, 132, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(10, 132, 255, 0.16), 0 0 30px rgba(10, 132, 255, 0.1);
 }
 
 .iphone-device { position: relative; z-index: 1; }
@@ -1536,8 +1538,9 @@ body {
 
 @media (max-width: 768px) {
   .mockup-wrapper .iphone-device::before {
-    inset: -10px;
-    border-radius: 56px;
+    inset: -2px -3px;
+    border-radius: 48px;
+    transform: rotate(2.5deg);
   }
   .capability-item { min-height: 0; }
 }
