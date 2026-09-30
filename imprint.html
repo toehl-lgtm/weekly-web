@@ -9,14 +9,13 @@
   <link rel="apple-touch-icon" href="assets/img/app-icon.png">
   <!-- Apple Smart App Banner -->
   <meta name="apple-itunes-app" content="app-id=6808738681">
-  <link rel="stylesheet" href="assets/css/style.css?v=10">
+  <link rel="stylesheet" href="assets/css/style.css?v=12">
   <link rel="stylesheet" href="assets/css/animations.css?v=8">
   <script>
     (function() {
       let saved = null;
       try { saved = localStorage.getItem('weekly-theme'); } catch { /* Storage is optional. */ }
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+      document.documentElement.setAttribute('data-theme', saved || 'dark');
     })();
   </script>
   <style>

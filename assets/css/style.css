@@ -1401,3 +1401,144 @@ body {
   .hero-title { font-size: clamp(2.45rem, 9vw, 3.8rem); }
   .hero::before { inset: 12% 4% 36%; }
 }
+
+/* A stronger Weekly signature: the seven-day grid follows the real app imagery. */
+.mockup-wrapper {
+  isolation: isolate;
+}
+
+.mockup-wrapper::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 8% -13% 16%;
+  border-radius: 46px;
+  transform: rotate(5deg);
+  border: 1px solid rgba(140, 200, 255, 0.34);
+  background:
+    repeating-linear-gradient(90deg, transparent 0, transparent calc(14.285% - 1px), rgba(255, 255, 255, 0.13) calc(14.285% - 1px), rgba(255, 255, 255, 0.13) 14.285%),
+    linear-gradient(145deg, #2476CB, #0B3A75);
+  box-shadow: 0 30px 80px rgba(10, 132, 255, 0.18);
+}
+
+[data-theme="light"] .mockup-wrapper::before {
+  border-color: rgba(10, 132, 255, 0.16);
+  background:
+    repeating-linear-gradient(90deg, transparent 0, transparent calc(14.285% - 1px), rgba(10, 132, 255, 0.12) calc(14.285% - 1px), rgba(10, 132, 255, 0.12) 14.285%),
+    linear-gradient(145deg, #D8EAFD, #AFCDF1);
+  box-shadow: 0 26px 60px rgba(10, 132, 255, 0.12);
+}
+
+.iphone-device { position: relative; z-index: 1; }
+
+.story-card {
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 0 20px 56px rgba(3, 10, 27, 0.12);
+}
+
+.story-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: #0A84FF;
+  z-index: 2;
+}
+
+.story-card-workout::before { background: #F29A58; }
+
+.story-visual,
+.story-visual-workout {
+  isolation: isolate;
+  background: linear-gradient(145deg, #153C6A, #0E2444);
+}
+
+.story-visual-workout {
+  background: linear-gradient(145deg, #654026, #2D2332);
+}
+
+[data-theme="light"] .story-visual {
+  background: linear-gradient(145deg, #DCEEFF, #AFD5F7);
+}
+
+[data-theme="light"] .story-visual-workout {
+  background: linear-gradient(145deg, #FFE5D1, #F5C7A7);
+}
+
+.story-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.58;
+  background: repeating-linear-gradient(90deg, transparent 0, transparent calc(20% - 1px), rgba(255, 255, 255, 0.2) calc(20% - 1px), rgba(255, 255, 255, 0.2) 20%);
+}
+
+.story-visual::after {
+  content: "";
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  right: -100px;
+  bottom: -160px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.capability-grid { gap: 16px; }
+.capability-item {
+  min-height: 170px;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-top: 3px solid #0A84FF;
+  border-radius: 20px;
+  background: var(--color-bg-secondary);
+}
+
+.capability-item:nth-child(2) { border-top-color: #72D7B0; }
+.capability-item:nth-child(3) { border-top-color: #F29A58; }
+
+.cta-card {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(10, 132, 255, 0.28), transparent 38%),
+    #111420;
+  border-color: rgba(140, 200, 255, 0.34);
+}
+
+.cta-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 4px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, #0A84FF 0 48%, #72D7B0 48% 72%, #F29A58 72%);
+}
+
+.cta-card .cta-title { color: #fff; }
+.cta-card .cta-desc,
+.cta-card .cta-meta { color: #CDD5E0; }
+
+[data-theme="light"] .cta-card {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(10, 132, 255, 0.14), transparent 38%),
+    #EAF3FF;
+  border-color: #BBD9F7;
+  color: #111420;
+}
+
+[data-theme="light"] .cta-card .cta-title { color: #111420; }
+[data-theme="light"] .cta-card .cta-desc,
+[data-theme="light"] .cta-card .cta-meta { color: #475569; }
+
+@media (max-width: 768px) {
+  .mockup-wrapper::before { inset: 7% -6% 16%; border-radius: 38px; }
+  .capability-item { min-height: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mockup-wrapper:hover .iphone-device { transform: none; }
+}

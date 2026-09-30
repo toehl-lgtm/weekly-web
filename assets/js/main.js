@@ -291,8 +291,7 @@ function initScreenshotSwitcher() {
 function initTheme() {
   const toggleBtn = document.getElementById('theme-toggle');
   const savedTheme = weeklyStorage.get('weekly-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+  const currentTheme = savedTheme || 'dark';
 
   document.documentElement.setAttribute('data-theme', currentTheme);
   updateThemeIcon(currentTheme);
