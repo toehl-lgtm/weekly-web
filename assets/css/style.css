@@ -901,11 +901,15 @@ body {
 /* Modern Grid 0fr -> 1fr Animation */
 .faq-collapse {
   display: grid;
-  grid-template-rows: 0fr;
+  grid-template-rows: 1fr;
   transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.faq-item.active .faq-collapse {
+.faq-ready .faq-collapse {
+  grid-template-rows: 0fr;
+}
+
+.faq-ready .faq-item.active .faq-collapse {
   grid-template-rows: 1fr;
 }
 

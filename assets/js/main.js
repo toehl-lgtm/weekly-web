@@ -3,10 +3,11 @@
  * Supports DE & EN localizations, real screenshot toggling, theme switching, smooth FAQ, and footer language selector.
  */
 
+// Only explicit language/theme choices are stored, for this tab's session.
 // Storage may be unavailable in private or restricted browser contexts.
 const weeklyStorage = {
-  get(key) { try { return localStorage.getItem(key); } catch { return null; } },
-  set(key, value) { try { localStorage.setItem(key, value); } catch { /* Keep working without persistence. */ } }
+  get(key) { try { return sessionStorage.getItem(key); } catch { return null; } },
+  set(key, value) { try { sessionStorage.setItem(key, value); } catch { /* Keep working without persistence. */ } }
 };
 
 const translations = {
@@ -173,8 +174,9 @@ function setLanguage(lang) {
     document.title = lang === 'de'
       ? 'weekly – Arbeit und Training in einer Woche'
       : 'weekly – Work and training in one week';
-    document.querySelector('.footer-brand span').textContent = lang === 'de' ? 'weekly für iOS' : 'weekly for iOS';
   }
+  const footerBrand = document.querySelector('.footer-brand span');
+  if (footerBrand) footerBrand.textContent = lang === 'de' ? 'weekly für iOS' : 'weekly for iOS';
 
   // Sync nav buttons
   document.querySelectorAll('.lang-btn, .lang-tab').forEach(b => {
@@ -209,13 +211,29 @@ function setLanguage(lang) {
 
   updateScreenshot();
 
-  // Update legal page toggles if present
-  if (typeof window.showLegalLang === 'function') {
-    window.showLegalLang(lang);
-  }
-  if (typeof window.showImprintLang === 'function') {
-    window.showImprintLang(lang);
-  }
+  updateLegalPage(lang);
+}
+
+function updateLegalPage(lang) {
+  const isGerman = lang === 'de';
+  const isPrivacy = Boolean(document.getElementById('policy-title'));
+  const isImprint = Boolean(document.getElementById('imprint-title'));
+  if (!isPrivacy && !isImprint) return;
+
+  const prefix = isPrivacy ? 'legal' : 'imprint';
+  document.getElementById(`${prefix}-de`).hidden = !isGerman;
+  document.getElementById(`${prefix}-en`).hidden = isGerman;
+
+  const title = isPrivacy
+    ? (isGerman ? 'Datenschutzerklärung' : 'Privacy Policy')
+    : (isGerman ? 'Impressum & Kontakt' : 'Legal & Contact');
+  document.getElementById(isPrivacy ? 'policy-title' : 'imprint-title').textContent = title;
+  document.title = `${title} – weekly`;
+  document.getElementById(isPrivacy ? 'policy-sub' : 'imprint-sub').textContent = isGerman
+    ? 'Website und iOS-App weekly'
+    : 'weekly website and iOS app';
+  const backLink = document.getElementById('nav-back-link');
+  if (backLink) backLink.textContent = isGerman ? '← Startseite' : '← Home';
 }
 
 /* --- 2. App preview --- */
@@ -345,7 +363,7 @@ function initMobileMenu() {
 function initTheme() {
   const toggleBtn = document.getElementById('theme-toggle');
   const savedTheme = weeklyStorage.get('weekly-theme');
-  const currentTheme = savedTheme || 'dark';
+  const currentTheme = ['dark', 'light'].includes(savedTheme) ? savedTheme : 'dark';
 
   document.documentElement.setAttribute('data-theme', currentTheme);
   updateThemeIcon(currentTheme);
@@ -423,4 +441,6 @@ function initFaqAccordion() {
       }
     });
   });
+  // Keep answers readable when JavaScript is unavailable.
+  document.documentElement.classList.add('faq-ready');
 }

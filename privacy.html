@@ -3,21 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Datenschutzerklärung / Privacy Policy – weekly</title>
-  <meta name="description" content="Datenschutzerklärung für die iOS App weekly gemäß DSGVO und Apple App Store Richtlinien.">
+  <meta name="description" content="Datenschutzhinweise zur weekly-Website, zum Support und zur iOS-App gemäß DSGVO und TDDDG.">
   <link rel="icon" type="image/png" href="assets/img/app-icon.png">
   <link rel="apple-touch-icon" href="assets/img/app-icon.png">
-  <!-- Apple Smart App Banner -->
-  <meta name="apple-itunes-app" content="app-id=6808738681">
-  <link rel="stylesheet" href="assets/css/style.css?v=15">
+  <link rel="stylesheet" href="assets/css/style.css?v=16">
   <link rel="stylesheet" href="assets/css/animations.css?v=8">
-  <script>
-    (function() {
-      let saved = null;
-      try { saved = localStorage.getItem('weekly-theme'); } catch { /* Storage is optional. */ }
-      document.documentElement.setAttribute('data-theme', saved || 'dark');
-    })();
-  </script>
+  <script src="assets/js/theme.js?v=1"></script>
   <style>
     .legal-container {
       max-width: 820px;
@@ -62,6 +56,9 @@
       margin: 36px 0 14px;
       color: var(--color-text-primary);
       letter-spacing: -0.01em;
+    }
+    .legal-content {
+      overflow-wrap: anywhere;
     }
     .legal-content p, .legal-content li {
       color: var(--color-text-secondary);
@@ -159,8 +156,8 @@
       <div class="nav-actions">
         <!-- Language Switcher in Nav -->
         <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="de">DE</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="de" aria-pressed="true">DE</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
 
         <button id="theme-toggle" class="theme-btn" aria-label="Farbschema wechseln" title="Dark / Light Mode">
@@ -189,7 +186,7 @@
       <header class="legal-header">
         <div>
           <h1 class="legal-title" id="policy-title">Datenschutzerklärung</h1>
-          <p class="legal-subtitle" id="policy-sub">iOS-App <strong>weekly</strong> • Informationen zur Datenverarbeitung</p>
+          <p class="legal-subtitle" id="policy-sub">Website und iOS-App <strong>weekly</strong></p>
         </div>
         <div class="lang-section-toggle">
           <button type="button" class="lang-tab active" data-lang="de" aria-pressed="true">Deutsch</button>
@@ -215,9 +212,24 @@
             E-Mail: <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>
           </p>
 
-          <h2>2. Lokale Speicherung auf deinem iPhone</h2>
-          <p>Alle deine angelegten Termine, Wochenpläne, Basis- und Sonderwochen, Notizen, Arbeitszeiten, Sportroutinen und Checklisten werden ausschließlich im geschützten Speicher deiner App auf deinem iPhone abgelegt.</p>
-          <p>Wir als Entwickler haben zu keinem Zeitpunkt Zugriff auf deine Termine, Notizen oder Kalendereinträge.</p>
+          <h2>Website: Hosting und Verbindungsdaten</h2>
+          <p>Diese Hinweise gelten für diese Website, Supportanfragen und die iOS-App weekly. Stand: 11. Oktober 2026.</p>
+          <p>Die Website wird über GitHub Pages von GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA, bereitgestellt. Beim Abruf verarbeitet GitHub technisch erforderliche Verbindungsdaten und protokolliert insbesondere deine IP-Adresse zu Sicherheitszwecken. Zweck ist die zuverlässige Bereitstellung und Absicherung dieser Website; Rechtsgrundlage für unseren Websitebetrieb ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren Informationsangebot).</p>
+          <p>Wir führen keine eigenen Besucherprotokolle oder Besucheranalysen. Für GitHubs Protokolle nennt die öffentliche Dokumentation keine feste Pages-spezifische Speicherfrist; GitHub richtet die Aufbewahrung nach Verarbeitungszweck und gesetzlichen Pflichten. Es kann zu einer Verarbeitung in den USA kommen. GitHub beschreibt hierfür das EU-US Data Privacy Framework und Standardvertragsklauseln. Einzelheiten: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages: Datenverarbeitung</a> und <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub-Datenschutzerklärung und Transfergarantien</a>.</p>
+
+          <h2>Website: Einstellungen und externe Links</h2>
+          <p>Die Website setzt selbst keine Cookies und nutzt keine Analyse- oder Werbedienste. Bilder, Schriften, Stylesheets und Skripte werden vom selben Website-Host geladen. Es gibt keine eingebetteten Videos, Karten oder externen Schriftendienste.</p>
+          <p>Nur wenn du Sprache oder Farbschema auswählst, speichern wir die Werte „de“/„en“ bzw. „dark“/„light“ unter „weekly-lang“ und „weekly-theme“ im sessionStorage deines Browsers. Damit bleibt die gewünschte Darstellung beim Wechsel zwischen den Seiten im selben Tab erhalten. Die Werte enthalten keine Nutzerkennung und werden von unserem Code nicht an einen Server gesendet. Die Speicherung endet mit der Tab-Sitzung; bei einer Sitzungswiederherstellung kann der Browser sie wiederherstellen. Du kannst die Werte jederzeit über die Website-Daten deines Browsers löschen. Die Speicherung für diese ausdrücklich gewählte Funktion erfolgt auf Grundlage von § 25 Abs. 2 Nr. 2 TDDDG; soweit personenbezogene Daten betroffen sind, auf Art. 6 Abs. 1 lit. f DSGVO (Bereitstellung der gewählten Darstellung).</p>
+          <p>Links zum App Store oder zu anderen Websites öffnen externe Angebote erst, wenn du sie aufrufst. Dann gelten deren Datenschutzhinweise. Ein E-Mail-Link öffnet dein E-Mail-Programm; über diese Website wird keine Nachricht automatisch versendet.</p>
+
+          <h2>Support: Kontakt per E-Mail</h2>
+          <p>Wenn du uns schreibst, verarbeiten wir deine E-Mail-Adresse, den Nachrichteninhalt und von dir mitgesendete Angaben oder Anhänge zur Bearbeitung deiner Anfrage. Bitte sende nur die dafür erforderlichen Daten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO für vertragsbezogenen Support oder vorvertragliche Anfragen, ansonsten Art. 6 Abs. 1 lit. f DSGVO (Beantwortung deiner Anfrage); gesetzliche Aufbewahrungspflichten beruhen auf Art. 6 Abs. 1 lit. c DSGVO.</p>
+          <p>Das Supportpostfach liegt bei Gmail, einem Dienst von Google (für den EWR: Google Ireland Limited, Irland). Google verarbeitet die Nachrichten zur Bereitstellung des E-Mail-Dienstes; eine Verarbeitung außerhalb der EU, insbesondere in den USA, ist möglich. Google erläutert die verwendeten Transfergarantien, einschließlich EU-US Data Privacy Framework und Standardvertragsklauseln, in seinen <a href="https://policies.google.com/privacy/frameworks?hl=de">Informationen zu Datenübermittlungen</a>. Weitere Angaben findest du in der <a href="https://policies.google.com/privacy?hl=de">Google-Datenschutzerklärung</a>.</p>
+          <p>Wir löschen Supportnachrichten, sobald die Anfrage abschließend bearbeitet ist und sie nicht mehr für Rückfragen, gesetzliche Aufbewahrungspflichten oder die Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich sind. Soweit eine Aufbewahrung notwendig ist, beschränken wir sie auf die erforderlichen Daten und die jeweilige gesetzliche Dauer.</p>
+
+          <h2>2. iOS-App: lokale Speicherung auf deinem iPhone</h2>
+          <p>Alle deine angelegten Termine, Wochenpläne, Basis- und Sonderwochen, Notizen, Arbeitszeiten, Sportroutinen und Checklisten werden im geschützten Speicher deiner App auf deinem iPhone abgelegt. Bei aktivierter iCloud-Synchronisation werden sie zusätzlich in deiner persönlichen iCloud gespeichert.</p>
+          <p>Die App übermittelt deine Termine, Notizen oder Kalendereinträge nicht an uns. Daten, die du uns selbst für eine Supportanfrage sendest, verarbeiten wir wie im Abschnitt „Support“ beschrieben.</p>
 
           <h2>3. Sichere Synchronisation über Apple iCloud</h2>
           <p>Wenn du die iCloud-Synchronisation auf deinem iPhone nutzt, werden deine Pläne und Arbeitszeiten automatisch und verschlüsselt über deine persönliche Apple iCloud auf deine anderen Apple-Geräte übertragen.</p>
@@ -227,7 +239,7 @@
           <p>weekly kann deine bestehenden iOS-Kalender im Wochenplan anzeigen. Der Zugriff erfolgt erst, nachdem du ihn im iOS-Dialog ausdrücklich bestätigt hast. weekly liest diese Daten lediglich zur Anzeige aus. Deine externen Kalender werden nicht verändert. Für Fahrtzeitberechnungen können Terminorte an Apple übermittelt werden, wie unten beschrieben.</p>
 
           <h2>5. Kein Tracking, keine Werbung</h2>
-          <p>weekly verzichtet aus Überzeugung auf jede Art von Datensammlung:</p>
+          <p>weekly nutzt keine Werbung und kein Tracking. Technisch erforderliche Verarbeitung bei Apple-Diensten ist unten beschrieben:</p>
           <ul>
             <li>Keine Tracking- oder Analyse-Tools (kein Google Analytics, Firebase, TelemetryDeck o. Ä.)</li>
             <li>Keine Werbe-Netzwerke oder Banner</li>
@@ -241,14 +253,17 @@
           <h2>6. Exporte (PDF &amp; CSV)</h2>
           <p>Exportierte Monats- und Stundennachweise als PDF oder CSV verbleiben auf deinem iPhone, bis du sie selbst aktiv über das iOS-Teilen-Menü versendest oder speicherst.</p>
 
-          <h2>7. Deine Rechte</h2>
-          <p>Da alle Daten auf deinem Endgerät bzw. in deiner privaten iCloud liegen, hast du die volle Kontrolle: Du kannst Termine jederzeit bearbeiten, exportieren oder Daten in der App löschen. Das Deinstallieren der App allein löscht keine bereits synchronisierten iCloud-Daten. Nutze zum Zurücksetzen die Datenlöschung in der App und lasse die Löschungen synchronisieren.</p>
+          <h2>7. Deine Rechte für Website, Support und App</h2>
+          <p>Unter den gesetzlichen Voraussetzungen hast du das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20). Gegen Verarbeitungen auf Grundlage berechtigter Interessen kannst du aus Gründen deiner besonderen Situation Widerspruch nach Art. 21 DSGVO einlegen. Eine erteilte datenschutzrechtliche Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+          <p>Du kannst dich bei einer Datenschutzaufsichtsbehörde beschweren (Art. 77 DSGVO), insbesondere am Ort deines gewöhnlichen Aufenthalts, deines Arbeitsplatzes oder des vermuteten Verstoßes. Für unseren Sitz zuständig ist der <a href="https://www.baden-wuerttemberg.datenschutz.de/">Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg</a>.</p>
+          <p>Du musst auf dieser Website keine Daten in ein Formular eingeben. Ohne technisch erforderliche Verbindungsdaten kann die Website nicht ausgeliefert werden; ohne deine Kontaktdaten können wir eine E-Mail-Anfrage nicht beantworten. Wir treffen keine automatisierten Entscheidungen einschließlich Profiling im Sinne von Art. 22 DSGVO.</p>
+          <p>Deine in der App angelegten Pläne liegen auf deinem Endgerät bzw. in deiner privaten iCloud: Du kannst Termine bearbeiten, exportieren oder Daten in der App löschen. Das Deinstallieren der App allein löscht keine bereits synchronisierten iCloud-Daten. Nutze zum Zurücksetzen die Datenlöschung in der App und lasse die Löschungen synchronisieren.</p>
           <p>Bei Fragen erreichst du mich jederzeit unter <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>.</p>
         </div>
       </div>
 
       <!-- ENGLISH VERSION -->
-      <div id="legal-en" style="display: none;">
+      <div id="legal-en" hidden>
         <div class="highlight-pill-box">
           <p>🔒 <strong>Clear &amp; Transparent:</strong> weekly stores your plans and work hours on your device. When iCloud is enabled, they sync through your personal iCloud. The app uses no analytics tools or ads and operates no servers of its own for your plans. The Apple services it also uses are described below.</p>
         </div>
@@ -265,9 +280,24 @@
             Email: <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>
           </p>
 
-          <h2>2. Local Storage on Your iPhone</h2>
-          <p>All your created appointments, weekly schedules, base templates, work hours, notes, and checklists are stored exclusively in your app's isolated sandbox storage on your device.</p>
-          <p>The developer has no access to your schedule, events, or entries at any time.</p>
+          <h2>Website: Hosting and Connection Data</h2>
+          <p>This notice covers this website, support requests, and the weekly iOS app. Last updated: 11 October 2026.</p>
+          <p>The website is hosted on GitHub Pages by GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, USA. GitHub processes connection data required to serve the website and logs visitors' IP addresses for security. Our purpose is to provide and protect this website; our legal basis is Article 6(1)(f) GDPR (legitimate interest in a reliable, secure information service).</p>
+          <p>We keep no visitor logs or visitor analytics of our own. GitHub's public documentation specifies no fixed Pages-specific retention period; retention depends on processing purposes and legal obligations. Processing may take place in the USA. GitHub describes the EU-US Data Privacy Framework and standard contractual clauses as transfer safeguards. Details: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection</a> and <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement and transfer safeguards</a>.</p>
+
+          <h2>Website: Preferences and External Links</h2>
+          <p>The website itself sets no cookies and uses no analytics or advertising services. Images, fonts, stylesheets, and scripts are loaded from the same website host. No external video, map, or font services are embedded.</p>
+          <p>Only when you choose a language or color scheme do we save “de”/“en” or “dark”/“light” as “weekly-lang” and “weekly-theme” in your browser's sessionStorage. This maintains your selected display when navigating between pages in the same tab. The values contain no user identifier and our code does not send them to a server. Storage ends with the tab session; browsers may restore it when restoring a session. You can clear it through your browser's website-data settings. Storage for this explicitly selected function relies on Section 25(2)(2) TDDDG; insofar as personal data is involved, Article 6(1)(f) GDPR applies (providing the selected display).</p>
+          <p>App Store and other external links open those services only when you follow them. Their privacy notices then apply. Email links open your email application; this website does not automatically send a message.</p>
+
+          <h2>Support: Email Contact</h2>
+          <p>If you email us, we process your email address, message, and any information or attachments you supply to handle your request. Please send only the data needed for that purpose. The legal basis is Article 6(1)(b) GDPR for contract-related support or pre-contractual inquiries, otherwise Article 6(1)(f) GDPR (responding to your inquiry); statutory retention obligations rely on Article 6(1)(c) GDPR.</p>
+          <p>The support mailbox uses Gmail, a Google service (for the EEA: Google Ireland Limited, Ireland). Google processes messages to provide email services; processing outside the EU, particularly in the USA, is possible. Google explains its transfer safeguards, including the EU-US Data Privacy Framework and standard contractual clauses, in its <a href="https://policies.google.com/privacy/frameworks?hl=en">data transfer information</a>. See also <a href="https://policies.google.com/privacy?hl=en">Google's privacy policy</a>.</p>
+          <p>We delete support messages once the inquiry is resolved and they are no longer needed for follow-up, statutory retention, or establishing, exercising, or defending legal claims. Where retention is required, we limit it to the necessary data and applicable statutory period.</p>
+
+          <h2>2. iOS App: Local Storage on Your iPhone</h2>
+          <p>All your created appointments, weekly schedules, base templates, work hours, notes, and checklists are stored in your app's isolated sandbox storage on your device. When iCloud sync is enabled, they are also stored in your personal iCloud.</p>
+          <p>The app does not send your schedule, events, or entries to us. If you send us data yourself for support, we process it as described in the “Support” section.</p>
 
           <h2>3. Secure Sync via Apple iCloud</h2>
           <p>If you have iCloud enabled on your iPhone, your schedules and tracked hours sync automatically over an encrypted connection through your personal Apple iCloud to your other Apple devices.</p>
@@ -291,8 +321,11 @@
           <h2>6. PDF &amp; CSV Exports</h2>
           <p>Exported monthly hour reports in PDF or CSV format are created locally on your device and only leave your iPhone if you choose to share or send them manually.</p>
 
-          <h2>7. Your Rights</h2>
-          <p>You have full control over your data at all times. You can edit, export, or delete your data directly inside the app, or delete the app entirely. Uninstalling the app alone does not erase previously synced iCloud data. To reset your data, use the in-app data deletion and allow the deletions to sync.</p>
+          <h2>7. Your Rights for the Website, Support, and App</h2>
+          <p>Subject to the statutory conditions, you have rights of access (Article 15 GDPR), rectification (Article 16), erasure (Article 17), restriction (Article 18), and data portability (Article 20). You may object under Article 21 to processing based on legitimate interests on grounds relating to your particular situation. You may withdraw any data-protection consent at any time for the future.</p>
+          <p>You may complain to a data protection supervisory authority (Article 77 GDPR), particularly in the country of your habitual residence, workplace, or the suspected infringement. The authority responsible for our location is the <a href="https://www.baden-wuerttemberg.datenschutz.de/">State Commissioner for Data Protection and Freedom of Information Baden-Württemberg</a>.</p>
+          <p>This website requires no form submissions. Without necessary connection data, it cannot be served; without your contact information, we cannot answer an email inquiry. We make no automated decisions, including profiling, within the meaning of Article 22 GDPR.</p>
+          <p>Your plans created in the app are stored on your device or in your personal iCloud. You can edit, export, or delete them directly inside the app. Uninstalling the app alone does not erase previously synced iCloud data. To reset your data, use the in-app data deletion and allow the deletions to sync.</p>
           <p>For any privacy inquiries, reach out to <a href="mailto:weekly.workandworkout@gmail.com" style="color: var(--color-accent);">weekly.workandworkout@gmail.com</a>.</p>
         </div>
       </div>
@@ -308,7 +341,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <img src="assets/img/app-icon.png" alt="weekly Icon" width="30" height="30">
+          <img src="assets/img/app-icon.png" alt="" width="30" height="30">
           <span>weekly für iOS</span>
         </div>
 
@@ -344,26 +377,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=10"></script>
-  <script>
-    window.showLegalLang = function(lang) {
-      document.getElementById('legal-de').style.display = lang === 'de' ? 'block' : 'none';
-      document.getElementById('legal-en').style.display = lang === 'en' ? 'block' : 'none';
-      
-      document.querySelectorAll('.lang-tab').forEach((tab, index) => {
-        tab.classList.toggle('active', (lang === 'de' && index === 0) || (lang === 'en' && index === 1));
-      });
-
-      document.getElementById('policy-title').textContent = lang === 'de' ? 'Datenschutzerklärung' : 'Privacy Policy';
-      document.getElementById('policy-sub').textContent = lang === 'de' ? 'iOS-App weekly • Informationen zur Datenverarbeitung' : 'weekly iOS App • Information about data processing';
-      const backLink = document.getElementById('nav-back-link');
-      if (backLink) backLink.textContent = lang === 'de' ? '← Startseite' : '← Home';
-    };
-
-    const saved = weeklyStorage.get('weekly-lang');
-    if (saved === 'de' || saved === 'en') {
-      showLegalLang(saved);
-    }
-  </script>
+  <script src="assets/js/main.js?v=11"></script>
 </body>
 </html>

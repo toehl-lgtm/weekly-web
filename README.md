@@ -9,3 +9,7 @@ Offizielle Website und rechtliche Seiten für die iOS-App **weekly: Work & Worko
 - 🔒 **Datenschutz / Privacy Policy:** [toehl-lgtm.github.io/weekly-web/privacy.html](https://toehl-lgtm.github.io/weekly-web/privacy.html)
 - ⚖️ **Impressum / Legal:** [toehl-lgtm.github.io/weekly-web/imprint.html](https://toehl-lgtm.github.io/weekly-web/imprint.html)
 - ✉️ **Support & Kontakt:** [weekly.workandworkout@gmail.com](mailto:weekly.workandworkout@gmail.com)
+
+## Website-Prüfung
+
+Die dokumentierten Korrekturen, technischen Prüfungen und noch offenen rechtlichen Betreiberfragen stehen im [Prüfbericht vom 11. Oktober 2026](docs/website-review-2026-10-11.md). Der Bericht ist keine rechtliche Freigabe.

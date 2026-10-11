@@ -3,38 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>weekly – Arbeit und Training in einer Woche</title>
   <meta name="description" content="weekly bringt Arbeit, Alltag und Training in einen klaren Wochenüberblick. Plane deinen Tag, erfasse Arbeitszeit und behalte deine Routinen im Blick.">
   <link rel="icon" type="image/png" href="assets/img/app-icon.png">
   <link rel="apple-touch-icon" href="assets/img/app-icon.png">
   
-  <!-- Apple Smart App Banner -->
-  <meta name="apple-itunes-app" content="app-id=6808738681">
 
   <!-- Open Graph & Social Cards -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="weekly – Arbeit und Training in einer Woche">
   <meta property="og:description" content="Arbeit, Alltag und Training in einem klaren Wochenüberblick. Jetzt im App Store für iPhone.">
-  <meta property="og:image" content="assets/img/app-icon.png">
+  <meta property="og:image" content="https://toehl-lgtm.github.io/weekly-web/assets/img/app-icon.png">
   <meta property="og:url" content="https://toehl-lgtm.github.io/weekly-web/">
   <meta property="og:site_name" content="weekly">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="weekly – Arbeit und Training in einer Woche">
   <meta name="twitter:description" content="Arbeit, Alltag und Training in einem klaren Wochenüberblick. Jetzt im App Store für iPhone.">
-  <meta name="twitter:image" content="assets/img/app-icon.png">
+  <meta name="twitter:image" content="https://toehl-lgtm.github.io/weekly-web/assets/img/app-icon.png">
   <meta name="theme-color" content="#111420" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#F7F8F6" media="(prefers-color-scheme: light)">
 
-  <link rel="stylesheet" href="assets/css/style.css?v=15">
+  <link rel="stylesheet" href="assets/css/style.css?v=16">
   <link rel="stylesheet" href="assets/css/animations.css?v=8">
-  <!-- Immediate theme check before render -->
-  <script>
-    (function() {
-      let saved = null;
-      try { saved = localStorage.getItem('weekly-theme'); } catch { /* Storage is optional. */ }
-      document.documentElement.setAttribute('data-theme', saved || 'dark');
-    })();
-  </script>
+  <script src="assets/js/theme.js?v=1"></script>
 </head>
 <body>
 
@@ -67,8 +60,8 @@
         </div>
         <!-- Language Switcher (DE / EN) -->
         <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="de">DE</button>
-          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="de" aria-pressed="true">DE</button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
 
         <!-- Dark / Light Theme Toggle -->
@@ -369,6 +362,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=10"></script>
+  <script src="assets/js/main.js?v=11"></script>
 </body>
 </html>
