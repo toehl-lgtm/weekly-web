@@ -6,7 +6,7 @@ Tim Oehl hat bestätigt, als Einzelunternehmer unter OEHL studios tätig zu sein
 
 Das Website-Repository gehört dem persönlichen GitHub-Konto `toehl-lgtm`, nicht einer Organization. Die verfügbare API-Auskunft nennt keinen Tarif. Sie beweist weder einen kostenlosen Tarif noch das Vorliegen oder Fehlen eines gesondert vereinbarten Vertrags. Die Website ist eine statische App-Landingpage mit App-Store-Links und Rechtstexten. Ein Vertragsschluss oder Zahlungen finden auf ihr nicht statt.
 
-Das Supportpostfach hat die Adresse `weekly.workandworkout@gmail.com`. Eine solche Adresse allein beweist nicht, ob ein normales Consumer-Konto oder ein Workspace-Individual-Abonnement dahintersteht. Die Kontovariante wurde beim Betreiber angefragt. Es wurde nicht in das Postfach eingesehen.
+Der Betreiber hat bestätigt, dass `weekly.workandworkout@gmail.com` ein gewöhnliches kostenloses Gmail-Konto ist. Es ist somit Consumer-Gmail; ein Workspace- oder Workspace-Individual-Abonnement wird nicht als Vertragsgrundlage angenommen. Es wurde nicht in das Postfach eingesehen.
 
 ## Gmail: die öffentliche Vertragslage ist geklärt
 
@@ -16,7 +16,7 @@ Für **Google Workspace** existiert der [Cloud Data Processing Addendum (CDPA)](
 
 Für **Google Workspace Individual** ist die Situation gesondert: Die [Zusatzbedingungen, Abschnitte 2 und 4](https://workspace.google.com/terms/google-workspace-individual-terms/index.html), nennen Gmail als erfasstes Produkt und beziehen bei geschäftlicher Nutzung die [Google Data Processing Addendum for Products Where Google is a Data Processor](https://business.safety.google/processorterms/) ein. Die [offizielle Hilfeseite](https://support.google.com/google-workspace-individual/answer/10757067?hl=en) und die [Liste erfasster Dienste](https://business.safety.google/services/) bestätigen diesen Ansatz. Für diesen Weg müssten das aktive Abonnement des konkreten Kontos, die geschäftliche Nutzung und die wirksam geltenden Bedingungen dokumentiert werden. Ein Individual-Abo wird hier weder vorausgesetzt noch abgeschlossen.
 
-**Konsequenz:** Wenn es gewöhnliches Gmail ist, ist der Weg zu einer nachweisbaren AVV-Abdeckung ein geeignetes geschäftliches Mailprodukt mit passendem Vertrag. Bei vorhandenem Workspace/Workspace Individual zunächst die konkrete Vertragsabdeckung belegen. Erst danach können Anbieterrolle, Vertragspartei und Datenschutzhinweise abschließend angepasst werden. Es wurde kein kostenpflichtiges Produkt gebucht und kein Vertragsabschluss vorgenommen.
+**Konsequenz:** Für das bestätigte Consumer-Gmail ist der Weg zu einer nachweisbaren AVV-Abdeckung ein geeignetes geschäftliches Mailprodukt mit passendem Vertrag. Bei einem künftigen Workspace/Workspace-Individual-Abonnement zunächst die konkrete Vertragsabdeckung belegen. Erst danach können Anbieterrolle, Vertragspartei und Datenschutzhinweise abschließend angepasst werden. Es wurde kein kostenpflichtiges Produkt gebucht und kein Vertragsabschluss vorgenommen.
 
 ## GitHub Pages: Dokumente gefunden, konkrete Abdeckung offen
 
@@ -32,8 +32,8 @@ Zusätzlich beschränken die **Pages-Zusatzbedingungen** bestimmte kommerzielle 
 
 ## Was noch tatsächlich zu entscheiden ist
 
-1. Google-Kontovariante bestätigen; bei einem geschäftlichen Produkt den Vertragseinbezug belegen, sonst ein geeignetes Mailprodukt auswählen.
-2. Die vorbereitete GitHub-Supportanfrage senden und Antwort aufbewahren oder direkt geeignetes anderes Hosting wählen.
+1. Die Google-Kontovariante ist bestätigt: Consumer-Gmail ohne verfügbaren AVV. Für eine nachweisbare Auftragsverarbeitung ein geeignetes geschäftliches Mailprodukt auswählen und dessen Vertragseinbezug belegen. Eine anderweitige rechtliche Absicherung des bestehenden Consumer-Setups wurde nicht festgestellt.
+2. Der Betreiber möchte die vorbereitete GitHub-Supportanfrage nur als Entwurf behalten; sie wird nicht gesendet. Die offenen Fragen müssen daher später selbst mit GitHub geklärt oder durch geeignetes anderes Hosting gelöst werden.
 3. Nach geklärtem Anbieter-Setup die Datenschutzerklärung mit den konkreten Vertragsparteien, Rollen und Löschfristen abgleichen.
 4. Umsatzsteuer-ID/gegebenenfalls Wirtschafts-ID und Telefonnummer ergänzen, sobald vorhanden.
 
