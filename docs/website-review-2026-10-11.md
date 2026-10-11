@@ -14,6 +14,10 @@ Geprüft wurden die drei HTML-Seiten, beide Stylesheets, das gemeinsame JavaScri
 - Die Seiten enthalten eine Content Security Policy: Skripte nur vom eigenen Host, keine Netzwerk-API-Verbindungen, keine Plugins oder Formularziele. Die verbleibenden Inline-Styles sind ausdrücklich erlaubt; Inline-JavaScript wurde in lokale Skripte überführt. `no-referrer` begrenzt die Weitergabe der Herkunftsseite. Eine Meta-CSP ersetzt nicht alle HTTP-Sicherheitsheader, insbesondere keine `frame-ancestors`-Headerregel.
 - Sprachwechsel aktualisieren jetzt auch Dokumenttitel, Fußzeile und die Sichtbarkeit der Rechtstexte konsistent. Ungültige gespeicherte Themes werden ignoriert. Gesperrter Browserspeicher verhindert die Bedienung nicht. FAQ-Antworten sind ohne JavaScript lesbar. Lange Kontaktangaben dürfen umbrechen. Social-Preview-Bilder verwenden absolute URLs.
 
+## Nachtrag zur Betreiber- und Vertragsklärung
+
+Der Betreiber hat seine Tätigkeit als Einzelunternehmer unter OEHL studios bestätigt; Impressum und Datenschutzerklärung wurden entsprechend präzisiert. Umsatzsteuer-ID und Telefonnummer liegen noch nicht vor. Die vertiefte Vertragsrecherche einschließlich der Unterschiede zwischen Consumer-Gmail, Workspace und Workspace Individual sowie der offenen GitHub-Pages-Abdeckung steht in der [Anbieter-Vertragsprüfung](provider-contracts-2026-10-11.md). Die folgenden Punkte beschreiben den ursprünglichen Prüfstand; der Nachtrag konkretisiert ihn.
+
 ## Offene rechtliche Punkte vor einer Vollständigkeitsbestätigung
 
 1. **Betreiberangaben:** Die tatsächliche Rechtsform, Niederlassungs-/Zustellanschrift, ein etwaiger Registereintrag und zugeteilte Umsatzsteuer- oder Wirtschafts-Identifikationsnummern sind nicht aus dem Website-Code belegbar. Solche Nummern müssen, soweit vorhanden und gesetzlich erforderlich, ergänzt werden. Es wurden keine Nummern oder Rechtsformen erfunden.
