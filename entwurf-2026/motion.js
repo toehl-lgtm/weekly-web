@@ -7,6 +7,8 @@
   const front = document.querySelector('.ribbon-front');
   const cue = document.querySelector('.scroll-cue');
   const drifting = [...document.querySelectorAll('[data-drift]')];
+  const chapters = [...document.querySelectorAll('.story-chapter')];
+  const chapterParts = chapters.flatMap(chapter => [...chapter.querySelectorAll('.chapter-copy, .chapter-screen, .stage-band')]);
   let frame = 0;
   let observer;
   const clamp = value => Math.min(1, Math.max(0, value));
@@ -24,6 +26,27 @@
     message.style.pointerEvents = reveal > .8 ? 'auto' : 'none';
     message.inert = reveal <= .8;
     cue.style.opacity = String(1 - clamp(progress * 5));
+    chapters.forEach(chapter => {
+      const rect = chapter.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+      const parts = chapter.querySelectorAll('.chapter-copy, .chapter-screen, .stage-band');
+      if (window.innerHeight <= 560) { parts.forEach(part => part.removeAttribute('style')); return; }
+      const position = clamp((window.innerHeight - rect.top) / rect.height);
+      const enter = clamp((position - .02) / .25);
+      const leave = clamp((position - .78) / .2);
+      const visibility = Math.min(enter, 1 - leave);
+      const copy = chapter.querySelector('.chapter-copy');
+      const screen = chapter.querySelector('.chapter-screen');
+      const bands = chapter.querySelectorAll('.stage-band');
+      copy.style.opacity = String(visibility);
+      copy.style.transform = `translate3d(0, ${(1 - enter) * 55 - leave * 65}px, 0)`;
+      screen.style.opacity = String(visibility);
+      screen.style.transform = `translate3d(0, ${(1 - enter) * 105 - leave * 100}px, 0)`;
+      bands.forEach((band, i) => {
+        const direction = i ? 1 : -1;
+        band.style.transform = `translate3d(${direction * (position - .5) * 9}%, ${direction * (position - .5) * 7}%, 0) rotate(${direction * (position - .5) * 9}deg)`;
+      });
+    });
     drifting.forEach(element => {
       const section = element.closest('.band-section');
       const rect = section.getBoundingClientRect();
@@ -40,7 +63,7 @@
     window.removeEventListener('resize', schedule);
     if (frame) { cancelAnimationFrame(frame); frame = 0; }
     if (observer) observer.disconnect();
-    [...drifting, word, message, back, front, cue].forEach(element => element.removeAttribute('style'));
+    [...drifting, ...chapterParts, word, message, back, front, cue].forEach(element => element.removeAttribute('style'));
     message.inert = false;
     document.querySelectorAll('.reveal').forEach(element => element.classList.remove('is-visible'));
     if (reduced.matches) return;
