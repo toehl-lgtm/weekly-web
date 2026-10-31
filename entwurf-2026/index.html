@@ -1,59 +1,42 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Ein Gestaltungsentwurf für weekly: Arbeit, Alltag und Training in einer Woche.">
-  <title>weekly – Deine Woche. Dein Rhythmus.</title>
-  <link rel="icon" href="../assets/img/app-icon.png">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#071748">
+<meta name="description" content="weekly bringt Arbeit, Alltag und Training in eine gemeinsame Woche.">
+<title>weekly – Deine Woche. Dein Rhythmus.</title>
+<link rel="icon" href="../assets/img/app-icon.png"><link rel="stylesheet" href="style.css"><script src="motion.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
-<header class="topbar wrap">
-  <a class="brand" href="#start" aria-label="weekly Startseite"><img src="../assets/img/app-icon.png" alt="" width="42" height="42"><span>weekly</span></a>
-  <nav aria-label="Hauptnavigation"><a href="#woche">Die App</a><a href="#training">Training</a><a href="#fragen">Fragen</a></nav>
-  <a class="nav-button" href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681">Im App Store <span aria-hidden="true">↗</span></a>
-</header>
+<header class="nav"><a class="nav-brand" href="#start" aria-label="weekly Startseite">weekly</a><nav aria-label="Hauptnavigation"><a href="#woche">Die App</a><a href="#training">Training</a><a href="#fragen">Fragen</a></nav><a class="nav-store" href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681">App Store <span aria-hidden="true">↗</span></a></header>
 <main id="inhalt">
-  <section id="start" class="hero wrap">
-    <div class="hero-copy">
-      <p class="eyebrow"><span class="status-dot"></span> ARBEIT &nbsp;·&nbsp; ALLTAG &nbsp;·&nbsp; TRAINING</p>
-      <h1>Deine Woche.<br><span>Dein Rhythmus.</span></h1>
-      <p class="intro">Für alles, was deinen Alltag ausmacht. Plane Termine, behalte deine Arbeitszeit im Blick und finde Platz für dein Training.</p>
-      <div class="actions"><a class="button button-light" href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681">weekly entdecken <span aria-hidden="true">↗</span></a><a class="text-link" href="#woche">Mehr über die App <span aria-hidden="true">↓</span></a></div>
-      <p class="hero-note">Für iPhone · Entwickelt für deinen Alltag</p>
-    </div>
-    <div class="ribbon-hero" aria-label="weekly – Dein Rhythmus für die Woche">
-      <svg class="ribbon-art" viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <defs>
-          <linearGradient id="ribbon-blue" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#428bff"/><stop offset=".45" stop-color="#1760f6"/><stop offset="1" stop-color="#0636bc"/></linearGradient>
-          <linearGradient id="ribbon-deep" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1c69ff"/><stop offset="1" stop-color="#092373"/></linearGradient>
-          <linearGradient id="ribbon-coral" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffae87"/><stop offset="1" stop-color="#f36c50"/></linearGradient>
-          <linearGradient id="ribbon-mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b3f6e3"/><stop offset="1" stop-color="#5ccfbd"/></linearGradient>
-        </defs>
-        <g class="ribbon-layer ribbon-layer-back"><path d="M-150 120 C65 -80 216 83 380 264 S588 478 735 258 S974 37 1150 240 S1415 400 1580 178" fill="none" stroke="url(#ribbon-deep)" stroke-width="112"/><path d="M-120 26 C92 -94 234 58 386 204 S568 369 710 168 S937 -2 1089 183 S1320 274 1555 66" fill="none" stroke="url(#ribbon-coral)" stroke-width="34" opacity=".94"/></g>
-        <g class="ribbon-layer ribbon-layer-front"><path d="M-180 276 C40 51 232 167 380 333 S565 491 710 266 S930 109 1088 313 S1320 406 1580 194" fill="none" stroke="url(#ribbon-blue)" stroke-width="110"/><path d="M-145 400 C80 210 194 259 354 399 S566 536 708 351 S917 189 1074 379 S1330 463 1580 318" fill="none" stroke="url(#ribbon-mint)" stroke-width="29" opacity=".95"/></g>
-      </svg>
-      <span class="ribbon-wordmark" aria-hidden="true">weekly</span>
-      <span class="ribbon-footnote" aria-hidden="true">DEIN RHYTHMUS. DEINE WOCHE.</span>
+  <section class="intro-scene" id="start" aria-labelledby="intro-title">
+    <div class="intro-sticky">
+      <div class="ambient" aria-hidden="true"></div>
+      <div class="ribbon-field" aria-hidden="true">
+        <svg class="ribbon-layer ribbon-back" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="deep" x1=".1" y1="0" x2=".9" y2="1"><stop stop-color="#589aff"/><stop offset=".3" stop-color="#1a62f4"/><stop offset=".57" stop-color="#083bac"/><stop offset="1" stop-color="#061e69"/></linearGradient><linearGradient id="coral" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ffc1a3"/><stop offset=".55" stop-color="#ff8266"/><stop offset="1" stop-color="#be3e44"/></linearGradient></defs>
+          <path d="M-330 180 C-70 -50 165 45 320 281 C450 481 514 670 633 633 C743 600 735 346 846 251 C986 130 1083 309 1178 415 C1300 550 1480 511 1810 200 L1830 331 C1518 650 1299 691 1150 538 C1013 397 959 282 872 365 C805 430 802 710 643 762 C464 823 378 551 247 365 C104 159 -77 96 -320 324 Z" fill="url(#deep)"/>
+          <path d="M-270 64 C-27 -108 161 -30 320 154 C484 343 514 477 610 472 C698 468 721 301 813 204 C971 37 1098 179 1197 286 C1324 424 1471 409 1770 87 L1802 142 C1511 470 1323 496 1164 353 C1042 244 974 124 855 245 C758 344 737 523 616 538 C478 556 430 377 282 205 C130 28 -38 -37 -270 137 Z" fill="url(#coral)" opacity=".93"/>
+        </svg>
+        <svg class="ribbon-layer ribbon-front" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="blue" x1="0" y1="0" x2=".95" y2="1"><stop stop-color="#7ab2ff"/><stop offset=".24" stop-color="#2477ff"/><stop offset=".54" stop-color="#0a48da"/><stop offset=".78" stop-color="#062e9f"/><stop offset="1" stop-color="#0c1b69"/></linearGradient><linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c9ffed"/><stop offset="1" stop-color="#4ec6c1"/></linearGradient></defs>
+          <path d="M-320 413 C-60 173 147 234 300 402 C450 567 499 790 615 787 C733 784 734 517 856 414 C1003 288 1070 436 1198 561 C1350 710 1503 622 1820 345 L1830 506 C1520 789 1334 846 1165 693 C1040 581 998 461 879 559 C791 632 794 872 633 925 C462 982 390 690 245 534 C98 376 -82 366 -320 565 Z" fill="url(#blue)"/>
+          <path d="M-294 600 C-71 404 123 408 278 558 C427 701 482 893 598 901 C722 909 734 709 845 591 C994 433 1084 591 1215 707 C1374 849 1516 784 1800 517 L1817 558 C1545 843 1363 914 1188 776 C1041 660 985 535 876 652 C763 775 761 966 608 970 C437 975 396 781 249 634 C93 478 -68 474 -294 670 Z" fill="url(#mint)"/>
+        </svg>
+      </div>
+      <h1 id="intro-title" class="hero-word">weekly</h1>
+      <div class="intro-message"><p class="kicker">ARBEIT · ALLTAG · TRAINING</p><h2>Deine Woche.<br><span>Dein Rhythmus.</span></h2><p>Für alles, was deinen Alltag ausmacht.</p><a href="#woche" class="intro-link">weekly entdecken <span aria-hidden="true">↓</span></a></div>
+      <div class="scroll-cue" aria-hidden="true"><span>ENTDECKE DEINE WOCHE</span><i></i></div>
     </div>
   </section>
-  <div class="ticker" aria-hidden="true"><div>DEINE WOCHE <span>✳</span> DEIN ALLTAG <span>✳</span> DEIN TRAINING <span>✳</span> ALLES AN EINEM ORT</div></div>
-  <section id="woche" class="week section wrap">
-    <div class="section-head"><p class="eyebrow blue">DIE WOCHENANSICHT</p><h2>Das große Ganze.<br><span>Auf einen Blick.</span></h2><p>Frühschicht, Training oder Zeit für dich: Deine Woche zeigt dir, was ansteht – und wo noch Platz ist.</p></div>
-    <div class="week-story">
-      <div class="week-story-copy"><span class="story-index">01 / DEIN ÜBERBLICK</span><h3>Eine Woche,<br>die mitdenkt.</h3><p>Schichten, private Termine und Training kommen in einer Ansicht zusammen. So siehst du, wie deine Woche wirklich aussieht.</p><div class="mini-schedule" aria-hidden="true"><span class="mini-track"></span><span class="schedule-pill work">ARBEIT</span><span class="schedule-pill personal">ALLTAG</span><span class="schedule-pill sport">TRAINING</span></div><p class="story-note">Eine Ansicht. Dein ganz eigener Rhythmus.</p></div>
-      <div class="week-story-visual"><span class="visual-arc arc-a"></span><span class="visual-arc arc-b"></span><div class="phone"><img src="../assets/img/weekly-week-de.jpg" alt="Wochenansicht der App mit beispielhaften Terminen für Arbeit und Training" loading="lazy" width="1320" height="2868"></div><span class="visual-label">DEINE WOCHE<br><strong>im Blick.</strong></span></div>
-    </div>
-  </section>
-  <section class="flow-section" aria-label="Die Funktionen von weekly"><div class="wrap flow-layout"><div class="flow-intro"><p class="eyebrow blue">PLATZ FÜR DEINEN ALLTAG</p><h2>Alles hängt<br><span>zusammen.</span></h2><p>Vom ersten Termin bis zur letzten Trainingseinheit: weekly bringt deine Planung an einen Ort.</p></div><div class="flow-list"><article class="flow-item"><span class="flow-number">01</span><div><h3>Dein Tag, sortiert.</h3><p>Termine und das, was als Nächstes ansteht, in einer übersichtlichen Tagesansicht.</p></div></article><article class="flow-item"><span class="flow-number mint">02</span><div><h3>Arbeitszeit im Blick.</h3><p>Behalte deine Stunden im Auge und exportiere Arbeitszeiten als PDF oder CSV.</p></div></article><article class="flow-item"><span class="flow-number coral">03</span><div><h3>Wiederkehrendes planen.</h3><p>Erstelle Vorlagen für deine Woche und passe sie an deinen Alltag an.</p></div></article></div></div></section>
-  <section id="training" class="training section"><div class="wrap training-grid"><div class="training-visual"><div class="training-blob"></div><div class="phone workout-phone"><img src="../assets/img/weekly-workout-de.jpg" alt="Workout-Bereich der App mit Routinen und Trainingsplänen" loading="lazy" width="1320" height="2868"></div></div><div class="training-copy"><p class="eyebrow orange">DEIN TRAINING</p><h2>Platz für<br><span>Bewegung.</span></h2><p>Arbeit und Alltag sind schon im Kalender. Dein Training gehört genauso dazu. Organisiere deine Routinen und halte deine Einheiten fest.</p><a class="text-link dark-link" href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681">weekly im App Store <span aria-hidden="true">↗</span></a></div></div></section>
-  <section class="privacy wrap section"><div><p class="eyebrow blue">DEINE DATEN</p><h2>Deine Woche.<br>Deine Daten.</h2></div><div><p>Deine Pläne liegen auf deinem Gerät und bei aktivierter Synchronisation in deiner persönlichen iCloud. Erfahre, welche Apple-Dienste weekly nutzt.</p><a class="text-link dark-link" href="../privacy.html">Zum Datenschutz <span aria-hidden="true">↗</span></a></div></section>
-  <section id="fragen" class="faq wrap section"><div class="faq-heading"><p class="eyebrow blue">GUT ZU WISSEN</p><h2>Noch Fragen?</h2><p>Wir helfen dir gerne weiter.</p></div><div class="faq-list"><details><summary>Wie funktioniert die Synchronisation?</summary><p>Wenn du iCloud für weekly aktiviert hast, können deine Daten über dein persönliches iCloud-Konto auf deinen Geräten synchronisiert werden.</p></details><details><summary>Werden meine Apple-Kalender verändert?</summary><p>weekly zeigt ausgewählte Kalendertermine als lesende Einbindung an. Deine Quellkalender bleiben unverändert.</p></details><details><summary>Wie erreiche ich den Support?</summary><p>Schreibe an <a href="mailto:weekly.workandworkout@gmail.com">weekly.workandworkout@gmail.com</a>.</p></details></div></section>
-  <section class="endcap"><div class="wrap"><p class="eyebrow">BEREIT FÜR DEINE WOCHE?</p><h2>Mach Platz für<br>deinen Rhythmus.</h2><a class="button button-light" href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681">weekly entdecken <span aria-hidden="true">↗</span></a></div></section>
+  <section class="manifesto section-pad" id="woche"><div class="wrap"><p class="eyebrow reveal">WENIGER HIN UND HER. MEHR ÜBERBLICK.</p><h2 class="display reveal">Alles, was deine<br>Woche <em>ausmacht.</em></h2><div class="manifesto-bottom reveal"><span class="small-line"></span><p>Termine, Arbeit und Training gehören zusammen. weekly bringt sie in eine Ansicht, die sich deinem Alltag anpasst.</p></div></div><div class="ribbon-divider" aria-hidden="true"><svg viewBox="0 0 1440 180" preserveAspectRatio="none"><path d="M-70 25 C260 220 405 -60 730 85 S1210 250 1510 30" fill="none" stroke="#1f61ed" stroke-width="45"/><path d="M-70 55 C260 250 405 -30 730 115 S1210 280 1510 60" fill="none" stroke="#8ce3d2" stroke-width="12"/></svg></div></section>
+  <section class="chapter chapter-week" aria-labelledby="week-title"><div class="wrap chapter-heading reveal"><p class="eyebrow">01 / DEINE WOCHE</p><h2 id="week-title">Das große Ganze.<br><span>Auf einen Blick.</span></h2><p>Frühschicht, Training oder Zeit für dich: Sieh, was ansteht und wo noch Platz ist.</p></div><div class="week-canvas reveal"><div class="week-shot"><img src="../assets/img/weekly-week-de.jpg" width="1320" height="2868" alt="Echte weekly-Wochenansicht mit beispielhaften Terminen" loading="lazy"></div><div class="week-side"><span>DEIN WOCHENPLAN</span><p>Eine Ansicht.<br>Dein Leben.</p><div class="week-colors" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div></div><p class="image-note wrap">Echte App-Aufnahme mit Beispieldaten.</p></section>
+  <section class="chapter day-chapter section-pad"><div class="wrap day-grid"><div class="day-art reveal"><div class="day-screen"><img src="../assets/img/weekly-today-de.jpg" width="1320" height="2868" alt="Tagesansicht mit Terminen und Arbeitszeit" loading="lazy"></div><div class="day-circle"></div></div><div class="day-copy reveal"><p class="eyebrow">02 / DEIN TAG</p><h2>Heute zählt.<br><span>Der Rest wartet.</span></h2><p>Sieh, was als Nächstes ansteht. Behalte deine Arbeitsstunden im Blick und exportiere sie bei Bedarf als PDF oder CSV.</p><a class="under-link" href="#fragen">Mehr über weekly <span aria-hidden="true">↘</span></a></div></div></section>
+  <section class="chapter workout-chapter" id="training"><div class="wrap workout-grid"><div class="workout-copy reveal"><p class="eyebrow">03 / DEIN TRAINING</p><h2>Mach Platz<br>für <em>Bewegung.</em></h2><p>Dein Training gehört genauso in deine Woche. Plane Routinen, starte Einheiten und halte deine Übungen fest.</p></div><div class="workout-art reveal"><div class="workout-orbit orbit-one"></div><div class="workout-orbit orbit-two"></div><div class="workout-shot"><img src="../assets/img/weekly-workout-de.jpg" width="1320" height="2868" alt="Workout-Bereich mit beispielhaften Routinen und Trainingsplänen" loading="lazy"></div><span class="workout-caption">DEIN TRAINING.<br><strong>DEIN TEMPO.</strong></span></div></div></section>
+  <section class="privacy section-pad"><div class="wrap privacy-grid reveal"><p class="eyebrow">DEINE DATEN</p><h2>Deine Woche.<br>Deine Daten.</h2><div><p>Deine Pläne liegen auf deinem Gerät und bei aktivierter Synchronisation in deiner persönlichen iCloud. Erfahre, welche Apple-Dienste weekly nutzt.</p><a class="under-link" href="../privacy.html">Zum Datenschutz <span aria-hidden="true">↗</span></a></div></div></section>
+  <section class="faq section-pad" id="fragen"><div class="wrap faq-grid"><div><p class="eyebrow">GUT ZU WISSEN</p><h2>Noch Fragen?</h2></div><div class="faq-list"><details><summary>Wie funktioniert die Synchronisation?</summary><p>Wenn du iCloud für weekly aktiviert hast, können deine Daten über dein persönliches iCloud-Konto auf deinen Geräten synchronisiert werden.</p></details><details><summary>Werden meine Apple-Kalender verändert?</summary><p>weekly zeigt ausgewählte Kalendertermine lesend an. Deine Quellkalender bleiben unverändert.</p></details><details><summary>Wie erreiche ich den Support?</summary><p>Schreibe an <a href="mailto:weekly.workandworkout@gmail.com">weekly.workandworkout@gmail.com</a>.</p></details></div></div></section>
+  <section class="outro section-pad"><div class="outro-ribbon" aria-hidden="true"></div><div class="wrap outro-content"><p class="eyebrow">FÜR ALLES, WAS VOR DIR LIEGT</p><h2>Deine Woche.<br>Dein Rhythmus.</h2><a class="button" href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681">weekly im App Store <span aria-hidden="true">↗</span></a></div></section>
 </main>
-<footer class="wrap footer"><a class="brand" href="#start"><img src="../assets/img/app-icon.png" alt="" width="38" height="38"><span>weekly</span></a><p>Arbeit. Alltag. Training.</p><div><a href="../privacy.html">Datenschutz</a><a href="../imprint.html">Impressum</a><a href="mailto:weekly.workandworkout@gmail.com">Kontakt</a></div><small>© 2026 Tim Oehl</small></footer>
-</body>
-</html>
+<footer class="wrap footer"><a class="footer-brand" href="#start">weekly</a><p>Arbeit. Alltag. Training.</p><div><a href="../privacy.html">Datenschutz</a><a href="../imprint.html">Impressum</a><a href="mailto:weekly.workandworkout@gmail.com">Kontakt</a></div><small>© 2026 Tim Oehl</small></footer>
+</body></html>
