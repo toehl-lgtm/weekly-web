@@ -6,6 +6,7 @@
   const back = document.querySelector('.ribbon-back');
   const front = document.querySelector('.ribbon-front');
   const cue = document.querySelector('.scroll-cue');
+  const ambient = document.querySelector('.ambient');
   const drifting = [...document.querySelectorAll('[data-drift]')];
   const chapters = [...document.querySelectorAll('.story-chapter')];
   const chapterParts = chapters.flatMap(chapter => [...chapter.querySelectorAll('.chapter-copy, .chapter-screen, .stage-band')]);
@@ -17,15 +18,17 @@
     const distance = Math.max(1, scene.offsetHeight - window.innerHeight);
     const progress = clamp(-scene.getBoundingClientRect().top / distance);
     const reveal = clamp((progress - .25) / .35);
+    const introExit = clamp((progress - .82) / .18);
     word.style.transform = `translateY(${-18 - progress * 120}%) scale(${1 - progress * .16})`;
     word.style.opacity = String(1 - clamp((progress - .48) / .45));
     back.style.transform = `translate3d(${progress * -5}%, ${progress * -7}%, 0) rotate(${progress * -11}deg) scale(${1 + progress * .12})`;
     front.style.transform = `translate3d(${progress * 5}%, ${progress * 7}%, 0) rotate(${progress * 9}deg) scale(${1 + progress * .08})`;
-    message.style.opacity = String(reveal);
+    message.style.opacity = String(reveal * (1 - introExit));
     message.style.transform = `translateY(${(1 - reveal) * 24}px)`;
-    message.style.pointerEvents = reveal > .8 ? 'auto' : 'none';
-    message.inert = reveal <= .8;
+    message.style.pointerEvents = reveal > .8 && introExit < .2 ? 'auto' : 'none';
+    message.inert = reveal <= .8 || introExit >= .2;
     cue.style.opacity = String(1 - clamp(progress * 5));
+    ambient.style.opacity = String(1 - clamp((progress - .55) / .45));
     chapters.forEach(chapter => {
       const rect = chapter.getBoundingClientRect();
       if (rect.bottom < 0 || rect.top > window.innerHeight) return;
@@ -63,7 +66,7 @@
     window.removeEventListener('resize', schedule);
     if (frame) { cancelAnimationFrame(frame); frame = 0; }
     if (observer) observer.disconnect();
-    [...drifting, ...chapterParts, word, message, back, front, cue].forEach(element => element.removeAttribute('style'));
+    [...drifting, ...chapterParts, word, message, back, front, cue, ambient].forEach(element => element.removeAttribute('style'));
     message.inert = false;
     document.querySelectorAll('.reveal').forEach(element => element.classList.remove('is-visible'));
     if (reduced.matches) return;
