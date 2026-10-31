@@ -27,3 +27,6 @@ body{background:#071748 radial-gradient(ellipse at 50% 20%,#103581 0%,#071748 62
 .faq-list{min-height:360px;align-content:start}@media(max-width:700px){.faq-list{min-height:390px}}
 /* Original quiet separators, with reserved answer space to avoid page jumps. */
 .faq-grid{align-items:start}.faq-list{border-top:1px solid #7187bb;display:grid;gap:0;align-content:start;min-height:360px;overflow-anchor:none}.faq details{border:0;border-bottom:1px solid #7187bb;border-radius:0;background:transparent;padding:24px 0}.faq summary{min-height:0;display:list-item;list-style:revert}.faq summary::-webkit-details-marker{display:revert}.faq summary::after{content:none}.faq details p{padding:0;margin:16px 0 0;color:#d2def4}.faq details a{color:#fff}@media(max-width:700px){.faq-list{min-height:390px}.faq details{padding:24px 0}}
+
+/* Feather the transformed SVG canvas too, so its edges cannot appear as a straight seam. */
+.story-ribbon,.stage-band{overflow:visible;mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%)}
