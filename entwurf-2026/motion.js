@@ -6,6 +6,7 @@
   const back = document.querySelector('.ribbon-back');
   const front = document.querySelector('.ribbon-front');
   const cue = document.querySelector('.scroll-cue');
+  const drifting = [...document.querySelectorAll('[data-drift]')];
   let frame = 0;
   let observer;
   const clamp = value => Math.min(1, Math.max(0, value));
@@ -23,6 +24,14 @@
     message.style.pointerEvents = reveal > .8 ? 'auto' : 'none';
     message.inert = reveal <= .8;
     cue.style.opacity = String(1 - clamp(progress * 5));
+    drifting.forEach(element => {
+      const section = element.closest('.band-section');
+      const rect = section.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+      const position = clamp((window.innerHeight - rect.top) / (window.innerHeight + rect.height));
+      const direction = Number(element.dataset.drift);
+      element.style.transform = `translate3d(${direction * (position - .5) * 7}%, ${direction * (position - .5) * 6}%, 0) rotate(${direction * (position - .5) * 8}deg)`;
+    });
   }
   function schedule() { if (!frame) frame = requestAnimationFrame(render); }
   function setup() {
@@ -31,7 +40,7 @@
     window.removeEventListener('resize', schedule);
     if (frame) { cancelAnimationFrame(frame); frame = 0; }
     if (observer) observer.disconnect();
-    [word, message, back, front, cue].forEach(element => element.removeAttribute('style'));
+    [...drifting, word, message, back, front, cue].forEach(element => element.removeAttribute('style'));
     message.inert = false;
     document.querySelectorAll('.reveal').forEach(element => element.classList.remove('is-visible'));
     if (reduced.matches) return;
