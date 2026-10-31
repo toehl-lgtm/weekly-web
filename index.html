@@ -1,367 +1,42 @@
-<!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<!doctype html>
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>weekly – Arbeit und Training in einer Woche</title>
-  <meta name="description" content="weekly bringt Arbeit, Alltag und Training in einen klaren Wochenüberblick. Plane deinen Tag, erfasse Arbeitszeit und behalte deine Routinen im Blick.">
-  <link rel="icon" type="image/png" href="assets/img/app-icon.png">
-  <link rel="apple-touch-icon" href="assets/img/app-icon.png">
-  
-
-  <!-- Open Graph & Social Cards -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="weekly – Arbeit und Training in einer Woche">
-  <meta property="og:description" content="Arbeit, Alltag und Training in einem klaren Wochenüberblick. Jetzt im App Store für iPhone.">
-  <meta property="og:image" content="https://toehl-lgtm.github.io/weekly-web/assets/img/app-icon.png">
-  <meta property="og:url" content="https://toehl-lgtm.github.io/weekly-web/">
-  <meta property="og:site_name" content="weekly">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="weekly – Arbeit und Training in einer Woche">
-  <meta name="twitter:description" content="Arbeit, Alltag und Training in einem klaren Wochenüberblick. Jetzt im App Store für iPhone.">
-  <meta name="twitter:image" content="https://toehl-lgtm.github.io/weekly-web/assets/img/app-icon.png">
-  <meta name="theme-color" content="#111420" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#F7F8F6" media="(prefers-color-scheme: light)">
-
-  <link rel="stylesheet" href="assets/css/style.css?v=16">
-  <link rel="stylesheet" href="assets/css/animations.css?v=8">
-  <script src="assets/js/theme.js?v=1"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#071748"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="description" content="weekly bringt Arbeit, Alltag und Training in einen klaren Wochenüberblick.">
+<title>weekly – Deine Woche. Dein Rhythmus.</title>
+<meta property="og:type" content="website"><meta property="og:title" content="weekly – Arbeit und Training in einer Woche"><meta property="og:description" content="Arbeit, Alltag und Training in einem klaren Wochenüberblick."><meta property="og:image" content="https://toehl-lgtm.github.io/weekly-web/assets/img/app-icon.png"><meta property="og:url" content="https://toehl-lgtm.github.io/weekly-web/"><meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/img/app-icon.png"><link rel="stylesheet" href="assets/brand/style.css"><script src="assets/brand/language.js" defer></script><script src="assets/brand/motion.js" defer></script>
 </head>
 <body>
-
-  <!-- Navigation Bar -->
-  <div class="container navbar">
-    <nav class="nav-container">
-      <a href="index.html" class="brand">
-        <img src="assets/img/app-icon.png" alt="" class="brand-icon">
-        <span>weekly</span>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="#features" data-i18n="navFeatures">Features</a></li>
-        <li><a href="#preview" data-i18n="navPreview">Vorschau</a></li>
-        <li><a href="privacy.html" data-i18n="navPrivacy">Datenschutz</a></li>
-        <li><a href="#support" data-i18n="navSupport">Support &amp; FAQ</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <div class="mobile-menu">
-          <button type="button" class="mobile-menu-trigger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu-panel">
-            <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-          </button>
-          <div class="mobile-menu-panel" id="mobile-menu-panel" hidden>
-            <a href="#features" data-i18n="navFeatures">Features</a>
-            <a href="#preview" data-i18n="navPreview">Vorschau</a>
-            <a href="privacy.html" data-i18n="navPrivacy">Datenschutz</a>
-            <a href="#support" data-i18n="navSupport">Support &amp; FAQ</a>
-          </div>
-        </div>
-        <!-- Language Switcher (DE / EN) -->
-        <div class="lang-switcher">
-          <button class="lang-btn active" data-lang="de" aria-pressed="true">DE</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        </div>
-
-        <!-- Dark / Light Theme Toggle -->
-        <button id="theme-toggle" class="theme-btn" aria-label="Farbschema wechseln" title="Dark / Light Mode">
-          <span id="theme-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-          </span>
-        </button>
-
-        <a href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm nav-cta" data-i18n="navCta">App Store ↗</a>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="nav"><a class="nav-brand" href="#start" aria-label="weekly Startseite">weekly</a><nav aria-label="Hauptnavigation"><a href="#woche">Die App</a><a href="#training">Training</a><a href="#fragen">Fragen</a></nav><div class="lang-picker" role="group" aria-label="Sprache / Language"><button type="button" data-lang="de" aria-pressed="true">DE</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div><a class="nav-store" href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681">App Store <span aria-hidden="true">↗</span></a></header>
+<main id="inhalt">
+  <section class="intro-scene" id="start" aria-labelledby="intro-title">
+    <div class="intro-sticky">
+      <div class="ambient" aria-hidden="true"></div>
+      <div class="ribbon-field" aria-hidden="true">
+        <svg class="ribbon-layer ribbon-back" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="deep" x1=".1" y1="0" x2=".9" y2="1"><stop stop-color="#589aff"/><stop offset=".3" stop-color="#1a62f4"/><stop offset=".57" stop-color="#083bac"/><stop offset="1" stop-color="#061e69"/></linearGradient><linearGradient id="coral" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ffc1a3"/><stop offset=".55" stop-color="#ff8266"/><stop offset="1" stop-color="#be3e44"/></linearGradient></defs>
+          <path d="M-330 180 C-70 -50 165 45 320 281 C450 481 514 670 633 633 C743 600 735 346 846 251 C986 130 1083 309 1178 415 C1300 550 1480 511 1810 200 L1830 331 C1518 650 1299 691 1150 538 C1013 397 959 282 872 365 C805 430 802 710 643 762 C464 823 378 551 247 365 C104 159 -77 96 -320 324 Z" fill="url(#deep)"/>
+          <path d="M-270 64 C-27 -108 161 -30 320 154 C484 343 514 477 610 472 C698 468 721 301 813 204 C971 37 1098 179 1197 286 C1324 424 1471 409 1770 87 L1802 142 C1511 470 1323 496 1164 353 C1042 244 974 124 855 245 C758 344 737 523 616 538 C478 556 430 377 282 205 C130 28 -38 -37 -270 137 Z" fill="url(#coral)" opacity=".93"/>
+        </svg>
+        <svg class="ribbon-layer ribbon-front" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="blue" x1="0" y1="0" x2=".95" y2="1"><stop stop-color="#7ab2ff"/><stop offset=".24" stop-color="#2477ff"/><stop offset=".54" stop-color="#0a48da"/><stop offset=".78" stop-color="#062e9f"/><stop offset="1" stop-color="#0c1b69"/></linearGradient><linearGradient id="mint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c9ffed"/><stop offset="1" stop-color="#4ec6c1"/></linearGradient></defs>
+          <path d="M-320 413 C-60 173 147 234 300 402 C450 567 499 790 615 787 C733 784 734 517 856 414 C1003 288 1070 436 1198 561 C1350 710 1503 622 1820 345 L1830 506 C1520 789 1334 846 1165 693 C1040 581 998 461 879 559 C791 632 794 872 633 925 C462 982 390 690 245 534 C98 376 -82 366 -320 565 Z" fill="url(#blue)"/>
+          <path d="M-294 600 C-71 404 123 408 278 558 C427 701 482 893 598 901 C722 909 734 709 845 591 C994 433 1084 591 1215 707 C1374 849 1516 784 1800 517 L1817 558 C1545 843 1363 914 1188 776 C1041 660 985 535 876 652 C763 775 761 966 608 970 C437 975 396 781 249 634 C93 478 -68 474 -294 670 Z" fill="url(#mint)"/>
+        </svg>
       </div>
-    </nav>
-  </div>
-
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero container">
-      <div class="hero-layout">
-      <div class="hero-copy">
-      <div class="badge-pill">
-        <span class="badge-dot live"></span>
-        <span data-i18n="badgeText">Jetzt live im App Store • iOS</span>
-      </div>
-
-      <h1 class="hero-title reveal">
-        <span data-i18n="heroTitlePrefix">Deine Woche.</span><br>
-        <span class="hero-title-gradient" data-i18n="heroTitleGradient">Alles hat seinen Platz.</span>
-      </h1>
-
-      <p class="hero-desc reveal reveal-delay-1" data-i18n="heroDesc">
-        Arbeit, Alltag und Training in einem klaren Wochenüberblick. Plane deinen Tag, erfasse Arbeitszeit und behalte deine Routinen im Blick.
-      </p>
-
-      <div class="hero-cta-group reveal reveal-delay-2">
-        <a href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" aria-label="weekly im App Store laden">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.65-.79 1.1-1.9 0.98-3-.97.04-2.15.65-2.85 1.48-.61.72-1.15 1.87-1.01 2.96 1.09.08 2.21-.56 2.88-1.44z"/>
-          </svg>
-          <span data-i18n="appStoreBadge">Im App Store laden</span>
-        </a>
-        <a href="#features" class="btn btn-secondary btn-lg" data-i18n="discoverFeatures">Features entdecken</a>
-      </div>
-
-      </div>
-
-      <!-- Real App Screenshot Showcase -->
-      <div id="preview" class="mockup-wrapper reveal reveal-delay-2">
-        <div class="mockup-deck" data-active="week" role="region" aria-label="App-Vorschau interaktiver Kartenstapel">
-          <div class="deck-card card-week" data-card="week" role="button" tabindex="0" aria-label="Wochenansicht öffnen">
-            <div class="iphone-device">
-              <img id="phone-screenshot-week" class="iphone-screen-image" src="assets/img/weekly-week-de.jpg" alt="weekly: Wochenübersicht mit Arbeit, Uni, Sport und Freizeit" width="1320" height="2868" fetchpriority="high">
-            </div>
-          </div>
-          <div class="deck-card card-today" data-card="today" role="button" tabindex="0" aria-label="Tagesansicht öffnen">
-            <div class="iphone-device">
-              <img id="phone-screenshot-today" class="iphone-screen-image" src="assets/img/weekly-today-de.jpg" alt="weekly: Tagesansicht mit Arbeitszeit und Terminen" width="1320" height="2868" loading="lazy">
-            </div>
-          </div>
-          <div class="deck-card card-workout" data-card="workout" role="button" tabindex="0" aria-label="Workout-Ansicht öffnen">
-            <div class="iphone-device">
-              <img id="phone-screenshot-workout" class="iphone-screen-image" src="assets/img/weekly-workout-de.jpg" alt="weekly: Workout-Routinen und Trainingspläne" width="1320" height="2868" loading="lazy">
-            </div>
-          </div>
-        </div>
-
-        <div class="mockup-controls" role="group" aria-label="App-Vorschau">
-          <button type="button" class="tab-pill active" data-screenshot="week" data-i18n="tabWeek" aria-pressed="true">Woche</button>
-          <button type="button" class="tab-pill" data-screenshot="today" data-i18n="tabToday" aria-pressed="false">Heute</button>
-          <button type="button" class="tab-pill" data-screenshot="workout" data-i18n="tabWorkout" aria-pressed="false">Workout</button>
-        </div>
-        <p class="preview-caption" data-i18n="previewCaption">Echte App-Aufnahmen mit Demo-Daten</p>
-      </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features-section container">
-      <div class="section-header reveal">
-        <p class="section-subtitle" data-i18n="sectionSub">So funktioniert weekly</p>
-        <h2 class="section-title" data-i18n="sectionTitle">Weniger suchen. Mehr Überblick.</h2>
-        <p class="section-desc" data-i18n="sectionDesc">Vom Wochenplan bis zum Workout: Jede Ansicht zeigt dir genau das, was gerade zählt.</p>
-      </div>
-
-      <div class="feature-stories">
-        <article class="story-card reveal">
-          <div class="story-copy">
-            <p class="story-eyebrow" data-i18n="todayEyebrow">DEIN TAG</p>
-            <h3 data-i18n="todayTitle">Heute weißt du, was ansteht.</h3>
-            <p data-i18n="todayDesc">Termine, Arbeitszeit und das Nächste auf deinem Plan stehen in einer ruhigen Tagesansicht zusammen.</p>
-          </div>
-          <div class="story-visual story-visual-today">
-            <div class="iphone-device">
-              <img class="iphone-screen-image" data-preview-image="today" src="assets/img/weekly-today-de.jpg" alt="weekly Tagesansicht mit Terminen und Arbeitszeit" width="1320" height="2868" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </article>
-        <article class="story-card story-card-workout reveal">
-          <div class="story-copy">
-            <p class="story-eyebrow" data-i18n="workoutEyebrow">DEIN TRAINING</p>
-            <h3 data-i18n="workoutTitle">Sport passt in deinen Alltag.</h3>
-            <p data-i18n="workoutDesc">Plane Training neben Arbeit und Freizeit. Im Workout-Bereich findest du deine Routinen und Vorlagen an einem Ort.</p>
-          </div>
-          <div class="story-visual story-visual-workout">
-            <div class="iphone-device">
-              <img class="iphone-screen-image" data-preview-image="workout" src="assets/img/weekly-workout-de.jpg" alt="weekly Workout-Bereich mit Routinen und Vorlagen" width="1320" height="2868" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="capability-grid">
-        <article class="capability-item reveal">
-          <h3 data-i18n="f3Title">Wiederkehrende Wochen</h3>
-          <p data-i18n="f3Desc">Lege eine Basiswoche an und wechsle bei Bedarf zu einer anderen Vorlage.</p>
-        </article>
-        <article class="capability-item reveal">
-          <h3 data-i18n="f4Title">Apple-Kalender</h3>
-          <p data-i18n="f4Desc">Zeige ausgewählte Kalender direkt neben deinen weekly-Terminen an.</p>
-        </article>
-        <article class="capability-item reveal">
-          <h3 data-i18n="f5Title">Stundennachweise</h3>
-          <p data-i18n="f5Desc">Exportiere deine Arbeitszeiten als PDF oder CSV.</p>
-        </article>
-      </div>
-
-      <!-- Trust / Privacy Highlight Banner -->
-      <div id="privacy-section" class="trust-banner reveal">
-        <div class="trust-badge-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-        </div>
-        <div class="trust-content">
-          <h3 data-i18n="trustTitle">Deine Daten bleiben in deiner Hand.</h3>
-          <p data-i18n="trustDesc">Deine Pläne liegen auf deinem Gerät und bei aktivierter Synchronisation in deiner persönlichen iCloud. weekly nutzt keine Analyse-Tools und zeigt keine Werbung. Welche Apple-Dienste die App nutzt, steht in der Datenschutzerklärung.</p>
-          <div class="trust-action">
-            <a href="privacy.html" class="btn btn-secondary btn-sm" data-i18n="trustBtn">
-              Datenschutzerklärung öffnen →
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Support & FAQ Section -->
-    <section id="support" class="faq-section container">
-      <div class="section-header reveal">
-        <p class="section-subtitle" data-i18n="faqSub">Hilfe &amp; Support</p>
-        <h2 class="section-title" data-i18n="faqTitle">Häufig gestellte Fragen (FAQ)</h2>
-        <p class="section-desc" data-i18n="faqDesc">Alles Wichtige zur App, Synchronisation und zum Support.</p>
-      </div>
-
-      <div class="faq-list reveal">
-        <!-- Item 1 -->
-        <div class="faq-item active">
-          <button class="faq-question">
-            <span data-i18n="faq1Q">Wie funktioniert die iCloud-Synchronisation?</span>
-            <span class="faq-icon-wrapper" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-collapse">
-            <div class="faq-collapse-inner">
-              <div class="faq-answer">
-                <p data-i18n="faq1A">weekly nutzt dein persönliches Apple iCloud-Konto. Wenn iCloud auf deinem iPhone aktiv ist, synchronisieren sich alle Einträge vollautomatisch im Hintergrund auf deinen Apple-Geräten. Es ist keine zusätzliche Registrierung erforderlich.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="faq2Q">Werden meine bestehenden Kalendertermine verändert?</span>
-            <span class="faq-icon-wrapper" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-collapse">
-            <div class="faq-collapse-inner">
-              <div class="faq-answer">
-                <p data-i18n="faq2A">Nein, keinesfalls. weekly bindet deine Apple-Kalender nur lesend ein, um sie nahtlos im Wochenraster anzuzeigen. Deine bestehenden Kalender bleiben völlig unberührt.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="faq3Q">Speichert weekly meine Pläne auf eigenen Servern?</span>
-            <span class="faq-icon-wrapper" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-collapse">
-            <div class="faq-collapse-inner">
-              <div class="faq-answer">
-                <p data-i18n="faq3A">Nein. Deine Pläne liegen auf deinem Gerät und bei aktivierter Synchronisation in deiner persönlichen iCloud. Für Ortssuche, Fahrtzeiten und Updates verwendet die App Apple-Dienste; Details findest du in der Datenschutzerklärung.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="faq-item">
-          <button class="faq-question">
-            <span data-i18n="faq4Q">Wer entwickelt weekly und wie erreiche ich den Support?</span>
-            <span class="faq-icon-wrapper" aria-hidden="true">+</span>
-          </button>
-          <div class="faq-collapse">
-            <div class="faq-collapse-inner">
-              <div class="faq-answer">
-                <p data-i18n="faq4A">weekly ist ein unabhängiges Herzensprojekt, das ich (Tim Oehl) als Solo-Entwickler mit viel Liebe zum Detail baue. Bei Fragen, Feedback oder Wünschen erreichst du mich direkt unter weekly.workandworkout@gmail.com. Da ich das Projekt alleine betreue, kann eine Antwort je nach Arbeitsaufwand etwas dauern – vielen Dank für dein Verständnis und deine Geduld!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- App Store Direct Support Contact Box -->
-      <div class="support-card reveal">
-        <div class="support-badge-indie" data-i18n="supportIndieBadge">Unabhängig entwickelt</div>
-        <h4 data-i18n="supportBoxTitle">Fragen oder Feedback an den Entwickler?</h4>
-        <p data-i18n="supportBoxDesc">Ich freue mich über jede Nachricht, Feedback und neue Ideen. Da ich die App alleine entwickle, kann eine Antwort manchmal etwas Zeit in Anspruch nehmen.</p>
-        <a href="mailto:weekly.workandworkout@gmail.com?subject=weekly%20iOS%20App%20Support" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-          <span data-i18n="supportBtn">Nachricht schreiben (weekly.workandworkout@gmail.com)</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Final App Store Call-to-Action Section -->
-    <section class="cta-section container">
-      <div class="cta-card reveal">
-        <div class="cta-glow"></div>
-        <img src="assets/img/app-icon.png" alt="" class="cta-app-icon">
-        <h2 class="cta-title" data-i18n="ctaTitle">Deine Woche beginnt hier.</h2>
-        <p class="cta-desc" data-i18n="ctaDesc">Plane Arbeit und Training an einem Ort. weekly ist im App Store für iPhone verfügbar – ohne Werbung und Analyse-Tools.</p>
-        <div class="cta-actions">
-          <a href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" aria-label="weekly im Apple App Store herunterladen">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.65-.79 1.1-1.9 0.98-3-.97.04-2.15.65-2.85 1.48-.61.72-1.15 1.87-1.01 2.96 1.09.08 2.21-.56 2.88-1.44z"/>
-            </svg>
-            <span data-i18n="ctaBadge">Im App Store laden</span>
-          </a>
-        </div>
-        <div class="cta-meta">
-          <span data-i18n="ctaMeta">iPhone • iOS 17+ • ohne Werbung und Tracking • iCloud-Sync</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <img src="assets/img/app-icon.png" alt="" width="30" height="30">
-          <span>weekly für iOS</span>
-        </div>
-
-        <ul class="footer-links">
-          <li><a href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681" target="_blank" rel="noopener noreferrer" data-i18n="navCta">App Store ↗</a></li>
-          <li><a href="privacy.html" data-i18n="navPrivacy">Datenschutz</a></li>
-          <li><a href="imprint.html" data-i18n="footerImprint">Impressum / Kontakt</a></li>
-          <li><a href="mailto:weekly.workandworkout@gmail.com">Support</a></li>
-        </ul>
-
-        <!-- Footer Language Dropdown -->
-        <div class="footer-lang-picker">
-          <label for="footer-lang-select" class="footer-lang-label">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-            <span data-i18n="langLabel">Sprache:</span>
-          </label>
-          <select id="footer-lang-select" class="footer-lang-select" aria-label="Sprache wählen">
-            <option value="de">Deutsch</option>
-            <option value="en">English</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span data-i18n="footerRights">© 2026 Tim Oehl. Alle Rechte vorbehalten.</span>
-        <span data-i18n="footerMade">Ein unabhängiges Projekt von Tim Oehl.</span>
-      </div>
+      <h1 id="intro-title" class="hero-word">weekly</h1>
+      <div class="intro-message"><p class="kicker">ARBEIT · ALLTAG · TRAINING</p><h2>Deine Woche.<br><span>Dein Rhythmus.</span></h2><p>Für alles, was deinen Alltag ausmacht.</p><a href="#woche" class="intro-link">weekly entdecken <span aria-hidden="true">↓</span></a></div>
+      <div class="scroll-cue" aria-hidden="true"><span>ENTDECKE DEINE WOCHE</span><i></i></div>
     </div>
-  </footer>
-
-  <script src="assets/js/main.js?v=11"></script>
-</body>
-</html>
+  </section>
+  <section class="story-chapter story-week" id="woche" aria-labelledby="woche-title"><div class="story-stage"><div class="stage-ribbons" aria-hidden="true"><svg class="stage-band stage-band-a" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-330 180 C-70 -50 165 45 320 281 C450 481 514 670 633 633 C743 600 735 346 846 251 C986 130 1083 309 1178 415 C1300 550 1480 511 1810 200 L1830 331 C1518 650 1299 691 1150 538 C1013 397 959 282 872 365 C805 430 802 710 643 762 C464 823 378 551 247 365 C104 159 -77 96 -320 324 Z" fill="url(#deep)"/><path d="M-270 64 C-27 -108 161 -30 320 154 C484 343 514 477 610 472 C698 468 721 301 813 204 C971 37 1098 179 1197 286 C1324 424 1471 409 1770 87 L1802 142 C1511 470 1323 496 1164 353 C1042 244 974 124 855 245 C758 344 737 523 616 538 C478 556 430 377 282 205 C130 28 -38 -37 -270 137 Z" fill="url(#coral)"/></svg><svg class="stage-band stage-band-b" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-320 413 C-60 173 147 234 300 402 C450 567 499 790 615 787 C733 784 734 517 856 414 C1003 288 1070 436 1198 561 C1350 710 1503 622 1820 345 L1830 506 C1520 789 1334 846 1165 693 C1040 581 998 461 879 559 C791 632 794 872 633 925 C462 982 390 690 245 534 C98 376 -82 366 -320 565 Z" fill="url(#blue)"/><path d="M-294 600 C-71 404 123 408 278 558 C427 701 482 893 598 901 C722 909 734 709 845 591 C994 433 1084 591 1215 707 C1374 849 1516 784 1800 517 L1817 558 C1545 843 1363 914 1188 776 C1041 660 985 535 876 652 C763 775 761 966 608 970 C437 975 396 781 249 634 C93 478 -68 474 -294 670 Z" fill="url(#mint)"/></svg></div><div class="stage-layout wrap"><div class="chapter-copy"><p class="eyebrow">01 / DEINE WOCHE</p><h2 id="woche-title">Alles, was deine<br>Woche <em>ausmacht.</em></h2><p>Schichten, Training und Zeit für dich: Sieh, was ansteht und wo noch Platz ist.</p></div><div class="chapter-screen"><div class="screen-image screen-week"><img src="assets/img/weekly-week-de.jpg" width="1320" height="2868" alt="weekly-Wochenansicht mit beispielhaften Terminen" loading="lazy"></div><p class="screen-caption">ECHTE APP-ANSICHT · BEISPIELDATEN</p></div></div></div></section>
+  <section class="story-chapter story-day" id="tag" aria-labelledby="tag-title"><div class="story-stage"><div class="stage-ribbons" aria-hidden="true"><svg class="stage-band stage-band-a" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-330 180 C-70 -50 165 45 320 281 C450 481 514 670 633 633 C743 600 735 346 846 251 C986 130 1083 309 1178 415 C1300 550 1480 511 1810 200 L1830 331 C1518 650 1299 691 1150 538 C1013 397 959 282 872 365 C805 430 802 710 643 762 C464 823 378 551 247 365 C104 159 -77 96 -320 324 Z" fill="url(#deep)"/><path d="M-270 64 C-27 -108 161 -30 320 154 C484 343 514 477 610 472 C698 468 721 301 813 204 C971 37 1098 179 1197 286 C1324 424 1471 409 1770 87 L1802 142 C1511 470 1323 496 1164 353 C1042 244 974 124 855 245 C758 344 737 523 616 538 C478 556 430 377 282 205 C130 28 -38 -37 -270 137 Z" fill="url(#coral)"/></svg><svg class="stage-band stage-band-b" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-320 413 C-60 173 147 234 300 402 C450 567 499 790 615 787 C733 784 734 517 856 414 C1003 288 1070 436 1198 561 C1350 710 1503 622 1820 345 L1830 506 C1520 789 1334 846 1165 693 C1040 581 998 461 879 559 C791 632 794 872 633 925 C462 982 390 690 245 534 C98 376 -82 366 -320 565 Z" fill="url(#blue)"/><path d="M-294 600 C-71 404 123 408 278 558 C427 701 482 893 598 901 C722 909 734 709 845 591 C994 433 1084 591 1215 707 C1374 849 1516 784 1800 517 L1817 558 C1545 843 1363 914 1188 776 C1041 660 985 535 876 652 C763 775 761 966 608 970 C437 975 396 781 249 634 C93 478 -68 474 -294 670 Z" fill="url(#mint)"/></svg></div><div class="stage-layout wrap"><div class="chapter-copy"><p class="eyebrow">02 / DEIN TAG</p><h2 id="tag-title">Heute zählt.<br><em>Der Rest wartet.</em></h2><p>Sieh, was als Nächstes ansteht. Behalte deine Arbeitszeit im Blick und exportiere sie bei Bedarf.</p></div><div class="chapter-screen"><div class="screen-image screen-day"><img src="assets/img/weekly-today-de.jpg" width="1320" height="2868" alt="weekly-Tagesansicht mit Terminen und Arbeitszeit" loading="lazy"></div><p class="screen-caption">ECHTE APP-ANSICHT · BEISPIELDATEN</p></div></div></div></section>
+  <section class="story-chapter story-workout" id="training" aria-labelledby="training-title"><div class="story-stage"><div class="stage-ribbons" aria-hidden="true"><svg class="stage-band stage-band-a" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-330 180 C-70 -50 165 45 320 281 C450 481 514 670 633 633 C743 600 735 346 846 251 C986 130 1083 309 1178 415 C1300 550 1480 511 1810 200 L1830 331 C1518 650 1299 691 1150 538 C1013 397 959 282 872 365 C805 430 802 710 643 762 C464 823 378 551 247 365 C104 159 -77 96 -320 324 Z" fill="url(#deep)"/><path d="M-270 64 C-27 -108 161 -30 320 154 C484 343 514 477 610 472 C698 468 721 301 813 204 C971 37 1098 179 1197 286 C1324 424 1471 409 1770 87 L1802 142 C1511 470 1323 496 1164 353 C1042 244 974 124 855 245 C758 344 737 523 616 538 C478 556 430 377 282 205 C130 28 -38 -37 -270 137 Z" fill="url(#coral)"/></svg><svg class="stage-band stage-band-b" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-320 413 C-60 173 147 234 300 402 C450 567 499 790 615 787 C733 784 734 517 856 414 C1003 288 1070 436 1198 561 C1350 710 1503 622 1820 345 L1830 506 C1520 789 1334 846 1165 693 C1040 581 998 461 879 559 C791 632 794 872 633 925 C462 982 390 690 245 534 C98 376 -82 366 -320 565 Z" fill="url(#blue)"/><path d="M-294 600 C-71 404 123 408 278 558 C427 701 482 893 598 901 C722 909 734 709 845 591 C994 433 1084 591 1215 707 C1374 849 1516 784 1800 517 L1817 558 C1545 843 1363 914 1188 776 C1041 660 985 535 876 652 C763 775 761 966 608 970 C437 975 396 781 249 634 C93 478 -68 474 -294 670 Z" fill="url(#mint)"/></svg></div><div class="stage-layout wrap"><div class="chapter-copy"><p class="eyebrow">03 / DEIN TRAINING</p><h2 id="training-title">Mach Platz für<br><em>Bewegung.</em></h2><p>Dein Training gehört genauso in deine Woche. Plane Routinen, starte Einheiten und halte deine Übungen fest.</p></div><div class="chapter-screen"><div class="screen-image screen-workout"><img src="assets/img/weekly-workout-de.jpg" width="1320" height="2868" alt="weekly-Workout-Bereich mit beispielhaften Routinen" loading="lazy"></div><p class="screen-caption">ECHTE APP-ANSICHT · BEISPIELDATEN</p></div></div></div></section>
+  <section class="privacy section-pad band-section"><div class="story-ribbons" aria-hidden="true"><svg class="story-ribbon story-ribbon-a" data-drift="-1" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-330 180 C-70 -50 165 45 320 281 C450 481 514 670 633 633 C743 600 735 346 846 251 C986 130 1083 309 1178 415 C1300 550 1480 511 1810 200 L1830 331 C1518 650 1299 691 1150 538 C1013 397 959 282 872 365 C805 430 802 710 643 762 C464 823 378 551 247 365 C104 159 -77 96 -320 324 Z" fill="url(#deep)"/><path d="M-270 64 C-27 -108 161 -30 320 154 C484 343 514 477 610 472 C698 468 721 301 813 204 C971 37 1098 179 1197 286 C1324 424 1471 409 1770 87 L1802 142 C1511 470 1323 496 1164 353 C1042 244 974 124 855 245 C758 344 737 523 616 538 C478 556 430 377 282 205 C130 28 -38 -37 -270 137 Z" fill="url(#coral)"/></svg><svg class="story-ribbon story-ribbon-b" data-drift="1" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-320 413 C-60 173 147 234 300 402 C450 567 499 790 615 787 C733 784 734 517 856 414 C1003 288 1070 436 1198 561 C1350 710 1503 622 1820 345 L1830 506 C1520 789 1334 846 1165 693 C1040 581 998 461 879 559 C791 632 794 872 633 925 C462 982 390 690 245 534 C98 376 -82 366 -320 565 Z" fill="url(#blue)"/><path d="M-294 600 C-71 404 123 408 278 558 C427 701 482 893 598 901 C722 909 734 709 845 591 C994 433 1084 591 1215 707 C1374 849 1516 784 1800 517 L1817 558 C1545 843 1363 914 1188 776 C1041 660 985 535 876 652 C763 775 761 966 608 970 C437 975 396 781 249 634 C93 478 -68 474 -294 670 Z" fill="url(#mint)"/></svg></div><div class="wrap privacy-grid reveal story-content"><p class="eyebrow">DEINE DATEN</p><h2>Deine Woche.<br>Deine Daten.</h2><div><p>Deine Pläne liegen auf deinem Gerät und bei aktivierter Synchronisation in deiner persönlichen iCloud. Erfahre, welche Apple-Dienste weekly nutzt.</p><a class="under-link" href="privacy.html">Zum Datenschutz <span aria-hidden="true">↗</span></a></div></div></section>
+  <section class="faq section-pad" id="fragen"><div class="wrap faq-grid"><div><p class="eyebrow">GUT ZU WISSEN</p><h2>Noch Fragen?</h2></div><div class="faq-list"><details name="weekly-faq"><summary>Wie funktioniert die Synchronisation?</summary><p>Wenn du iCloud für weekly aktiviert hast, können deine Daten über dein persönliches iCloud-Konto auf deinen Geräten synchronisiert werden.</p></details><details name="weekly-faq"><summary>Werden meine Apple-Kalender verändert?</summary><p>weekly zeigt ausgewählte Kalendertermine lesend an. Deine Quellkalender bleiben unverändert.</p></details><details name="weekly-faq"><summary>Wie erreiche ich den Support?</summary><p>Schreibe an <a href="mailto:weekly.workandworkout@gmail.com">weekly.workandworkout@gmail.com</a>.</p></details></div></div></section>
+  <section class="outro section-pad band-section"><div class="story-ribbons" aria-hidden="true"><svg class="story-ribbon story-ribbon-a" data-drift="-1" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-330 180 C-70 -50 165 45 320 281 C450 481 514 670 633 633 C743 600 735 346 846 251 C986 130 1083 309 1178 415 C1300 550 1480 511 1810 200 L1830 331 C1518 650 1299 691 1150 538 C1013 397 959 282 872 365 C805 430 802 710 643 762 C464 823 378 551 247 365 C104 159 -77 96 -320 324 Z" fill="url(#deep)"/><path d="M-270 64 C-27 -108 161 -30 320 154 C484 343 514 477 610 472 C698 468 721 301 813 204 C971 37 1098 179 1197 286 C1324 424 1471 409 1770 87 L1802 142 C1511 470 1323 496 1164 353 C1042 244 974 124 855 245 C758 344 737 523 616 538 C478 556 430 377 282 205 C130 28 -38 -37 -270 137 Z" fill="url(#coral)"/></svg><svg class="story-ribbon story-ribbon-b" data-drift="1" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice"><path d="M-320 413 C-60 173 147 234 300 402 C450 567 499 790 615 787 C733 784 734 517 856 414 C1003 288 1070 436 1198 561 C1350 710 1503 622 1820 345 L1830 506 C1520 789 1334 846 1165 693 C1040 581 998 461 879 559 C791 632 794 872 633 925 C462 982 390 690 245 534 C98 376 -82 366 -320 565 Z" fill="url(#blue)"/><path d="M-294 600 C-71 404 123 408 278 558 C427 701 482 893 598 901 C722 909 734 709 845 591 C994 433 1084 591 1215 707 C1374 849 1516 784 1800 517 L1817 558 C1545 843 1363 914 1188 776 C1041 660 985 535 876 652 C763 775 761 966 608 970 C437 975 396 781 249 634 C93 478 -68 474 -294 670 Z" fill="url(#mint)"/></svg></div><div class="wrap outro-content"><p class="eyebrow">FÜR ALLES, WAS VOR DIR LIEGT</p><h2>Deine Woche.<br>Dein Rhythmus.</h2><a class="button" href="https://apps.apple.com/us/app/weekly-work-workout/id6808738681">weekly im App Store <span aria-hidden="true">↗</span></a></div></section>
+</main>
+<footer class="wrap footer"><a class="footer-brand" href="#start">weekly</a><p>Arbeit. Alltag. Training.</p><div><a href="privacy.html">Datenschutz</a><a href="imprint.html">Impressum</a><a href="mailto:weekly.workandworkout@gmail.com">Kontakt</a></div><small>© 2026 Tim Oehl</small></footer>
+</body></html>

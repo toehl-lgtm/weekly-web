@@ -15,3 +15,7 @@ Offizielle Website und rechtliche Seiten für die iOS-App **weekly: Work & Worko
 Die dokumentierten Korrekturen, technischen Prüfungen und noch offenen rechtlichen Betreiberfragen stehen im [Prüfbericht vom 11. Oktober 2026](docs/website-review-2026-10-11.md). Der Bericht ist keine rechtliche Freigabe.
 
 Die anschließende [Vertragsprüfung für GitHub Pages und Gmail](docs/provider-contracts-2026-10-11.md) dokumentiert die gefundenen Anbieterbedingungen und die noch erforderlichen Nachweise.
+
+## Gestaltung
+
+Die [Markenwelt und die Website-Gestaltung](docs/markenwelt-2026.md) beschreiben Schrift, Bänder, Bewegung und Pflege.

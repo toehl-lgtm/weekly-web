@@ -6,8 +6,8 @@
     legal: { de: ['Datenschutz', 'Informationen zu Website und App'], en: ['Privacy Policy', 'Information about the website and app'] },
     imprint: { de: ['Impressum & Kontakt', 'Informationen zum Anbieter'], en: ['Legal & Contact', 'Information about the provider'] }
   };
-  tabs.forEach(tab => tab.addEventListener('click', () => {
-    const language = tab.dataset.language;
+  function select(language, save = false) {
+    const tab = tabs.find(button => button.dataset.language === language);
     Object.entries(sections).forEach(([key, section]) => { section.hidden = key !== language; });
     tabs.forEach(button => button.setAttribute('aria-pressed', String(button === tab)));
     document.documentElement.lang = language;
@@ -22,5 +22,8 @@
     document.querySelector('.footer a[href="imprint.html"]').textContent = language === 'de' ? 'Impressum' : 'Legal';
     document.querySelector('.footer a[href^="mailto:"]').textContent = language === 'de' ? 'Kontakt' : 'Contact';
     document.title = `${title} – weekly`;
-  }));
+    if (save) { try { sessionStorage.setItem('weekly-lang', language); } catch {} }
+  }
+  tabs.forEach(tab => tab.addEventListener('click', () => select(tab.dataset.language, true)));
+  try { if (sessionStorage.getItem('weekly-lang') === 'en') select('en'); } catch {}
 })();
