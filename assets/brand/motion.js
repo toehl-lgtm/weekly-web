@@ -42,12 +42,12 @@
       const screen = chapter.querySelector('.chapter-screen');
       const bands = chapter.querySelectorAll('.stage-band');
       copy.style.opacity = String(visibility);
-      copy.style.transform = `translate3d(0, ${(1 - enter) * 55 - leave * 65}px, 0)`;
+      copy.style.transform = `translate3d(0, ${(1 - enter) * 36 - leave * 45}px, 0)`;
       screen.style.opacity = String(visibility);
-      screen.style.transform = `translate3d(0, ${(1 - enter) * 105 - leave * 100}px, 0)`;
+      screen.style.transform = `translate3d(0, ${(1 - enter) * 68 - leave * 55}px, 0)`;
       bands.forEach((band, i) => {
         const direction = i ? 1 : -1;
-        band.style.transform = `translate3d(${direction * (position - .5) * 9}%, ${direction * (position - .5) * 7}%, 0) rotate(${direction * (position - .5) * 9}deg)`;
+        band.style.transform = `translate3d(${direction * (position - .5) * 6}%, ${direction * (position - .5) * 5}%, 0) rotate(${direction * (position - .5) * 6}deg)`;
       });
     });
     drifting.forEach(element => {

@@ -8,7 +8,7 @@ Die Markenschrift ist Plus Jakarta Sans; `weekly` steht als kleingeschriebener, 
 
 Der Einstieg zeigt zunächst die Marke. Beim Scrollen bewegen sich Schriftzug und Bänder, anschließend folgen die Kapitel für Woche, Tag und Training. Sie verwenden tatsächliche App-Aufnahmen mit Beispieldaten, keine erfundenen App-Oberflächen. Neue Screenshots vor dem Austausch mit dem tatsächlich veröffentlichten Funktionsumfang abgleichen.
 
-Scrollen bleibt in der Kontrolle der Nutzer. Bei „Bewegung reduzieren“ erscheinen die Inhalte ohne Scrollbewegung; ohne JavaScript sind die Inhalte ebenfalls lesbar. Datenschutz und Impressum nutzen dieselbe Schrift- und Farbwelt, aber eine ruhige Lesefläche. Deutsch und Englisch stehen zur Verfügung.
+Scrollen bleibt in der Kontrolle der Nutzer; Übergänge sind kurz und die Bewegungen begleiten die Leserichtung. Die Bewegungsgrundsätze folgen Apples Empfehlungen für gezielte, optionale und unterbrechbare Animationen. Bei „Bewegung reduzieren“ erscheinen die Inhalte ohne Scrollbewegung; ohne JavaScript sind die Inhalte ebenfalls lesbar. Datenschutz und Impressum nutzen dieselbe Schrift- und Farbwelt, aber eine ruhige Lesefläche. Deutsch und Englisch stehen zur Verfügung.
 
 ## Pflege und Veröffentlichung
 
