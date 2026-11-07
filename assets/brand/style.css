@@ -43,17 +43,21 @@ header .nav-brand,footer .footer-brand,.nav a.nav-brand{display:inline-flex;alig
 @media(max-width:700px){.screen-caption{font-size:12px}}
 .lang-picker button{font-size:13px}
 .footer small{font-size:13px}
-/* Feature overview */
-.features{position:relative;color:#fff}
-.features h2{font-size:clamp(40px,5.6vw,76px);letter-spacing:-.06em;line-height:1.04;margin:0 0 clamp(36px,5vw,64px);font-weight:800}
+/* Feature overview: ruled list in the same language as the FAQ, no tile grid. */
+.features{position:relative;color:#fff;padding-block:clamp(56px,7vw,110px) clamp(56px,7vw,110px)}
+.motion-enabled .features{margin-top:-10svh}
+.features-layout{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:start}
+.features-head{position:sticky;top:110px}
+.features h2{font-size:clamp(40px,5vw,70px);letter-spacing:-.06em;line-height:1.04;margin:0;font-weight:800}
 .features h2 em{font-style:normal;color:#8ce3d2}
-.feature-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.feature{position:relative;padding:26px 22px 24px;border:1px solid #4a64a8;border-radius:20px;background:#ffffff0d;overflow:hidden}
-.feature:before{content:"";position:absolute;left:22px;top:0;width:44px;height:4px;border-radius:0 0 4px 4px;background:var(--accent,#2477ff)}
+.feature-list{list-style:none;margin:0;padding:0;border-top:1px solid #7187bb}
+.feature{position:relative;display:grid;grid-template-columns:minmax(150px,.8fr) minmax(0,1.4fr);gap:8px 28px;padding:22px 0 22px 26px;border-bottom:1px solid #7187bb;align-items:baseline}
+.feature:before{content:"";position:absolute;left:0;top:30px;width:9px;height:9px;border-radius:50%;background:var(--accent,#4f8dff)}
 .feature-blue{--accent:#4f8dff}.feature-mint{--accent:#8ce3d2}.feature-orange{--accent:#ffa982}
-.feature h3{font-size:19px;letter-spacing:-.02em;margin:10px 0 10px;font-weight:800}
-.feature p{margin:0;font-size:15.5px;line-height:1.55;color:#dbe6fb}
+.feature h3{font-size:19px;letter-spacing:-.02em;margin:0;font-weight:800;line-height:1.3}
+.feature p{margin:0;font-size:16px;line-height:1.6;color:#d6e2f8}
 .feature-orange h3{color:#ffd2bd}
-@media(max-width:980px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.feature-grid{grid-template-columns:1fr}.feature{padding:22px 20px}}
-.motion-enabled .scroll-cue{bottom:clamp(72px,14svh,130px)}
+@media(max-width:900px){.features-layout{grid-template-columns:1fr}.features-head{position:static}}
+@media(max-width:560px){.feature{grid-template-columns:1fr;padding-left:22px}.feature:before{top:27px}}
+/* Shorter pinned dwell per chapter (was 210svh) so scrolling feels continuous. */
+@media(min-height:561px){.motion-enabled .story-chapter{height:185vh;height:185svh}}

@@ -36,7 +36,7 @@
       if (window.innerHeight <= 560) { parts.forEach(part => part.removeAttribute('style')); return; }
       const position = clamp((window.innerHeight - rect.top) / rect.height);
       const enter = clamp((position - .02) / .25);
-      const leave = clamp((position - .78) / .2);
+      const leave = clamp((position - .985) / .3);
       const visibility = Math.min(enter, 1 - leave);
       const copy = chapter.querySelector('.chapter-copy');
       const screen = chapter.querySelector('.chapter-screen');
