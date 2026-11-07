@@ -1,6 +1,6 @@
 (() => {
   const dictionary = {
-    '.nav nav a:nth-child(1)': 'The app', '.nav nav a:nth-child(2)': 'Workout', '.nav nav a:nth-child(3)': 'Questions',
+    '.nav nav a:nth-child(1)': 'The app', '.nav nav a:nth-child(2)': 'Workout', '.nav nav a:nth-child(3)': 'Features', '.nav nav a:nth-child(4)': 'Questions',
     '.nav-store': 'App Store ↗', '.kicker': 'WORK · LIFE · WORKOUT',
     '.intro-message h2': 'Your week.<br><span>Your rhythm.</span>',
     '.intro-message > p:not(.kicker)': 'For everything that makes up your day.',
@@ -12,6 +12,15 @@
     '#tag .chapter-copy > p:last-child': 'See what’s next. Keep track of your work hours and export them when you need to.',
     '#training .eyebrow': '03 / YOUR TRAINING', '#training h2': 'Make room<br>for <em>movement.</em>',
     '#training .chapter-copy > p:last-child': 'Training belongs in your week too. Plan routines, start sessions and record your exercises.',
+    '.features .eyebrow': 'FEATURES', '.features h2': 'Everything in <em>one</em> place.',
+    '.feature:nth-child(1) h3': 'Weekly overview', '.feature:nth-child(1) p': 'Work, life and workouts in one clear week.',
+    '.feature:nth-child(2) h3': 'Work-hours account', '.feature:nth-child(2) p': 'Track your hours and compare them with your target.',
+    '.feature:nth-child(3) h3': 'Appointments & travel time', '.feature:nth-child(3) p': 'Calculate travel time to appointments and get reminded in time.',
+    '.feature:nth-child(4) h3': 'Workout Hub', '.feature:nth-child(4) p': 'Plan routines and exercises, start sessions and record them.',
+    '.feature:nth-child(5) h3': 'Statistics', '.feature:nth-child(5) p': 'Insights for day, week, month and year.',
+    '.feature:nth-child(6) h3': 'Widgets & reminders', '.feature:nth-child(6) p': 'A quick look on your Home Screen and alerts before appointments.',
+    '.feature:nth-child(7) h3': 'Export', '.feature:nth-child(7) p': 'Monthly and hour reports as PDF or CSV.',
+    '.feature:nth-child(8) h3': 'Apple ecosystem', '.feature:nth-child(8) p': 'Sync with iCloud and show Apple Calendar events read-only.',
     '.privacy .eyebrow': 'YOUR DATA', '.privacy h2': 'Your week.<br>Your data.',
     '.privacy-grid > div > p': 'Your plans stay on your device and, when sync is enabled, in your personal iCloud. Learn which Apple services weekly uses.',
     '.privacy .under-link': 'Privacy information <span aria-hidden="true">↗</span>',
