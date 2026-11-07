@@ -19,12 +19,12 @@ const translations = {
     badgeText: "Jetzt live im App Store • iOS",
     heroTitlePrefix: "Deine Woche.",
     heroTitleGradient: "Alles hat seinen Platz.",
-    heroDesc: "Arbeit, Alltag und Training in einem klaren Wochenüberblick. Plane deinen Tag, erfasse Arbeitszeit und behalte deine Routinen im Blick.",
+    heroDesc: "Arbeit, Alltag und Workout in einem klaren Wochenüberblick. Plane deinen Tag, erfasse Arbeitszeit und behalte deine Routinen im Blick.",
     appStoreBadge: "Im App Store laden",
     navCta: "App Store ↗",
     discoverFeatures: "Features entdecken",
     ctaTitle: "Deine Woche beginnt hier.",
-    ctaDesc: "Plane Arbeit und Training an einem Ort. weekly ist im App Store für iPhone verfügbar – ohne Werbung und Analyse-Tools.",
+    ctaDesc: "Plane Arbeit und Workouts an einem Ort. weekly ist im App Store für iPhone verfügbar – ohne Werbung und Analyse-Tools.",
     ctaBadge: "Im App Store laden",
     ctaMeta: "iPhone • iOS 17+ • ohne Werbung und Tracking • iCloud-Sync",
     tabWeek: "Woche",
@@ -39,7 +39,7 @@ const translations = {
     todayDesc: "Termine, Arbeitszeit und das Nächste auf deinem Plan stehen in einer ruhigen Tagesansicht zusammen.",
     workoutEyebrow: "DEIN TRAINING",
     workoutTitle: "Sport passt in deinen Alltag.",
-    workoutDesc: "Plane Training neben Arbeit und Freizeit. Im Workout-Bereich findest du deine Routinen und Vorlagen an einem Ort.",
+    workoutDesc: "Plane Workouts neben Arbeit und Freizeit. Im Workout-Bereich findest du deine Routinen und Vorlagen an einem Ort.",
     f3Title: "Wiederkehrende Wochen",
     f3Desc: "Lege eine Basiswoche an und wechsle bei Bedarf zu einer anderen Vorlage.",
     f4Title: "Apple-Kalender",
@@ -77,12 +77,12 @@ const translations = {
     badgeText: "Now Live on the App Store • iOS",
     heroTitlePrefix: "Your Week.",
     heroTitleGradient: "Everything in its place.",
-    heroDesc: "Work, life and training in one clear week view. Plan your day, track work hours and keep your routines in sight.",
+    heroDesc: "Work, life and workouts in one clear week view. Plan your day, track work hours and keep your routines in sight.",
     appStoreBadge: "Download on the App Store",
     navCta: "App Store ↗",
     discoverFeatures: "Explore Features",
     ctaTitle: "Your week starts here.",
-    ctaDesc: "Plan work and training in one place. weekly is available on the App Store for iPhone, without ads or analytics tools.",
+    ctaDesc: "Plan work and workouts in one place. weekly is available on the App Store for iPhone, without ads or analytics tools.",
     ctaBadge: "Download on the App Store",
     ctaMeta: "iPhone • iOS 17+ • no ads or tracking • iCloud sync",
     tabWeek: "Week",
@@ -172,8 +172,8 @@ function setLanguage(lang) {
   document.documentElement.setAttribute('lang', lang);
   if (document.querySelector('.hero')) {
     document.title = lang === 'de'
-      ? 'weekly – Arbeit und Training in einer Woche'
-      : 'weekly – Work and training in one week';
+      ? 'weekly – Work & Workout in einer Woche'
+      : 'weekly – Work & Workout in one week';
   }
   const footerBrand = document.querySelector('.footer-brand span');
   if (footerBrand) footerBrand.textContent = lang === 'de' ? 'weekly für iOS' : 'weekly for iOS';
@@ -241,12 +241,12 @@ const screenshotLabels = {
   de: {
     week: 'weekly: Wochenübersicht mit Arbeit, Uni, Sport und Freizeit',
     today: 'weekly: Tagesansicht mit Arbeitszeit und Terminen',
-    workout: 'weekly: Workout-Routinen und Trainingspläne'
+    workout: 'weekly: Workout-Routinen und Workout-Pläne'
   },
   en: {
     week: 'weekly: Week view with work, university, exercise and free time',
     today: 'weekly: Today view with work hours and events',
-    workout: 'weekly: Workout routines and training plans'
+    workout: 'weekly: Workout routines and plans'
   }
 };
 
