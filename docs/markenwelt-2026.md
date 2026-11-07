@@ -1,6 +1,6 @@
 # Weekly: Markenwelt und Website
 
-Stand: 31. Oktober 2026. Die übergreifende Markenrichtlinie für App, Website und App Store liegt im App-Projekt unter `docs/product/branding.md`; dieses Dokument beschreibt die Website-Umsetzung. Die abgestimmte Richtung verbindet einen dunkelblauen Hintergrund mit bewegten, ineinanderfließenden Bändern. Blau prägt die Marke; Mint und Korall ergänzen die Bandwelt, Orange kennzeichnet Training. Das bestehende App-Icon bleibt erhalten.
+Stand: 31. Oktober 2026. Die übergreifende Markenrichtlinie für App, Website und App Store liegt im App-Projekt unter `docs/product/branding.md`; dieses Dokument beschreibt die Website-Umsetzung. Die abgestimmte Richtung verbindet einen dunkelblauen Hintergrund mit bewegten, ineinanderfließenden Bändern. Blau prägt die Marke; Mint und Korall ergänzen die Bandwelt, Orange kennzeichnet Training. Das Band-W ist das App-Icon und seit 8. November 2026 auch Favicon, Social-Vorschau und Teil von Navigation und Footer. Das alte Neon-Icon liegt unter `assets/img/legacy/`. Logo-SVGs und Tokens: `assets/brand/` (Kopie von `brand/` im App-Repo).
 
 ## Schrift und Gestaltung
 

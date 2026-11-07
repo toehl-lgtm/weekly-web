@@ -30,3 +30,8 @@ body{background:#071748 radial-gradient(ellipse at 50% 20%,#103581 0%,#071748 62
 
 /* Feather the transformed SVG canvas too, so its edges cannot appear as a straight seam. */
 .story-ribbon,.stage-band{overflow:visible;mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%)}
+
+/* Band-W mark next to the wordmark (brand/weekly-band-w.svg). */
+header .nav-brand,footer .footer-brand,.nav a.nav-brand{display:inline-flex;align-items:center;gap:.42em}.brand-mark{width:auto;height:.9em;flex:none;display:block}
+.nav-brand .brand-mark{height:23px}.footer-brand .brand-mark{height:26px}
+.outro-icon{width:96px;height:96px;margin:0 0 28px;border-radius:22%;box-shadow:0 18px 40px #02093a66}@media(max-width:700px){.outro-icon{width:76px;height:76px}}

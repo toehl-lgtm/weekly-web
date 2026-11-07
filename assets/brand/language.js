@@ -1,7 +1,7 @@
 (() => {
   const dictionary = {
-    '.nav nav a:nth-child(1)': 'The app', '.nav nav a:nth-child(2)': 'Training', '.nav nav a:nth-child(3)': 'Questions',
-    '.nav-store': 'App Store ↗', '.kicker': 'WORK · LIFE · TRAINING',
+    '.nav nav a:nth-child(1)': 'The app', '.nav nav a:nth-child(2)': 'Workout', '.nav nav a:nth-child(3)': 'Questions',
+    '.nav-store': 'App Store ↗', '.kicker': 'WORK · LIFE · WORKOUT',
     '.intro-message h2': 'Your week.<br><span>Your rhythm.</span>',
     '.intro-message > p:not(.kicker)': 'For everything that makes up your day.',
     '.intro-link': 'Discover weekly <span aria-hidden="true">↓</span>',
@@ -24,7 +24,7 @@
     '.faq details:nth-child(3) p': 'Email <a href="mailto:weekly.workandworkout@gmail.com">weekly.workandworkout@gmail.com</a>.',
     '.outro .eyebrow': 'FOR EVERYTHING AHEAD', '.outro h2': 'Your week.<br>Your rhythm.',
     '.outro .button': 'weekly on the App Store <span aria-hidden="true">↗</span>',
-    '.footer > p': 'Work. Life. Training.', '.footer a[href="privacy.html"]': 'Privacy',
+    '.footer > p': 'Work. Life. Workout.', '.footer a[href="privacy.html"]': 'Privacy',
     '.footer a[href="imprint.html"]': 'Legal', '.footer a[href^="mailto:"]': 'Contact'
   };
   const entries = Object.entries(dictionary).map(([selector, english]) => {
