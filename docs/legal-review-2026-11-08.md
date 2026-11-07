@@ -13,3 +13,9 @@ Keine Rechtsberatung und keine Freigabe. Geprüft wurden `privacy.html` und `imp
 4. **Standortberechtigung:** erledigt. `NSLocationWhenInUseUsageDescription` wurde samt Übersetzungen aus der App entfernt (kein Standortzugriff im Code). Soll später "aktueller Standort" in der Adresseingabe kommen, Berechtigung und Datenschutztext dann gemeinsam ergänzen.
 5. **Stand-Datum:** Datenschutz nennt „Stand: 11. Oktober 2026". Nach der E-Mail-Umstellung aktualisieren.
 6. **Nutzungsbedingungen / Abo:** Datenschutz erwähnt das Abo; die Kauf-Ansicht verlinkt laut Roadmap Datenschutz und Nutzungsbedingungen. Prüfen, dass beide URLs live erreichbar sind (Apple EULA reicht, sonst eigene Seite).
+
+## Preise auf der Website (8. November 2026)
+- `index.html` zeigt 0,99 €/Monat und 8,99 €/Jahr (Deutschland, inkl. MwSt.), „ca. 24 % sparen", 14 Tage kostenlos für Berechtigte, automatische Verlängerung, Kündigung 24 h vor Ablauf, Hinweis auf abweichende Landespreise. Grundlage sind nur `StoreKit/Weekly.storekit` und `docs/releases/subscription-setup.md` (geplante Startpreise). **Vor dem Veröffentlichen mit den tatsächlichen Preisen in App Store Connect abgleichen**; die Zahlen stehen an einer Stelle im HTML (`#preise`) plus englisch in `assets/brand/language.js`.
+- Länderpreise sind bewusst nicht aufgelistet: eine statische Seite kennt den Storefront nicht, und Apple legt sie fest. Wer sie nennen will, zieht sie aus App Store Connect (Preisübersicht) und nennt Stand und Währung.
+- Nutzungsbedingungen verlinken auf Apples Standard-EULA, wie die Paywall. Eine eigene Seite wäre nur nötig, wenn die App eigene Bedingungen nutzt.
+- Beim Umzug zu Strato ändern sich die URLs: Die App verlinkt `https://toehl-lgtm.github.io/weekly-web/privacy.html` (Paywall, Onboarding, Datenschutz-Ansicht, Nur-Lesen-Ansicht); App Store Connect (Datenschutz-/Support-URL) und `canonical`/`og:image`/Sitemap hier ebenfalls anpassen. Bis zur Weiterleitung die alte Adresse nicht abschalten.
