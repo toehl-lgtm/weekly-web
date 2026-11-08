@@ -10,6 +10,7 @@
   const drifting = [...document.querySelectorAll('[data-drift]')];
   const chapters = [...document.querySelectorAll('.story-chapter')];
   const chapterParts = chapters.flatMap(chapter => [...chapter.querySelectorAll('.chapter-copy, .chapter-screen, .stage-band')]);
+  const featureItems = [...document.querySelectorAll('.feature')];
   let frame = 0;
   let observer;
   const clamp = value => Math.min(1, Math.max(0, value));
@@ -50,6 +51,13 @@
         band.style.transform = `translate3d(${direction * (position - .5) * 6}%, ${direction * (position - .5) * 5}%, 0) rotate(${direction * (position - .5) * 6}deg)`;
       });
     });
+    const edge = 150;
+    featureItems.forEach(item => {
+      const top = item.getBoundingClientRect().top;
+      const fade = window.innerHeight <= 560 ? 1 : clamp(top / edge);
+      item.style.opacity = String(.15 + .85 * fade);
+      item.style.transform = `translate3d(0, ${(1 - fade) * 14}px, 0)`;
+    });
     drifting.forEach(element => {
       const section = element.closest('.band-section');
       const rect = section.getBoundingClientRect();
@@ -66,7 +74,7 @@
     window.removeEventListener('resize', schedule);
     if (frame) { cancelAnimationFrame(frame); frame = 0; }
     if (observer) observer.disconnect();
-    [...drifting, ...chapterParts, word, message, back, front, cue, ambient].forEach(element => element.removeAttribute('style'));
+    [...drifting, ...chapterParts, ...featureItems, word, message, back, front, cue, ambient].forEach(element => element.removeAttribute('style'));
     message.inert = false;
     document.querySelectorAll('.reveal').forEach(element => element.classList.remove('is-visible'));
     if (reduced.matches) return;

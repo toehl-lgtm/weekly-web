@@ -84,3 +84,19 @@ header .nav-brand,footer .footer-brand,.nav a.nav-brand{display:inline-flex;alig
 @media(max-width:560px){.plans{grid-template-columns:1fr}}
 /* Shorter pinned dwell per chapter (was 210svh) so scrolling feels continuous. */
 @media(min-height:561px){.motion-enabled .story-chapter{height:185vh;height:185svh}}
+
+/* Nov 2026: softer feature sheet, shorter dwell, tighter section rhythm */
+.features{background:linear-gradient(160deg,#dbe6fb 0,#cfdcf6 100%);margin-top:-14svh;padding:clamp(36px,4.5vw,64px) 0;box-shadow:0 -24px 60px #02093a40}
+.features-head{top:96px}
+.features .eyebrow{color:#1d4fb8}
+.features h2,.feature h3{color:#0a1a4f}
+.feature-list{border-top:2px solid #0a1a4f55}
+.feature{padding:15px 0 15px 34px;border-bottom:1px solid #a9bbe0;will-change:opacity,transform}
+.feature:before{left:2px;top:50%;margin-top:-6px;width:12px;height:12px;background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 22%,transparent)}
+.feature p{color:#2c3b5e}
+.pricing{padding-block:clamp(56px,7vw,100px)}
+.privacy.section-pad,.faq.section-pad,.outro.section-pad{padding:clamp(64px,8vw,110px) 0}
+.faq-list{min-height:0}
+.faq details{padding:20px 0}
+.faq summary{font-size:18px}
+@media(max-width:700px){.features{margin-top:-8svh}.feature{padding-left:30px}.feature:before{top:50%}.faq summary{font-size:17px}}
