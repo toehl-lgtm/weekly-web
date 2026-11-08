@@ -106,3 +106,8 @@ header .nav-brand,footer .footer-brand,.nav a.nav-brand{display:inline-flex;alig
 .features-head{top:calc(50svh - 90px)}
 .feature{padding-block:20px}
 @media(max-width:700px){.features{min-height:0;padding:48px 0}.features-head{top:auto}}
+
+/* Rückweg zur Dachmarke */
+.nav-studio{opacity:.75;padding-left:18px;border-left:1px solid #ffffff40}
+.nav-studio:hover{opacity:1}
+.footer .footer-studio{text-decoration:underline;text-underline-offset:3px}
