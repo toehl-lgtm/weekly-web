@@ -1,7 +1,7 @@
 (() => {
   const dictionary = {
     '.nav nav a:nth-child(1)': 'The app', '.nav nav a:nth-child(2)': 'Workout', '.nav nav a:nth-child(3)': 'Features', '.nav nav a:nth-child(4)': 'Pricing', '.nav nav a:nth-child(5)': 'Questions',
-    '.nav-store': 'App Store ↗', '.nav-studio': 'OEHL Studios', '.kicker': 'WORK · LIFE · WORKOUT',
+    '.nav-store': 'App Store ↗', '.kicker': 'WORK · LIFE · WORKOUT',
     '.intro-message h2': 'Your week.<br><span>Your rhythm.</span>',
     '.intro-message > p:not(.kicker)': 'For everything that makes up your day.',
     '.intro-link': 'Discover weekly <span aria-hidden="true">↓</span>',

@@ -121,3 +121,16 @@ header .nav-brand,footer .footer-brand,.nav a.nav-brand{display:inline-flex;alig
 .motion-enabled .feature{will-change:opacity}
 .features-track .features{margin-top:0}
 @media(max-width:700px),(max-height:560px){.motion-enabled .features-track{height:auto}.motion-enabled .features{position:relative;top:auto;height:auto;max-height:none}}
+
+/* OEHL STUDIOS: Dachmarke, gleiche Schrift und Szene wie die Studio-Website */
+@font-face{font-family:Archivo;src:url(Archivo-latin.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+.nav-studio,.studio-mark{font-family:Archivo,system-ui,sans-serif;font-stretch:125%;font-weight:300;letter-spacing:-.02em;text-transform:none}
+.nav-studio b,.studio-mark b{font-weight:850}
+.nav-studio{font-size:13px;opacity:.9;border-left:1px solid #ffffff40;padding-left:18px}
+.studio-band{display:grid;grid-template-columns:1fr auto;gap:6px 24px;align-items:end;margin:clamp(60px,9vw,120px) 0 0;padding:clamp(40px,6vw,80px) max(18px,calc((100% - 1240px)/2)) clamp(36px,5vw,64px);background:#000;color:#fff;text-decoration:none}
+.studio-kicker{grid-column:1/-1;font:600 13px/1 "Plus Jakarta Sans",Jakarta,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#ffffffb3}
+.studio-mark{font-size:clamp(44px,11.5vw,150px);line-height:.9;letter-spacing:-.025em;background:url(hero-szene.svg) center 40%/cover;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding-bottom:.06em;width:fit-content}
+.studio-go{font-size:clamp(28px,4vw,48px);color:#fff;transition:transform .25s}
+.studio-band:hover .studio-go{transform:translateX(8px)}
+.studio-band+.footer{padding-top:32px}
+.legal-page .studio-band{margin-top:0}
