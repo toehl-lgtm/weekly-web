@@ -19,3 +19,8 @@ Keine Rechtsberatung und keine Freigabe. Geprüft wurden `privacy.html` und `imp
 - Länderpreise sind bewusst nicht aufgelistet: eine statische Seite kennt den Storefront nicht, und Apple legt sie fest. Wer sie nennen will, zieht sie aus App Store Connect (Preisübersicht) und nennt Stand und Währung.
 - Nutzungsbedingungen verlinken auf Apples Standard-EULA, wie die Paywall. Eine eigene Seite wäre nur nötig, wenn die App eigene Bedingungen nutzt.
 - Beim Umzug zu Strato ändern sich die URLs: Die App verlinkt `https://toehl-lgtm.github.io/weekly-web/privacy.html` (Paywall, Onboarding, Datenschutz-Ansicht, Nur-Lesen-Ansicht); App Store Connect (Datenschutz-/Support-URL) und `canonical`/`og:image`/Sitemap hier ebenfalls anpassen. Bis zur Weiterleitung die alte Adresse nicht abschalten.
+
+## Nachtrag 8. November 2026, 12:00 (Release-Autopilot)
+- Impressum: Anbieter jetzt „Tim Oehl – OEHL Studios“, Einzelunternehmen; USt-IdNr. nach § 27a UStG (DE465979799) und Hinweis Kleinunternehmer nach § 19 UStG ergänzt (DE/EN), gleichlautend mit der OEHL-Studios-Seite. Punkt 3 damit erledigt.
+- Datenschutz gegen den Code nachgeschärft: Anhänge, Fotos und Videos (lokal + iCloud), lokale Erinnerungen und Widgets (App-Group-Speicher, nichts an uns), vorausgefüllte Diagnoseangaben in der Feedback-Mail (App-Version/Build, OS, Gerätetyp, Sprache/Region, Zeitzone). Stand auf 8. November 2026.
+- Weiter offen: Punkt 1 (Postfach mit AVV) und 2 (Telefon). Vorbereitete Ersatztexte und Reihenfolge: `anbieterwechsel-strato.md`.
