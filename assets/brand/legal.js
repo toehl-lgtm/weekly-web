@@ -11,6 +11,7 @@
     Object.entries(sections).forEach(([key, section]) => { section.hidden = key !== language; });
     tabs.forEach(button => button.setAttribute('aria-pressed', String(button === tab)));
     document.documentElement.lang = language;
+    document.querySelectorAll('.studio-band, .nav-studio').forEach(a => { a.setAttribute('href', language === 'en' ? '../en/' : '../'); a.setAttribute('aria-label', language === 'en' ? 'OEHL STUDIOS, back to the home page' : 'OEHL STUDIOS, zur Startseite'); });
     const [title, subtitle] = text[prefix][language];
     document.querySelector('.legal-hero h1').textContent = title;
     document.querySelector('.legal-hero > p:last-child').textContent = subtitle;

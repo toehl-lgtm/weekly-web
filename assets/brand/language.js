@@ -62,6 +62,7 @@
     images.forEach((image, i) => { image.src = image.src.replace(/-(de|en)\.jpg$/, `-${language}.jpg`); image.alt = language === 'en' ? altEnglish[i] : alts[i]; });
     tabs.forEach(tab => tab.setAttribute('aria-pressed', String(tab.dataset.lang === language)));
     document.documentElement.lang = language;
+    document.querySelectorAll('.studio-band, .nav-studio').forEach(a => { a.setAttribute('href', language === 'en' ? '../en/' : '../'); a.setAttribute('aria-label', language === 'en' ? 'OEHL STUDIOS, back to the home page' : 'OEHL STUDIOS, zur Startseite'); });
     document.querySelector('.skip').textContent = language === 'en' ? 'Skip to content' : 'Zum Inhalt springen';
     document.title = language === 'en' ? 'weekly – Your week. Your rhythm.' : 'weekly – Deine Woche. Dein Rhythmus.';
     if (save) { try { sessionStorage.setItem('weekly-lang', language); } catch {} }
