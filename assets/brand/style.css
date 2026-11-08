@@ -111,3 +111,13 @@ header .nav-brand,footer .footer-brand,.nav a.nav-brand{display:inline-flex;alig
 .nav-studio{opacity:.75;padding-left:18px;border-left:1px solid #ffffff40}
 .nav-studio:hover{opacity:1}
 .footer .footer-studio{text-decoration:underline;text-underline-offset:3px}
+
+/* Feature-Box bleibt wie die App-Kapitel stehen, die Überschrift fährt dabei nach unten */
+.features-track{position:relative;margin-top:-10svh;z-index:2}
+.motion-enabled .features-track{height:200svh}
+.motion-enabled .features{position:sticky;top:max(76px,9svh);margin-top:0;min-height:0;height:76svh;max-height:720px;align-content:start}
+.motion-enabled .features-head{position:static;will-change:transform}
+.motion-enabled .features>.features-layout{height:100%;align-content:start}
+.motion-enabled .feature{will-change:opacity}
+.features-track .features{margin-top:0}
+@media(max-width:700px),(max-height:560px){.motion-enabled .features-track{height:auto}.motion-enabled .features{position:relative;top:auto;height:auto;max-height:none}}
