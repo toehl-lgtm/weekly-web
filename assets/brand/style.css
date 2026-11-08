@@ -123,7 +123,6 @@ header .nav-brand,footer .footer-brand,.nav a.nav-brand{display:inline-flex;alig
 @media(max-width:700px),(max-height:560px){.motion-enabled .features-track{height:auto}.motion-enabled .features{position:relative;top:auto;height:auto;max-height:none}}
 
 /* OEHL STUDIOS: Dachmarke, gleiche Schrift und Szene wie die Studio-Website */
-@font-face{font-family:Archivo;src:url(Archivo-latin.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
 .nav-studio,.studio-mark{font-family:Archivo,system-ui,sans-serif;font-stretch:125%;font-weight:300;letter-spacing:-.02em;text-transform:none}
 .nav-studio b,.studio-mark b{font-weight:850}
 .nav-studio{font-size:13px;opacity:.9;border-left:1px solid #ffffff40;padding-left:18px}
@@ -134,3 +133,8 @@ header .nav-brand,footer .footer-brand,.nav a.nav-brand{display:inline-flex;alig
 .studio-band:hover .studio-go{transform:translateX(8px)}
 .studio-band+.footer{padding-top:32px}
 .legal-page .studio-band{margin-top:0}
+
+/* Wortmarke als SVG (gleiche Umrisse wie die Studio-Website) */
+.nav-studio{font-size:0}
+.nav-studio-mark{height:18px;width:auto;display:block}
+.studio-mark{display:block;width:min(100%,1100px);height:auto;font-size:0;background:none;color:inherit;-webkit-text-fill-color:initial;padding:0}
