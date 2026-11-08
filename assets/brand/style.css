@@ -138,3 +138,14 @@ header .nav-brand,footer .footer-brand,.nav a.nav-brand{display:inline-flex;alig
 .nav-studio{font-size:0}
 .nav-studio-mark{height:18px;width:auto;display:block}
 .studio-mark{display:block;width:min(100%,1100px);height:auto;font-size:0;background:none;color:inherit;-webkit-text-fill-color:initial;padding:0}
+
+/* Korrekturen: Navigation bricht nicht mehr um, Box überlappt das Kapitel nicht, Übergang zum Studio-Band */
+.nav-brand{flex:none}
+.nav nav{white-space:nowrap;gap:clamp(14px,2.2vw,32px)}
+.nav nav a{white-space:nowrap}
+@media(max-width:1180px){.nav-studio{display:none}}
+@media(max-width:960px){.nav nav{display:none}.nav-store{margin-left:auto}}
+.features-track{margin-top:0}
+.studio-band{margin-top:0}
+.outro::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(#0000,#000);pointer-events:none;z-index:1}
+@media(max-width:700px){.chapter-screen{flex-direction:column;height:auto;gap:0}.screen-image{height:min(40svh,340px)}.screen-caption{position:static;display:block;margin-top:14px;text-align:center;width:100%;right:auto;bottom:auto;font-size:11px}.story-stage .stage-layout{padding-block:70px 40px}}
