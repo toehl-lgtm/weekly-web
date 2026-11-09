@@ -1,3 +1,2 @@
 User-agent: *
-Allow: /
-Sitemap: https://toehl-lgtm.github.io/weekly-web/sitemap.xml
+Disallow: /
